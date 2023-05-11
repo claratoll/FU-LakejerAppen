@@ -14,7 +14,12 @@ struct ContentView: View {
         
         VStack{
             Text("Hey")
+
+            Text("Julia är HÄR igen")
+                .font(.headline)
+
             //Alex var här
+
         }
     }
 }
