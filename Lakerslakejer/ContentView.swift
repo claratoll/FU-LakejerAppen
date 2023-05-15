@@ -14,14 +14,20 @@ struct ContentView: View {
         
         VStack{
             Text("Hey")
-
+                .foregroundColor(Color.ui.gold)
             Text("Julia är HÄR igen")
                 .font(.headline)
+                .foregroundColor(Color.ui.gray)
+            Image("Poseidon_transparant")
+                .resizable()
+
 
             //Alex var här
             //Mouhammads branch
 
         }
+        .background(Color.ui.blue)
+        
     }
 }
 
