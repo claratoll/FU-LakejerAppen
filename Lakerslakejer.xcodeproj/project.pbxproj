@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D85F8972A12396500EB810C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85F8962A12396500EB810C /* Extension.swift */; };
 		1D87FBC72A0CCEB50013AC3C /* LakerslakejerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87FBC62A0CCEB50013AC3C /* LakerslakejerApp.swift */; };
 		1D87FBC92A0CCEB50013AC3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87FBC82A0CCEB50013AC3C /* ContentView.swift */; };
 		1D87FBCB2A0CCEB70013AC3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D87FBCA2A0CCEB70013AC3C /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D85F8962A12396500EB810C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		1D87FBC32A0CCEB50013AC3C /* Lakerslakejer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lakerslakejer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D87FBC62A0CCEB50013AC3C /* LakerslakejerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LakerslakejerApp.swift; sourceTree = "<group>"; };
 		1D87FBC82A0CCEB50013AC3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,9 +69,13 @@
 				1D87FBCF2A0CCEB70013AC3C /* Persistence.swift */,
 				1D87FBD12A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld */,
 				1D87FBCC2A0CCEB70013AC3C /* Preview Content */,
+
 				B9B40FEA2A12349F009CA9C0 /* MenuView.swift */,
 				B9721DB72A12593F00493CF3 /* CouponView.swift */,
 				B9721DB92A125BE000493CF3 /* LogoutView.swift */,
+
+				1D85F8962A12396500EB810C /* Extension.swift */,
+
 			);
 			path = Lakerslakejer;
 			sourceTree = "<group>";
@@ -152,8 +158,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				B9721DB82A12593F00493CF3 /* CouponView.swift in Sources */,
 				B9B40FEB2A12349F009CA9C0 /* MenuView.swift in Sources */,
+
+				1D85F8972A12396500EB810C /* Extension.swift in Sources */,
+
 				1D87FBD02A0CCEB70013AC3C /* Persistence.swift in Sources */,
 				1D87FBC92A0CCEB50013AC3C /* ContentView.swift in Sources */,
 				1D87FBD32A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld in Sources */,
