@@ -10,7 +10,7 @@ import SwiftUI
 struct MemberView: View {
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.orange,.blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: Gradient(colors: [.ui.orange,.ui.blue]), startPoint: .topTrailing, endPoint: .bottomLeading)
             
             
             
