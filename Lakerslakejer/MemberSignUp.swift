@@ -1,16 +1,16 @@
 //
-//  LoginView.swift
+//  MemberSignUp.swift
 //  Lakerslakejer
 //
-//  Created by Julia Petersson  on 2023-05-15.
+//  Created by Mouhammad Azroun on 2023-05-15.
 //
 
 import SwiftUI
 
-struct LoginView: View {
+struct MemberSignUp: View {
     @State var email = ""
     @State var password = ""
-    @State var showSignUpType = false
+    @State var name = ""
     
     var body: some View {
         ZStack{
@@ -39,7 +39,14 @@ struct LoginView: View {
                         .frame(width: 420, height: 452)
                         .foregroundColor(.white)
                     VStack {
-                        Text("Email")
+                        TextField("Name", text: $name)
+                            .font(.headline)
+                            .frame(width: 220, height: 42)
+                            .foregroundColor(.white)
+                            .background(.gray)
+                            .cornerRadius(20)
+                            .padding()
+                        
                            TextField("Email", text: $email)
                                .font(.headline)
                                .frame(width: 220, height: 42)
@@ -49,7 +56,6 @@ struct LoginView: View {
                                .padding()
                                
                            
-                        Text("Lösenord")
                            SecureField("Lösenord", text: $password)
                  
                              .font(.headline)
@@ -60,23 +66,13 @@ struct LoginView: View {
                             .padding()
                         Button{}
                     label: {
-                               Text("Login")
+                               Text("Sign up")
                            }
                            .frame(width: 120, height: 42)
                            .foregroundColor(.white)
                            .background(Color.gray)
                            .cornerRadius(20)
                            .padding()
-                        
-                        Button(action: {
-                            showSignUpType = true
-                        }, label: {
-                            Text("Don't have an account? Sign up")
-                        })
-                        .navigationBarTitle("Sign Up Type")
-                                    .fullScreenCover(isPresented: $showSignUpType) {
-                                        SignUpType()
-                                    }
                        }
                 }
             }
@@ -84,8 +80,8 @@ struct LoginView: View {
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
+struct MemberSignUp_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        MemberSignUp()
     }
 }

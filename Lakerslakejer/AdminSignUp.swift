@@ -1,16 +1,15 @@
 //
-//  LoginView.swift
+//  AdminSignUp.swift
 //  Lakerslakejer
 //
-//  Created by Julia Petersson  on 2023-05-15.
+//  Created by Mouhammad Azroun on 2023-05-15.
 //
 
 import SwiftUI
 
-struct LoginView: View {
+struct AdminSignUp: View {
     @State var email = ""
     @State var password = ""
-    @State var showSignUpType = false
     
     var body: some View {
         ZStack{
@@ -58,25 +57,17 @@ struct LoginView: View {
                             .background(.gray)
                             .cornerRadius(20)
                             .padding()
-                        Button{}
+                        Button{
+                            // Admin main view
+                        }
                     label: {
-                               Text("Login")
+                               Text("Sign up")
                            }
                            .frame(width: 120, height: 42)
                            .foregroundColor(.white)
                            .background(Color.gray)
                            .cornerRadius(20)
                            .padding()
-                        
-                        Button(action: {
-                            showSignUpType = true
-                        }, label: {
-                            Text("Don't have an account? Sign up")
-                        })
-                        .navigationBarTitle("Sign Up Type")
-                                    .fullScreenCover(isPresented: $showSignUpType) {
-                                        SignUpType()
-                                    }
                        }
                 }
             }
@@ -84,8 +75,8 @@ struct LoginView: View {
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
+struct AdminSignUp_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        AdminSignUp()
     }
 }
