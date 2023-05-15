@@ -10,7 +10,7 @@ import SwiftUI
 struct MenuView: View {
     var body: some View {
         ZStack{
-           
+
                 
             VStack{
   //              ButtonView()
@@ -39,6 +39,7 @@ struct MenuView: View {
             
                 
             }
+        
                 
         }
      
@@ -56,64 +57,66 @@ struct MenuView_Previews: PreviewProvider {
 struct ButtonView: View {
     
     var body: some View {
-        
-        VStack{
+    
+            VStack{
+                
+                Button {}
+            label:{
+                //placeholder
+                Image(systemName: "figure.hockey")
+                    .frame(width: 420, height: 132)
+                    .background(.orange)
+            }
+                //.padding(.bottom, 20)
+                Spacer()
+                Button{
+                    
+                }label: {
+                    Text("Mitt Medlemskap")
+                        .font(.headline)
+                        .frame(width: 220, height: 42)
+                        .foregroundColor(.white)
+                        .background(.gray)
+                        .cornerRadius(20)
+                        .padding()
+                }
+                Button{
+                    
+                }label: {
+                    Text("Klippkort")
+                        .font(.headline)
+                        .frame(width: 220, height: 42)
+                        .foregroundColor(.white)
+                        .background(.gray)
+                        .cornerRadius(20)
+                        .padding()
+                }
+                Button{
+                    
+                }label: {
+                    Text("Nyheter")
+                        .font(.headline)
+                        .frame(width: 220, height: 42)
+                        .foregroundColor(.white)
+                        .background(.gray)
+                        .cornerRadius(20)
+                        .padding()
+                }
+                Button{
+                    
+                }label: {
+                    Text("Sponsra Tifogruppen")
+                        .font(.headline)
+                        .frame(width: 220, height: 42)
+                        .foregroundColor(.white)
+                        .background(.gray)
+                        .cornerRadius(20)
+                        .padding()
+                }
+                Spacer()
+            }
             
-            Button {}
-        label:{
-            //placeholder
-            Image(systemName: "figure.hockey")
-                .frame(width: 420, height: 132)
-                .background(.orange)
         }
-        //.padding(.bottom, 20)
-            Spacer()
-            Button{
-                
-            }label: {
-                Text("Mitt Medlemskap")
-                    .font(.headline)
-                    .frame(width: 220, height: 32)
-                    .foregroundColor(.white)
-                    .background(Color(red: 125/255, green: 136/255, blue: 151/255))
-                    .cornerRadius(20)
-                    .padding()
-            }
-            Button{
-                
-            }label: {
-                Text("Klippkort")
-                    .font(.headline)
-                    .frame(width: 220, height: 32)
-                    .foregroundColor(.white)
-                    .background(Color(red: 125/255, green: 136/255, blue: 151/255))
-                    .cornerRadius(20)
-                    .padding()
-            }
-            Button{
-                
-            }label: {
-                Text("Nyheter")
-                    .font(.headline)
-                    .frame(width: 220, height: 32)
-                    .foregroundColor(.white)
-                    .background(Color(red: 125/255, green: 136/255, blue: 151/255))
-                    .cornerRadius(20)
-                    .padding()
-            }
-            Button{
-                
-            }label: {
-                Text("Sponsra Tifogruppen")
-                    .font(.headline)
-                    .frame(width: 220, height: 32)
-                    .foregroundColor(.white)
-                    .background(Color(red: 125/255, green: 136/255, blue: 151/255))
-                    .cornerRadius(20)
-                    .padding()
-            }
-            Spacer()
-        }
-        
-    }
+ 
+    
 }
