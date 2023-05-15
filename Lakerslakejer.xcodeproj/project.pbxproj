@@ -16,6 +16,7 @@
 		1D87FBD32A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D87FBD12A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld */; };
 		B9721DB82A12593F00493CF3 /* CouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DB72A12593F00493CF3 /* CouponView.swift */; };
 		B9721DBA2A125BE000493CF3 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DB92A125BE000493CF3 /* LogoutView.swift */; };
+		B9721DBC2A1288F200493CF3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DBB2A1288F200493CF3 /* LoginView.swift */; };
 		B9B40FEB2A12349F009CA9C0 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B40FEA2A12349F009CA9C0 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		1D87FBD22A0CCEB70013AC3C /* Lakerslakejer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lakerslakejer.xcdatamodel; sourceTree = "<group>"; };
 		B9721DB72A12593F00493CF3 /* CouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponView.swift; sourceTree = "<group>"; };
 		B9721DB92A125BE000493CF3 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
+		B9721DBB2A1288F200493CF3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B9B40FEA2A12349F009CA9C0 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,13 +71,11 @@
 				1D87FBCF2A0CCEB70013AC3C /* Persistence.swift */,
 				1D87FBD12A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld */,
 				1D87FBCC2A0CCEB70013AC3C /* Preview Content */,
-
 				B9B40FEA2A12349F009CA9C0 /* MenuView.swift */,
+				B9721DBB2A1288F200493CF3 /* LoginView.swift */,
 				B9721DB72A12593F00493CF3 /* CouponView.swift */,
 				B9721DB92A125BE000493CF3 /* LogoutView.swift */,
-
 				1D85F8962A12396500EB810C /* Extension.swift */,
-
 			);
 			path = Lakerslakejer;
 			sourceTree = "<group>";
@@ -158,12 +158,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				B9721DB82A12593F00493CF3 /* CouponView.swift in Sources */,
 				B9B40FEB2A12349F009CA9C0 /* MenuView.swift in Sources */,
-
 				1D85F8972A12396500EB810C /* Extension.swift in Sources */,
-
+				B9721DBC2A1288F200493CF3 /* LoginView.swift in Sources */,
 				1D87FBD02A0CCEB70013AC3C /* Persistence.swift in Sources */,
 				1D87FBC92A0CCEB50013AC3C /* ContentView.swift in Sources */,
 				1D87FBD32A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld in Sources */,
