@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct AdminSignUp: View {
-    @State var email = ""
-    @State var password = ""
+    @StateObject var viewModel = AdminRegisterVM()
     
     var body: some View {
         ZStack{
@@ -39,7 +38,7 @@ struct AdminSignUp: View {
                         .foregroundColor(.white)
                     VStack {
                         Text("Email")
-                           TextField("Email", text: $email)
+                        TextField("Email", text: $viewModel.email)
                                .font(.headline)
                                .frame(width: 220, height: 42)
                                .foregroundColor(.white)
@@ -49,7 +48,7 @@ struct AdminSignUp: View {
                                
                            
                         Text("Lösenord")
-                           SecureField("Lösenord", text: $password)
+                        SecureField("Lösenord", text: $viewModel.password)
                  
                              .font(.headline)
                             .frame(width: 220, height: 42)
@@ -58,7 +57,7 @@ struct AdminSignUp: View {
                             .cornerRadius(20)
                             .padding()
                         Button{
-                            // Admin main view
+                            viewModel.register()
                         }
                     label: {
                                Text("Sign up")

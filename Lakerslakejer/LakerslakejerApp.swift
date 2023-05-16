@@ -24,7 +24,7 @@ struct LakerslakejerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            MemberSignUp()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
