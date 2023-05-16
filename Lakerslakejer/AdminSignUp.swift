@@ -48,7 +48,7 @@ struct AdminSignUp: View {
                                
                            
                         Text("Lösenord")
-                        SecureField("Lösenord", text: $viewModel.password)
+                        SecureField("Lösenor", text: $viewModel.password)
                  
                              .font(.headline)
                             .frame(width: 220, height: 42)
