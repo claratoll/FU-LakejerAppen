@@ -14,6 +14,9 @@
 		1D87FBCE2A0CCEB70013AC3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D87FBCD2A0CCEB70013AC3C /* Preview Assets.xcassets */; };
 		1D87FBD02A0CCEB70013AC3C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87FBCF2A0CCEB70013AC3C /* Persistence.swift */; };
 		1D87FBD32A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D87FBD12A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld */; };
+		1DBD55F02A13C24300CC31EA /* CreateNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD55EF2A13C24300CC31EA /* CreateNewsView.swift */; };
+		1DBD55F22A13C28000CC31EA /* NewsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD55F12A13C28000CC31EA /* NewsStruct.swift */; };
+		1DBD55F42A13C29700CC31EA /* NewsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD55F32A13C29700CC31EA /* NewsVM.swift */; };
 		61FC44652A129F1E00D7F502 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */; };
 		61FC44682A129F4700D7F502 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 61FC44672A129F4700D7F502 /* FirebaseAuth */; };
 		61FC446A2A129F4700D7F502 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 61FC44692A129F4700D7F502 /* FirebaseDatabase */; };
@@ -43,6 +46,9 @@
 		1D87FBCD2A0CCEB70013AC3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1D87FBCF2A0CCEB70013AC3C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		1D87FBD22A0CCEB70013AC3C /* Lakerslakejer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lakerslakejer.xcdatamodel; sourceTree = "<group>"; };
+		1DBD55EF2A13C24300CC31EA /* CreateNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewsView.swift; sourceTree = "<group>"; };
+		1DBD55F12A13C28000CC31EA /* NewsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStruct.swift; sourceTree = "<group>"; };
+		1DBD55F32A13C29700CC31EA /* NewsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVM.swift; sourceTree = "<group>"; };
 		61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61FC44732A12A16A00D7F502 /* SignUpType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpType.swift; sourceTree = "<group>"; };
 		61FC44752A12A57F00D7F502 /* AdminSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSignUp.swift; sourceTree = "<group>"; };
@@ -93,6 +99,10 @@
 		1D87FBC52A0CCEB50013AC3C /* Lakerslakejer */ = {
 			isa = PBXGroup;
 			children = (
+				1D9163942A13F3FA00036CA0 /* Coupon */,
+				1D9163932A13F3F300036CA0 /* Card */,
+				1D9163922A13F3E600036CA0 /* User */,
+				1DBD55EE2A13C22700CC31EA /* News */,
 				1D87FBC62A0CCEB50013AC3C /* LakerslakejerApp.swift */,
 				1D87FBC82A0CCEB50013AC3C /* ContentView.swift */,
 				B9721DBB2A1288F200493CF3 /* LoginView.swift */,
@@ -122,6 +132,37 @@
 				1D87FBCD2A0CCEB70013AC3C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1D9163922A13F3E600036CA0 /* User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		1D9163932A13F3F300036CA0 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		1D9163942A13F3FA00036CA0 /* Coupon */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coupon;
+			sourceTree = "<group>";
+		};
+		1DBD55EE2A13C22700CC31EA /* News */ = {
+			isa = PBXGroup;
+			children = (
+				1DBD55EF2A13C24300CC31EA /* CreateNewsView.swift */,
+				1DBD55F12A13C28000CC31EA /* NewsStruct.swift */,
+				1DBD55F32A13C29700CC31EA /* NewsVM.swift */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,16 +253,19 @@
 				61FC447E2A13EA7900D7F502 /* AdminRegisterVM.swift in Sources */,
 				1D85F8972A12396500EB810C /* Extension.swift in Sources */,
 				61FC44782A12A58E00D7F502 /* MemberSignUp.swift in Sources */,
+				1DBD55F22A13C28000CC31EA /* NewsStruct.swift in Sources */,
 				B9721DBC2A1288F200493CF3 /* LoginView.swift in Sources */,
 				1D87FBD02A0CCEB70013AC3C /* Persistence.swift in Sources */,
 				1D87FBC92A0CCEB50013AC3C /* ContentView.swift in Sources */,
 				61FC447C2A13EA2200D7F502 /* Admin.swift in Sources */,
 				1D87FBD32A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld in Sources */,
 				61FC44762A12A57F00D7F502 /* AdminSignUp.swift in Sources */,
+				1DBD55F02A13C24300CC31EA /* CreateNewsView.swift in Sources */,
 				B9721DBA2A125BE000493CF3 /* LogoutView.swift in Sources */,
 				1D87FBC72A0CCEB50013AC3C /* LakerslakejerApp.swift in Sources */,
 				61FC44742A12A16A00D7F502 /* SignUpType.swift in Sources */,
 				61FC447A2A13E73D00D7F502 /* Member.swift in Sources */,
+				1DBD55F42A13C29700CC31EA /* NewsVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
