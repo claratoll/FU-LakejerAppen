@@ -49,10 +49,6 @@
 		1D87FBBA2A0CCEB50013AC3C = {
 			isa = PBXGroup;
 			children = (
-				00B13C552A124C0A00C0116D /* NewsView.swift */,
-				00F067662A128234001641B9 /* News.swift */,
-				00F067642A1281D2001641B9 /* NewsEntryView.swift */,
-				00F067682A1284FC001641B9 /* NewsViewModel.swift */,
 				1D87FBC52A0CCEB50013AC3C /* Lakerslakejer */,
 				1D87FBC42A0CCEB50013AC3C /* Products */,
 			);
@@ -69,6 +65,10 @@
 		1D87FBC52A0CCEB50013AC3C /* Lakerslakejer */ = {
 			isa = PBXGroup;
 			children = (
+				00B13C552A124C0A00C0116D /* NewsView.swift */,
+				00F067662A128234001641B9 /* News.swift */,
+				00F067642A1281D2001641B9 /* NewsEntryView.swift */,
+				00F067682A1284FC001641B9 /* NewsViewModel.swift */,
 				1D87FBC62A0CCEB50013AC3C /* LakerslakejerApp.swift */,
 				1D87FBC82A0CCEB50013AC3C /* ContentView.swift */,
 				1D87FBCA2A0CCEB70013AC3C /* Assets.xcassets */,
