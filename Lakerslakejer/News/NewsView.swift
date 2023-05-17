@@ -30,6 +30,7 @@ struct NewsView: View {
                 }
                 .navigationTitle("Nyheter från klubben")
                 
+                
                 .navigationBarItems(trailing: NavigationLink(destination: CreateNewsView()){
                     Image(systemName: "plus.circle")
                       
@@ -81,7 +82,7 @@ struct RowView: View {
                       
                         VStack{
                             Spacer()
-                            Text(newsEntry.content ?? "Dagens datum ")
+                            Text(newsEntry.content ?? "Dagens datum eller mer text ")
                                 .font(.title3)
                                 .fontWeight(.ultraLight)               .multilineTextAlignment(.center)
                             Spacer()
