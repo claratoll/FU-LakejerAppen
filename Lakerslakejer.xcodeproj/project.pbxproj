@@ -15,8 +15,10 @@
 		1D87FBD02A0CCEB70013AC3C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87FBCF2A0CCEB70013AC3C /* Persistence.swift */; };
 		1D87FBD32A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D87FBD12A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld */; };
 		1DAFFEDB2A14D6DC00212C61 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAFFEDA2A14D6DB00212C61 /* CardView.swift */; };
+		1DAFFEDD2A14D86100212C61 /* NewsEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAFFEDC2A14D86100212C61 /* NewsEntryView.swift */; };
+		1DAFFEDF2A14D88700212C61 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAFFEDE2A14D88700212C61 /* NewsView.swift */; };
 		1DBD55F02A13C24300CC31EA /* CreateNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD55EF2A13C24300CC31EA /* CreateNewsView.swift */; };
-		1DBD55F22A13C28000CC31EA /* NewsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD55F12A13C28000CC31EA /* NewsStruct.swift */; };
+		1DBD55F22A13C28000CC31EA /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD55F12A13C28000CC31EA /* News.swift */; };
 		1DBD55F42A13C29700CC31EA /* NewsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD55F32A13C29700CC31EA /* NewsVM.swift */; };
 		61FC44652A129F1E00D7F502 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */; };
 		61FC44682A129F4700D7F502 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 61FC44672A129F4700D7F502 /* FirebaseAuth */; };
@@ -28,7 +30,7 @@
 		61FC44742A12A16A00D7F502 /* SignUpType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC44732A12A16A00D7F502 /* SignUpType.swift */; };
 		61FC44762A12A57F00D7F502 /* AdminSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC44752A12A57F00D7F502 /* AdminSignUp.swift */; };
 		61FC44782A12A58E00D7F502 /* MemberSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC44772A12A58E00D7F502 /* MemberSignUp.swift */; };
-		61FC447A2A13E73D00D7F502 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC44792A13E73D00D7F502 /* Member.swift */; };
+		61FC447A2A13E73D00D7F502 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC44792A13E73D00D7F502 /* User.swift */; };
 		61FC447C2A13EA2200D7F502 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC447B2A13EA2200D7F502 /* Admin.swift */; };
 		61FC447E2A13EA7900D7F502 /* AdminRegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC447D2A13EA7900D7F502 /* AdminRegisterVM.swift */; };
 		61FC44802A13FAC100D7F502 /* MemberRegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC447F2A13FAC100D7F502 /* MemberRegisterVM.swift */; };
@@ -47,14 +49,16 @@
 		1D87FBCF2A0CCEB70013AC3C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		1D87FBD22A0CCEB70013AC3C /* Lakerslakejer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lakerslakejer.xcdatamodel; sourceTree = "<group>"; };
 		1DAFFEDA2A14D6DB00212C61 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		1DAFFEDC2A14D86100212C61 /* NewsEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEntryView.swift; sourceTree = "<group>"; };
+		1DAFFEDE2A14D88700212C61 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		1DBD55EF2A13C24300CC31EA /* CreateNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewsView.swift; sourceTree = "<group>"; };
-		1DBD55F12A13C28000CC31EA /* NewsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStruct.swift; sourceTree = "<group>"; };
+		1DBD55F12A13C28000CC31EA /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		1DBD55F32A13C29700CC31EA /* NewsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVM.swift; sourceTree = "<group>"; };
 		61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61FC44732A12A16A00D7F502 /* SignUpType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpType.swift; sourceTree = "<group>"; };
 		61FC44752A12A57F00D7F502 /* AdminSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSignUp.swift; sourceTree = "<group>"; };
 		61FC44772A12A58E00D7F502 /* MemberSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberSignUp.swift; sourceTree = "<group>"; };
-		61FC44792A13E73D00D7F502 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		61FC44792A13E73D00D7F502 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		61FC447B2A13EA2200D7F502 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
 		61FC447D2A13EA7900D7F502 /* AdminRegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminRegisterVM.swift; sourceTree = "<group>"; };
 		61FC447F2A13FAC100D7F502 /* MemberRegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRegisterVM.swift; sourceTree = "<group>"; };
@@ -117,7 +121,7 @@
 				B9721DB72A12593F00493CF3 /* CouponView.swift */,
 				1D85F8962A12396500EB810C /* Extension.swift */,
 				61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */,
-				61FC44792A13E73D00D7F502 /* Member.swift */,
+				61FC44792A13E73D00D7F502 /* User.swift */,
 				61FC447B2A13EA2200D7F502 /* Admin.swift */,
 				61FC447D2A13EA7900D7F502 /* AdminRegisterVM.swift */,
 				61FC447F2A13FAC100D7F502 /* MemberRegisterVM.swift */,
@@ -159,8 +163,10 @@
 			isa = PBXGroup;
 			children = (
 				1DBD55EF2A13C24300CC31EA /* CreateNewsView.swift */,
-				1DBD55F12A13C28000CC31EA /* NewsStruct.swift */,
+				1DBD55F12A13C28000CC31EA /* News.swift */,
 				1DBD55F32A13C29700CC31EA /* NewsVM.swift */,
+				1DAFFEDC2A14D86100212C61 /* NewsEntryView.swift */,
+				1DAFFEDE2A14D88700212C61 /* NewsView.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -250,21 +256,23 @@
 				B9721DB82A12593F00493CF3 /* CouponView.swift in Sources */,
 				61FC44802A13FAC100D7F502 /* MemberRegisterVM.swift in Sources */,
 				B9B40FEB2A12349F009CA9C0 /* MenuView.swift in Sources */,
+				1DAFFEDF2A14D88700212C61 /* NewsView.swift in Sources */,
 				61FC447E2A13EA7900D7F502 /* AdminRegisterVM.swift in Sources */,
 				1D85F8972A12396500EB810C /* Extension.swift in Sources */,
 				61FC44782A12A58E00D7F502 /* MemberSignUp.swift in Sources */,
-				1DBD55F22A13C28000CC31EA /* NewsStruct.swift in Sources */,
+				1DBD55F22A13C28000CC31EA /* News.swift in Sources */,
 				1DAFFEDB2A14D6DC00212C61 /* CardView.swift in Sources */,
 				B9721DBC2A1288F200493CF3 /* LoginView.swift in Sources */,
 				1D87FBD02A0CCEB70013AC3C /* Persistence.swift in Sources */,
 				1D87FBC92A0CCEB50013AC3C /* ContentView.swift in Sources */,
 				61FC447C2A13EA2200D7F502 /* Admin.swift in Sources */,
+				1DAFFEDD2A14D86100212C61 /* NewsEntryView.swift in Sources */,
 				1D87FBD32A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld in Sources */,
 				61FC44762A12A57F00D7F502 /* AdminSignUp.swift in Sources */,
 				1DBD55F02A13C24300CC31EA /* CreateNewsView.swift in Sources */,
 				1D87FBC72A0CCEB50013AC3C /* LakerslakejerApp.swift in Sources */,
 				61FC44742A12A16A00D7F502 /* SignUpType.swift in Sources */,
-				61FC447A2A13E73D00D7F502 /* Member.swift in Sources */,
+				61FC447A2A13E73D00D7F502 /* User.swift in Sources */,
 				1DBD55F42A13C29700CC31EA /* NewsVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

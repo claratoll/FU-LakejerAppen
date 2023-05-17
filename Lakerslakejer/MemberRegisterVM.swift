@@ -31,7 +31,7 @@ class MemberRegisterVM: ObservableObject{
     }
     
     private func uploadMemberInfo(id: String) {
-        let newMember = Member(id: id, name: name, email: email)
+        let newMember = User(id: id, name: name, email: email)
             
             do {
                 let db = Firestore.firestore()
