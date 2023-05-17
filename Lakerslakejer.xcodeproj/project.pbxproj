@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0095BA582A14D11B00984F9B /* NewsEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0095BA542A14D11B00984F9B /* NewsEntryView.swift */; };
-		0095BA592A14D11B00984F9B /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0095BA552A14D11B00984F9B /* NewsViewModel.swift */; };
-		0095BA5A2A14D11B00984F9B /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0095BA562A14D11B00984F9B /* News.swift */; };
-		0095BA5B2A14D11B00984F9B /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0095BA572A14D11B00984F9B /* NewsView.swift */; };
 		1D85F8972A12396500EB810C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85F8962A12396500EB810C /* Extension.swift */; };
 		1D87FBC72A0CCEB50013AC3C /* LakerslakejerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87FBC62A0CCEB50013AC3C /* LakerslakejerApp.swift */; };
 		1D87FBC92A0CCEB50013AC3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87FBC82A0CCEB50013AC3C /* ContentView.swift */; };
@@ -42,10 +38,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0095BA542A14D11B00984F9B /* NewsEntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsEntryView.swift; sourceTree = "<group>"; };
-		0095BA552A14D11B00984F9B /* NewsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
-		0095BA562A14D11B00984F9B /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
-		0095BA572A14D11B00984F9B /* NewsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		1D85F8962A12396500EB810C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		1D87FBC32A0CCEB50013AC3C /* Lakerslakejer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lakerslakejer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D87FBC62A0CCEB50013AC3C /* LakerslakejerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LakerslakejerApp.swift; sourceTree = "<group>"; };
@@ -166,10 +158,6 @@
 		1DBD55EE2A13C22700CC31EA /* News */ = {
 			isa = PBXGroup;
 			children = (
-				0095BA562A14D11B00984F9B /* News.swift */,
-				0095BA542A14D11B00984F9B /* NewsEntryView.swift */,
-				0095BA572A14D11B00984F9B /* NewsView.swift */,
-				0095BA552A14D11B00984F9B /* NewsViewModel.swift */,
 				1DBD55EF2A13C24300CC31EA /* CreateNewsView.swift */,
 				1DBD55F12A13C28000CC31EA /* NewsStruct.swift */,
 				1DBD55F32A13C29700CC31EA /* NewsVM.swift */,
@@ -260,26 +248,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9721DB82A12593F00493CF3 /* CouponView.swift in Sources */,
-				0095BA5B2A14D11B00984F9B /* NewsView.swift in Sources */,
 				61FC44802A13FAC100D7F502 /* MemberRegisterVM.swift in Sources */,
 				B9B40FEB2A12349F009CA9C0 /* MenuView.swift in Sources */,
 				61FC447E2A13EA7900D7F502 /* AdminRegisterVM.swift in Sources */,
 				1D85F8972A12396500EB810C /* Extension.swift in Sources */,
 				61FC44782A12A58E00D7F502 /* MemberSignUp.swift in Sources */,
 				1DBD55F22A13C28000CC31EA /* NewsStruct.swift in Sources */,
-				0095BA592A14D11B00984F9B /* NewsViewModel.swift in Sources */,
 				B9721DBC2A1288F200493CF3 /* LoginView.swift in Sources */,
 				1D87FBD02A0CCEB70013AC3C /* Persistence.swift in Sources */,
 				1D87FBC92A0CCEB50013AC3C /* ContentView.swift in Sources */,
 				61FC447C2A13EA2200D7F502 /* Admin.swift in Sources */,
-				0095BA582A14D11B00984F9B /* NewsEntryView.swift in Sources */,
 				1D87FBD32A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld in Sources */,
 				61FC44762A12A57F00D7F502 /* AdminSignUp.swift in Sources */,
 				1DBD55F02A13C24300CC31EA /* CreateNewsView.swift in Sources */,
 				1D87FBC72A0CCEB50013AC3C /* LakerslakejerApp.swift in Sources */,
 				1DAB86062A14D27B00833A54 /* CardView.swift in Sources */,
 				61FC44742A12A16A00D7F502 /* SignUpType.swift in Sources */,
-				0095BA5A2A14D11B00984F9B /* News.swift in Sources */,
 				61FC447A2A13E73D00D7F502 /* Member.swift in Sources */,
 				1DBD55F42A13C29700CC31EA /* NewsVM.swift in Sources */,
 			);
