@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+
 class NewsVM : ObservableObject {
     
     @Published var news = [News]()
@@ -50,23 +51,37 @@ class NewsVM : ObservableObject {
 
     }*/
 
+    func listenToFirebase(){
+        let newsRef = db.collection("news")
+        
+        
+        newsRef.addSnapshotListener(){ snapshot, err in
+            guard let snapshot = snapshot else {return}
+            
+            if let err = err {
+                print("error getting document \(err)")
+            } else {
+                self.news.removeAll()
+                
+                for document in snapshot.documents {
+                    do {
+                        let newNews = try document.data(as : News.self)
+                        self.news.append(newNews)
+                    } catch {
+                        print("error reading from db")
+                    }
+                }
+                
+                
+            }
+            
+            
+        }
+        
+    }
+    
+    
+    
 }
-
-/*
- 
-
-
-    @Published var publishedNews = [News]()
-
-     // en konstruktör som kör våran mockdata
-     init(){
-         addMockData()
-     }
-
-   
- }
- 
- */
-
 
 
