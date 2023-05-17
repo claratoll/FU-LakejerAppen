@@ -13,11 +13,11 @@ import FirebaseFirestoreSwift
 
 struct News : Codable, Identifiable, Equatable {
     @DocumentID var id: String?
-    var date : Date
-    var headLine : String
-    var content : String
-    var newsText : String
-    var image : String
+    var date : Date? = Date()
+    var headLine : String?
+    var content : String?
+    var newsText : String?
+    var image : String?
 }
 
 /*

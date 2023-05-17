@@ -46,10 +46,10 @@ struct NewsEntryView: View {
 
         // med if let så nil checkar vi entry
         if let newsEntry = newsEntry{
-            content = newsEntry.content
-            headline = newsEntry.headLine
-            text = newsEntry.newsText
-            image = newsEntry.image
+            content = newsEntry.content ?? "Content"
+            headline = newsEntry.headLine ?? "Headline"
+            text = newsEntry.newsText ?? "newstext"
+            image = newsEntry.image ?? "image"
 
         }
     }
