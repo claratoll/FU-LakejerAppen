@@ -27,7 +27,7 @@ struct CreateNewsView: View {
             
             Spacer()
             Button("Save") {
-                let newNews = NewsStruct(date: Date(), headLine: headline, newsText: newsText)
+            //    let newNews = News(date: Date(), headLine: headline, newsText: newsText)
                 //Sends the news to the VM
                 newsVM.saveToFirebase(headline: headline, date: Date(), text: newsText)
                 

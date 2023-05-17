@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 class NewsVM : ObservableObject {
     
-    @Published var news = [NewsStruct]()
+    @Published var news = [News]()
     
     let db = Firestore.firestore()
     let auth = Auth.auth()
@@ -40,8 +40,33 @@ class NewsVM : ObservableObject {
         
     }
     
-    
+    /*
+    func update(news: News, with  content: String){
+
+        if let index = news.firstIndex(of: news){
+        news[index].content = content
+
+        }
+
+    }*/
+
 }
+
+/*
+ 
+
+
+    @Published var publishedNews = [News]()
+
+     // en konstruktör som kör våran mockdata
+     init(){
+         addMockData()
+     }
+
+   
+ }
+ 
+ */
 
 
 
