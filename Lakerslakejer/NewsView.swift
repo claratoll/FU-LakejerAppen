@@ -31,12 +31,13 @@ struct NewsView: View {
                     }
                     
                 }
+                // Ändra
                 .navigationTitle("Nyheter från klubben")
                 
                 .navigationBarItems(trailing: NavigationLink(destination: NewsEntryView()){
                     
                     Image(systemName: "plus.circle")
-                        
+                        //size
                 })
             }
             
