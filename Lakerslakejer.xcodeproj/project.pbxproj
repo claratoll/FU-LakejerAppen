@@ -14,7 +14,6 @@
 		1D87FBCE2A0CCEB70013AC3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D87FBCD2A0CCEB70013AC3C /* Preview Assets.xcassets */; };
 		1D87FBD02A0CCEB70013AC3C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87FBCF2A0CCEB70013AC3C /* Persistence.swift */; };
 		1D87FBD32A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D87FBD12A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld */; };
-		1DAB86062A14D27B00833A54 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB86052A14D27B00833A54 /* CardView.swift */; };
 		1DBD55F02A13C24300CC31EA /* CreateNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD55EF2A13C24300CC31EA /* CreateNewsView.swift */; };
 		1DBD55F22A13C28000CC31EA /* NewsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD55F12A13C28000CC31EA /* NewsStruct.swift */; };
 		1DBD55F42A13C29700CC31EA /* NewsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD55F32A13C29700CC31EA /* NewsVM.swift */; };
@@ -46,7 +45,6 @@
 		1D87FBCD2A0CCEB70013AC3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1D87FBCF2A0CCEB70013AC3C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		1D87FBD22A0CCEB70013AC3C /* Lakerslakejer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lakerslakejer.xcdatamodel; sourceTree = "<group>"; };
-		1DAB86052A14D27B00833A54 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		1DBD55EF2A13C24300CC31EA /* CreateNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewsView.swift; sourceTree = "<group>"; };
 		1DBD55F12A13C28000CC31EA /* NewsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStruct.swift; sourceTree = "<group>"; };
 		1DBD55F32A13C29700CC31EA /* NewsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVM.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 		1D9163932A13F3F300036CA0 /* Card */ = {
 			isa = PBXGroup;
 			children = (
-				1DAB86052A14D27B00833A54 /* CardView.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -262,7 +259,6 @@
 				61FC44762A12A57F00D7F502 /* AdminSignUp.swift in Sources */,
 				1DBD55F02A13C24300CC31EA /* CreateNewsView.swift in Sources */,
 				1D87FBC72A0CCEB50013AC3C /* LakerslakejerApp.swift in Sources */,
-				1DAB86062A14D27B00833A54 /* CardView.swift in Sources */,
 				61FC44742A12A16A00D7F502 /* SignUpType.swift in Sources */,
 				61FC447A2A13E73D00D7F502 /* Member.swift in Sources */,
 				1DBD55F42A13C29700CC31EA /* NewsVM.swift in Sources */,
