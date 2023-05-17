@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct LoginView: View {
     @State var email = ""
     @State var password = ""
     @State var showSignUpType = false
+    @Binding var signedIn : Bool
+    @State var showAlert = false
+    var auth = Auth.auth()
     
     var body: some View {
         ZStack{
@@ -58,7 +62,12 @@ struct LoginView: View {
                             .background(.gray)
                             .cornerRadius(20)
                             .padding()
-                        Button{}
+                        Button{
+                            login()
+                            
+                            
+                            
+                        }
                     label: {
                                Text("Login")
                            }
@@ -79,13 +88,29 @@ struct LoginView: View {
                                     }
                        }
                 }
+            }.alert(isPresented: $showAlert) {
+                Alert(title: Text("Felaktig Login"), message: Text("Fel lösenord eller email"), dismissButton: .default(Text("OK")))
             }
         }
     }
-}
+    func login(){
+        auth.signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("Login error: \(error.localizedDescription)")
+                showAlert = true
+            } else {
+                print("Login successful")
+                signedIn = true
+            }
+        }
+    }
+        
+    }
+    
+
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(signedIn: .constant(false))
     }
 }

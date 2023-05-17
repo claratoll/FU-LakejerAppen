@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct MenuView: View {
+    @State var showLogoutAlert = false
+    @Binding var signedIn : Bool
+    var auth = Auth.auth()
     var body: some View {
         ZStack{
 
@@ -27,12 +31,16 @@ struct MenuView: View {
                         }
                     CouponView()
                         .tabItem{
-                            Label("Home", systemImage: "greetingcard.fill")
+                            Label("Klippkort", systemImage: "greetingcard.fill")
                         }
                     
-                    LogoutView() .tabItem{
+                    Button (action: {showLogoutAlert = true})
+                    {
                         Label("Logout", systemImage: "rectangle.portrait.and.arrow.forward")
                     }
+                    .tabItem{
+                        
+                        Label("Logout", systemImage: "rectangle.portrait.and.arrow.forward")}
                 }
              
                 
@@ -41,16 +49,45 @@ struct MenuView: View {
             }
         
                 
+        }.alert(isPresented: $showLogoutAlert)
+        {
+            Alert(
+                          title: Text("Logga ut"),
+                          message: Text("Vill du verkligen logga ut?"),
+                          primaryButton: .cancel(),
+                          secondaryButton: .destructive(Text("Logga ut"), action: performLogout)
+                      )
+            
+            
+            
+            
         }
      
             
       
 }
+    private func performLogout(){
+        do {
+            try auth.signOut()
+            signedIn = false
+            
+        } catch let error{
+            
+            print("Forever trapped")
+        }
+
+
+        
+        }
 }
+
+
+
+    
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        MenuView(signedIn: .constant(true))
     }
 }
 
