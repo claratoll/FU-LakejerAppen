@@ -12,7 +12,9 @@ struct SponsorView: View {
         VStack {
           Image("klack2")
                .resizable()
-                .frame(width: 500, height: 350)
+                .frame(width: 450)
+                .clipped()
+                .clipShape(Circle())
             VStack(spacing: 50) {
                 Spacer()
                 Text("Sponsra tifogruppen")
