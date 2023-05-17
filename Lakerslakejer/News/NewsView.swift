@@ -46,25 +46,27 @@ struct NewsView: View {
 struct RowView: View {
     let newsEntry : News
     var body: some View {
-        VStack{
-            Image(newsEntry.image ?? "klack")
+        VStack(alignment: .leading, spacing: 10.0){
+            Image(newsEntry.image ?? "eventgruppen")
                 .resizable()
-            // Hela bilden kan nu visas i mobilen
                 .aspectRatio(contentMode: .fit)
             // Gör hörnen runda
                 .cornerRadius(15)
-            Spacer()
             
+            HStack{
             Text(newsEntry.headLine ?? "headline")
                 .bold()
-            Spacer()
-            
+                .foregroundColor(Color.blue)
+                
+           
+            }
             //   Text(newsEntry.headline.prefix(7))
             
             Spacer()
             VStack{
                 Spacer()
                 Text(newsEntry.newsText ?? "news text")
+                    .bold()
                 VStack{
                     Spacer()
                     Text(newsEntry.content ?? "content")
@@ -72,6 +74,17 @@ struct RowView: View {
                 }
             }
         }
+        // den fixar övre halvans bakgrundfärg(bilden)
+        .padding()
+        .background(Rectangle()
+            .foregroundColor(.white)
+                    //hörnen blir runda på kortet
+            .cornerRadius(15)
+            .shadow(radius: 15))
+        
+        //den fixar under halvans
+        .padding()
+        
     }
 }
 
