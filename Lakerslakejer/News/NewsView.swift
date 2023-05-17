@@ -32,7 +32,7 @@ struct NewsView: View {
                 
                 .navigationBarItems(trailing: NavigationLink(destination: CreateNewsView()){
                     Image(systemName: "plus.circle")
-                    
+                      
                 })
             }
             .onAppear(){
@@ -46,45 +46,67 @@ struct NewsView: View {
 struct RowView: View {
     let newsEntry : News
     var body: some View {
-        VStack(alignment: .leading, spacing: 10.0){
-            Image(newsEntry.image ?? "eventgruppen")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            // Gör hörnen runda
-                .cornerRadius(15)
+        ZStack{
+         //  Color(.systemBlue)
+            //.ignoresSafeArea()
             
-            HStack{
-            Text(newsEntry.headLine ?? "headline")
-                .bold()
-                .foregroundColor(Color.blue)
-                
-           
-            }
-            //   Text(newsEntry.headline.prefix(7))
-            
-            Spacer()
-            VStack{
+            VStack(alignment: .center, spacing: 5.0){
+                Image(newsEntry.image ?? "eventgruppen")
+                    .frame(width: 300, height: 200)
+                   // .resizable()
+                    .aspectRatio(contentMode: .fill)
+                // Gör hörnen runda
+                    .cornerRadius(10)
+                   // .ignoresSafeArea()
                 Spacer()
-                Text(newsEntry.newsText ?? "news text")
-                    .bold()
-                VStack{
+                
+                    HStack{
+                        
+                        Text(newsEntry.headLine ?? "headline")
+                        
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .multilineTextAlignment(.center)
+                            .aspectRatio(contentMode: .fill)
+                        
+                    }
+                    
                     Spacer()
-                    Text(newsEntry.content ?? "content")
-                    Spacer()
-                }
+                    VStack{
+                        Spacer()
+                        Text(newsEntry.newsText ?? "news text")
+                            .font(.title3)
+                            .fontWeight(.regular)
+                            .multilineTextAlignment(.leading)
+                      
+                        VStack{
+                            Spacer()
+                            Text(newsEntry.content ?? "Dagens datum ")
+                                .font(.title3)
+                                .fontWeight(.ultraLight)               .multilineTextAlignment(.center)
+                            Spacer()
+                        }
+                    }
+                    
+            
+            
+             
+                
             }
+            
+            .padding(.top,10)
+            .background(Rectangle()
+                .frame(minWidth: 320)
+                .foregroundColor(.white)
+                        //hörnen blir runda på kortet
+                .cornerRadius(10)
+                .shadow(radius: 15))
+            .padding(.bottom,5)
+            .padding(.trailing, 5)
+            .padding(.leading, 15)
+            //den fixar under halvans
+           // .padding()
         }
-        // den fixar övre halvans bakgrundfärg(bilden)
-        .padding()
-        .background(Rectangle()
-            .foregroundColor(.white)
-                    //hörnen blir runda på kortet
-            .cornerRadius(15)
-            .shadow(radius: 15))
-        
-        //den fixar under halvans
-        .padding()
-        
     }
 }
 
