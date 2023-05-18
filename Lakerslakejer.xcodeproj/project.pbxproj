@@ -27,12 +27,8 @@
 		61FC446E2A129F4700D7F502 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 61FC446D2A129F4700D7F502 /* FirebaseFirestore */; };
 		61FC44702A129F4700D7F502 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 61FC446F2A129F4700D7F502 /* FirebaseFirestoreSwift */; };
 		61FC44722A129F4700D7F502 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 61FC44712A129F4700D7F502 /* FirebaseStorage */; };
-		61FC44742A12A16A00D7F502 /* SignUpType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC44732A12A16A00D7F502 /* SignUpType.swift */; };
-		61FC44762A12A57F00D7F502 /* AdminSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC44752A12A57F00D7F502 /* AdminSignUp.swift */; };
 		61FC44782A12A58E00D7F502 /* UserSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC44772A12A58E00D7F502 /* UserSignUpView.swift */; };
 		61FC447A2A13E73D00D7F502 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC44792A13E73D00D7F502 /* User.swift */; };
-		61FC447C2A13EA2200D7F502 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC447B2A13EA2200D7F502 /* Admin.swift */; };
-		61FC447E2A13EA7900D7F502 /* AdminRegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC447D2A13EA7900D7F502 /* AdminRegisterVM.swift */; };
 		61FC44802A13FAC100D7F502 /* UserRegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC447F2A13FAC100D7F502 /* UserRegisterVM.swift */; };
 		B9721DB82A12593F00493CF3 /* CouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DB72A12593F00493CF3 /* CouponView.swift */; };
 		B9721DBC2A1288F200493CF3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DBB2A1288F200493CF3 /* LoginView.swift */; };
@@ -57,12 +53,8 @@
 		1DBD55F12A13C28000CC31EA /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		1DBD55F32A13C29700CC31EA /* NewsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVM.swift; sourceTree = "<group>"; };
 		61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		61FC44732A12A16A00D7F502 /* SignUpType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpType.swift; sourceTree = "<group>"; };
-		61FC44752A12A57F00D7F502 /* AdminSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSignUp.swift; sourceTree = "<group>"; };
 		61FC44772A12A58E00D7F502 /* UserSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpView.swift; sourceTree = "<group>"; };
 		61FC44792A13E73D00D7F502 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		61FC447B2A13EA2200D7F502 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
-		61FC447D2A13EA7900D7F502 /* AdminRegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminRegisterVM.swift; sourceTree = "<group>"; };
 		61FC447F2A13FAC100D7F502 /* UserRegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterVM.swift; sourceTree = "<group>"; };
 		B9721DB72A12593F00493CF3 /* CouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponView.swift; sourceTree = "<group>"; };
 		B9721DBB2A1288F200493CF3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -114,8 +106,6 @@
 				1D87FBC62A0CCEB50013AC3C /* LakerslakejerApp.swift */,
 				1D87FBC82A0CCEB50013AC3C /* ContentView.swift */,
 				B9721DBB2A1288F200493CF3 /* LoginView.swift */,
-				61FC44732A12A16A00D7F502 /* SignUpType.swift */,
-				61FC44752A12A57F00D7F502 /* AdminSignUp.swift */,
 				61FC44772A12A58E00D7F502 /* UserSignUpView.swift */,
 				1D87FBCA2A0CCEB70013AC3C /* Assets.xcassets */,
 				1D87FBCF2A0CCEB70013AC3C /* Persistence.swift */,
@@ -125,8 +115,6 @@
 				1D85F8962A12396500EB810C /* Extension.swift */,
 				61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */,
 				61FC44792A13E73D00D7F502 /* User.swift */,
-				61FC447B2A13EA2200D7F502 /* Admin.swift */,
-				61FC447D2A13EA7900D7F502 /* AdminRegisterVM.swift */,
 				61FC447F2A13FAC100D7F502 /* UserRegisterVM.swift */,
 			);
 			path = Lakerslakejer;
@@ -264,7 +252,6 @@
 				B9B40FEB2A12349F009CA9C0 /* MenuView.swift in Sources */,
 				1DAFFEDF2A14D88700212C61 /* NewsView.swift in Sources */,
 				B9721DD02A14F64800493CF3 /* CouponViewModel.swift in Sources */,
-				61FC447E2A13EA7900D7F502 /* AdminRegisterVM.swift in Sources */,
 				B9721DCE2A14F63800493CF3 /* Coupon.swift in Sources */,
 				1D85F8972A12396500EB810C /* Extension.swift in Sources */,
 				61FC44782A12A58E00D7F502 /* UserSignUpView.swift in Sources */,
@@ -273,13 +260,10 @@
 				B9721DBC2A1288F200493CF3 /* LoginView.swift in Sources */,
 				1D87FBD02A0CCEB70013AC3C /* Persistence.swift in Sources */,
 				1D87FBC92A0CCEB50013AC3C /* ContentView.swift in Sources */,
-				61FC447C2A13EA2200D7F502 /* Admin.swift in Sources */,
 				1DAFFEDD2A14D86100212C61 /* NewsEntryView.swift in Sources */,
 				1D87FBD32A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld in Sources */,
-				61FC44762A12A57F00D7F502 /* AdminSignUp.swift in Sources */,
 				1DBD55F02A13C24300CC31EA /* CreateNewsView.swift in Sources */,
 				1D87FBC72A0CCEB50013AC3C /* LakerslakejerApp.swift in Sources */,
-				61FC44742A12A16A00D7F502 /* SignUpType.swift in Sources */,
 				61FC447A2A13E73D00D7F502 /* User.swift in Sources */,
 				1DBD55F42A13C29700CC31EA /* NewsVM.swift in Sources */,
 			);

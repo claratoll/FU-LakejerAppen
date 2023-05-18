@@ -9,8 +9,7 @@ import Foundation
 import FirebaseFirestoreSwift
 
 struct User: Codable {
-    @DocumentID var id : String?
-    var accountType: String = "member"
+    var id : String
     var name: String
     var email: String
     var admin: Bool = false
