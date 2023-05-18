@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct MemberSignUp: View {
-    @StateObject var viewModel = MemberRegisterVM()
+struct UserSignUpView: View {
+    @StateObject var viewModel = UserRegisterVM()
     
     var body: some View {
         ZStack{
@@ -26,11 +26,7 @@ struct MemberSignUp: View {
                         .offset(x:0, y:34)
                         .padding(.top, 10)
                     
-                      
-                       
-//                    Text("Lakers lakejer")
-//                        .font(.largeTitle)
-                      //  .offset(x:0, y:54)
+     
                 }
                 ZStack(alignment: .center){
                     Rectangle()
@@ -79,9 +75,10 @@ struct MemberSignUp: View {
         }
     }
 }
-
+/*
 struct MemberSignUp_Previews: PreviewProvider {
     static var previews: some View {
         MemberSignUp()
     }
 }
+*/
