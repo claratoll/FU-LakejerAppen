@@ -32,11 +32,7 @@ struct LoginView: View {
                         .offset(x:0, y:34)
                         .padding(.top, 10)
                     
-                      
-                       
-//                    Text("Lakers lakejer")
-//                        .font(.largeTitle)
-                      //  .offset(x:0, y:54)
+               
                 }
                 ZStack(alignment: .center){
                     Rectangle()
@@ -64,9 +60,6 @@ struct LoginView: View {
                             .padding()
                         Button{
                             login()
-                            
-                            
-                            
                         }
                     label: {
                                Text("Login")
@@ -107,10 +100,11 @@ struct LoginView: View {
         
     }
     
-
+/*
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView(signedIn: .constant(false))
     }
 }
+*/

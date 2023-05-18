@@ -51,7 +51,7 @@ struct SignUpType: View {
                            .padding()
                            .navigationBarTitle("Member Sign up")
                                        .fullScreenCover(isPresented: $showMemberSignUp) {
-                                           MemberSignUp()
+                                           UserSignUpView()
                                        }
                         Button{
                             showAdminSignUp = true

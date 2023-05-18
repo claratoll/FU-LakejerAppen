@@ -11,12 +11,15 @@ import SwiftUI
 import Firebase
 import FirebaseFirestoreSwift
 
-class MemberRegisterVM: ObservableObject{
+class UserRegisterVM: ObservableObject{
     @Published var name = ""
     @Published var email = ""
     @Published var password = ""
     let auth = Auth.auth()
     let db = Firestore.firestore()
+    //@Binding var signedIn : Bool
+    
+    @Environment(\.presentationMode) var presentationMode
 
     func register () {
         auth.createUser(withEmail: email, password: password) { result, error in
@@ -26,9 +29,12 @@ class MemberRegisterVM: ObservableObject{
                 print("sign up successfull")
                 guard let memberId = result?.user.uid else{return}
                 self.uploadMemberInfo(id: memberId)
+                
             }
         }
     }
+    
+    
     
     private func uploadMemberInfo(id: String) {
         let newMember = User(id: id, name: name, email: email)

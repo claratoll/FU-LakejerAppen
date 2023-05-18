@@ -63,7 +63,7 @@ struct MenuView: View {
             
         } catch let error{
             
-            print("Forever trapped")
+            print("Forever trapped \(error)")
         }
     }
 }
@@ -76,7 +76,7 @@ struct MenuView_Previews: PreviewProvider {
 
 struct ButtonView: View {
     
-   
+    
     var body: some View {
         
         VStack{
@@ -91,19 +91,49 @@ struct ButtonView: View {
             
             //.padding(.bottom, 20)
             Spacer()
-            NavigationView{
-                               
-                NavigationLink{ CouponView() } label: {
-                    Text("Klippkort")
-                        
+            NavigationView {
+                VStack{
+                    Spacer()
+                    NavigationLink(destination: CouponView()) {
+                        Text("Klippkort")
+                            .frame(width: 200, height: 50)
+                            .background(Color.ui.blue)
+                            .foregroundColor(Color.ui.gray)
+                            .cornerRadius(10)
+                    }
+                    
+                    Spacer()
+                    NavigationLink(destination: NewsView()) {
+                        Text("Nyheter")
+                            .frame(width: 200, height: 50)
+                            .background(Color.ui.blue)
+                            .foregroundColor(Color.ui.gray)
+                            .cornerRadius(10)
+                    }
+                    Spacer()
+                    NavigationLink(destination: NewsView()){
+                        Text("Sponsra Tifogruppen")
+                            .frame(width: 200, height: 50)
+                            .background(Color.ui.blue)
+                            .foregroundColor(Color.ui.gray)
+                            .cornerRadius(10)
+                    }
+                    Spacer()
+                    NavigationLink(destination: NewsView()){
+                        Text("Kontakta styrelsen")
+                            .frame(width: 200, height: 50)
+                            .background(Color.ui.blue)
+                            .foregroundColor(Color.ui.gray)
+                            .cornerRadius(10)
+                    }
+                    Spacer()
                 }
-            }
                 
-            //nyheter
-            //sponsra tifogruppen
-            
-           
-            Spacer()
+                
+                
+                
+                Spacer()
+            }
         }
     }
 }

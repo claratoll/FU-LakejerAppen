@@ -10,7 +10,6 @@ import FirebaseFirestoreSwift
 
 struct User: Codable {
     @DocumentID var id : String?
-
     var accountType: String = "member"
     var name: String
     var email: String
