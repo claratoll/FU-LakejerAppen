@@ -36,6 +36,8 @@
 		61FC44802A13FAC100D7F502 /* MemberRegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC447F2A13FAC100D7F502 /* MemberRegisterVM.swift */; };
 		B9721DB82A12593F00493CF3 /* CouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DB72A12593F00493CF3 /* CouponView.swift */; };
 		B9721DBC2A1288F200493CF3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DBB2A1288F200493CF3 /* LoginView.swift */; };
+		B9721DCE2A14F63800493CF3 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DCD2A14F63800493CF3 /* Coupon.swift */; };
+		B9721DD02A14F64800493CF3 /* CouponViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DCF2A14F64800493CF3 /* CouponViewModel.swift */; };
 		B9B40FEB2A12349F009CA9C0 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B40FEA2A12349F009CA9C0 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		61FC447F2A13FAC100D7F502 /* MemberRegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRegisterVM.swift; sourceTree = "<group>"; };
 		B9721DB72A12593F00493CF3 /* CouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponView.swift; sourceTree = "<group>"; };
 		B9721DBB2A1288F200493CF3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B9721DCD2A14F63800493CF3 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
+		B9721DCF2A14F64800493CF3 /* CouponViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponViewModel.swift; sourceTree = "<group>"; };
 		B9B40FEA2A12349F009CA9C0 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,7 +122,6 @@
 				1D87FBD12A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld */,
 				1D87FBCC2A0CCEB70013AC3C /* Preview Content */,
 				B9B40FEA2A12349F009CA9C0 /* MenuView.swift */,
-				B9721DB72A12593F00493CF3 /* CouponView.swift */,
 				1D85F8962A12396500EB810C /* Extension.swift */,
 				61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */,
 				61FC44792A13E73D00D7F502 /* User.swift */,
@@ -155,6 +158,9 @@
 		1D9163942A13F3FA00036CA0 /* Coupon */ = {
 			isa = PBXGroup;
 			children = (
+				B9721DB72A12593F00493CF3 /* CouponView.swift */,
+				B9721DCD2A14F63800493CF3 /* Coupon.swift */,
+				B9721DCF2A14F64800493CF3 /* CouponViewModel.swift */,
 			);
 			path = Coupon;
 			sourceTree = "<group>";
@@ -257,7 +263,9 @@
 				61FC44802A13FAC100D7F502 /* MemberRegisterVM.swift in Sources */,
 				B9B40FEB2A12349F009CA9C0 /* MenuView.swift in Sources */,
 				1DAFFEDF2A14D88700212C61 /* NewsView.swift in Sources */,
+				B9721DD02A14F64800493CF3 /* CouponViewModel.swift in Sources */,
 				61FC447E2A13EA7900D7F502 /* AdminRegisterVM.swift in Sources */,
+				B9721DCE2A14F63800493CF3 /* Coupon.swift in Sources */,
 				1D85F8972A12396500EB810C /* Extension.swift in Sources */,
 				61FC44782A12A58E00D7F502 /* MemberSignUp.swift in Sources */,
 				1DBD55F22A13C28000CC31EA /* News.swift in Sources */,
