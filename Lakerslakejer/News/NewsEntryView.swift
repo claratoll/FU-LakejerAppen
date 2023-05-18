@@ -42,7 +42,6 @@ struct NewsEntryView: View {
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.leading)
             
-            
             TextEditor(text: $text)
                 
                     .font(.title3)
@@ -51,15 +50,17 @@ struct NewsEntryView: View {
                     .background(Rectangle()
                         .frame(minWidth: 220)
                         .foregroundColor(.white)
-                        .cornerRadius(20) )
+                        .cornerRadius(20))
                     .padding(.bottom,5)
                     .padding(.trailing, 5)
                     .padding(.leading, 5)
                     .padding(.top, -80)
             
+            // Här kan datum och skribent stå skrivet.
             TextEditor(text: $content)
                 .font(.title3)
-                .fontWeight(.light)
+                .fontWeight(.ultraLight)
+                .multilineTextAlignment(.leading)
         }
 
         .onAppear(perform: setContent)
