@@ -111,7 +111,7 @@ struct ButtonView: View {
                             .cornerRadius(10)
                     }
                     Spacer()
-                    NavigationLink(destination: NewsView()){
+                    NavigationLink(destination: SponsorView()){
                         Text("Sponsra Tifogruppen")
                             .frame(width: 200, height: 50)
                             .background(Color.ui.blue)
