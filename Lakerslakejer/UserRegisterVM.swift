@@ -15,6 +15,7 @@ class UserRegisterVM: ObservableObject{
     @Published var name = ""
     @Published var email = ""
     @Published var password = ""
+    @Published var isSignedUp = false
     let auth = Auth.auth()
     let db = Firestore.firestore()
     //@Binding var signedIn : Bool
@@ -29,6 +30,7 @@ class UserRegisterVM: ObservableObject{
                 print("sign up successfull")
                 guard let memberId = result?.user.uid else{return}
                 self.uploadMemberInfo(id: memberId)
+                self.isSignedUp = true
                 
             }
         }

@@ -76,8 +76,8 @@ struct LoginView: View {
                             Text("Don't have an account? Sign up")
                         })
                         .navigationBarTitle("Sign Up Type")
-                                    .fullScreenCover(isPresented: $showSignUpType) {
-                                        SignUpType()
+                                    .sheet(isPresented: $showSignUpType) {
+                                        UserSignUpView()
                                     }
                        }
                 }

@@ -69,16 +69,20 @@ struct UserSignUpView: View {
                            .background(Color.gray)
                            .cornerRadius(20)
                            .padding()
+                        
+                           .navigationBarTitle("Sign Up Successful")
+                           .fullScreenCover(isPresented: $viewModel.isSignedUp) {
+                               MenuView(signedIn: $viewModel.isSignedUp)
+                                       }
                        }
                 }
             }
         }
     }
 }
-/*
+
 struct MemberSignUp_Previews: PreviewProvider {
     static var previews: some View {
-        MemberSignUp()
+        UserSignUpView()
     }
 }
-*/
