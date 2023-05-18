@@ -30,9 +30,10 @@ struct NewsView: View {
                 }
                 .navigationTitle("Nyheter från klubben")
                 
+                
                 .navigationBarItems(trailing: NavigationLink(destination: CreateNewsView()){
                     Image(systemName: "plus.circle")
-                    
+                      
                 })
             }
             .onAppear(){
@@ -46,31 +47,66 @@ struct NewsView: View {
 struct RowView: View {
     let newsEntry : News
     var body: some View {
-        VStack{
-            Image(newsEntry.image ?? "klack")
-                .resizable()
-            // Hela bilden kan nu visas i mobilen
-                .aspectRatio(contentMode: .fit)
-            // Gör hörnen runda
-                .cornerRadius(15)
-            Spacer()
+        ZStack{
+         //  Color(.systemBlue)
+            //.ignoresSafeArea()
             
-            Text(newsEntry.headLine ?? "headline")
-                .bold()
-            Spacer()
-            
-            //   Text(newsEntry.headline.prefix(7))
-            
-            Spacer()
-            VStack{
+            VStack(alignment: .center, spacing: 5.0){
+                Image(newsEntry.image ?? "eventgruppen")
+                    .frame(width: 300, height: 200)
+                   // .resizable()
+                    .aspectRatio(contentMode: .fill)
+                // Gör hörnen runda
+                    .cornerRadius(10)
+                   // .ignoresSafeArea()
                 Spacer()
-                Text(newsEntry.newsText ?? "news text")
-                VStack{
+                
+                    HStack{
+                        
+                        Text(newsEntry.headLine ?? "headline")
+                        
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .multilineTextAlignment(.center)
+                            .aspectRatio(contentMode: .fill)
+                        
+                    }
+                    
                     Spacer()
-                    Text(newsEntry.content ?? "content")
-                    Spacer()
-                }
+                    VStack{
+                        Spacer()
+                        Text(newsEntry.newsText ?? "news text")
+                            .font(.title3)
+                            .fontWeight(.regular)
+                            .multilineTextAlignment(.leading)
+                      
+                        VStack{
+                            Spacer()
+                            Text(newsEntry.content ?? "Dagens datum eller mer text ")
+                                .font(.title3)
+                                .fontWeight(.ultraLight)               .multilineTextAlignment(.center)
+                            Spacer()
+                        }
+                    }
+                    
+            
+            
+             
+                
             }
+            
+            .padding(.top,10)
+            .background(Rectangle()
+                .frame(minWidth: 320)
+                .foregroundColor(.white)
+                        //hörnen blir runda på kortet
+                .cornerRadius(10)
+                .shadow(radius: 15))
+            .padding(.bottom,5)
+            .padding(.trailing, 5)
+            .padding(.leading, 15)
+            //den fixar under halvans
+           // .padding()
         }
     }
 }
