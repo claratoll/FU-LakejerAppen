@@ -27,10 +27,40 @@ struct NewsEntryView: View {
     var body: some View {
         VStack{
 
-            // som en edittext
-            TextEditor(text: $content)
+           
+            
+            VStack(alignment: .center, spacing: 5.0){
+                Image(newsEntry?.image ?? "eventgruppen")
+                    .frame(width: 500, height: 300)
+                    .aspectRatio(contentMode: .fill)
+                    .cornerRadius(10)
+                    .padding(.top,-40)
+            }
             TextEditor(text: $headline)
+            
+                .font(.title)
+                .fontWeight(.semibold)
+                .multilineTextAlignment(.leading)
+            
             TextEditor(text: $text)
+                
+                    .font(.title3)
+                    .fontWeight(.light)
+                    .multilineTextAlignment(.leading)
+                    .background(Rectangle()
+                        .frame(minWidth: 220)
+                        .foregroundColor(.white)
+                        .cornerRadius(20))
+                    .padding(.bottom,5)
+                    .padding(.trailing, 5)
+                    .padding(.leading, 5)
+                    .padding(.top, -80)
+            
+            // Här kan datum och skribent stå skrivet.
+            TextEditor(text: $content)
+                .font(.title3)
+                .fontWeight(.ultraLight)
+                .multilineTextAlignment(.leading)
         }
 
         .onAppear(perform: setContent)
