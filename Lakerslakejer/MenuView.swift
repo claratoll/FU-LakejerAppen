@@ -56,6 +56,7 @@ struct MenuView: View {
         }
     }
     
+    
     private func performLogout(){
         do {
             try auth.signOut()
@@ -75,18 +76,23 @@ struct MenuView_Previews: PreviewProvider {
 }
 
 struct ButtonView: View {
+    @State private var isCardViewVisible = true
     
     
     var body: some View {
         
         VStack{
             
+            
             Button {}
         label:{
             //placeholder
-            CardView()
-                .frame(width: 30, height: 30)
-                .rotationEffect(Angle(degrees: 270))
+           
+            if isCardViewVisible {
+                CardView()
+                    .frame(width: 30, height: 200)
+            }
+                
         }
             
             //.padding(.bottom, 20)
@@ -94,7 +100,7 @@ struct ButtonView: View {
             NavigationView {
                 VStack{
                     Spacer()
-                    NavigationLink(destination: CouponView()) {
+                    NavigationLink(destination: CouponView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
                         Text("Klippkort")
                             .frame(width: 200, height: 50)
                             .background(Color.ui.blue)
@@ -103,7 +109,7 @@ struct ButtonView: View {
                     }
                     
                     Spacer()
-                    NavigationLink(destination: NewsView()) {
+                    NavigationLink(destination: NewsView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
                         Text("Nyheter")
                             .frame(width: 200, height: 50)
                             .background(Color.ui.blue)
@@ -111,7 +117,7 @@ struct ButtonView: View {
                             .cornerRadius(10)
                     }
                     Spacer()
-                    NavigationLink(destination: SponsorView()){
+                    NavigationLink(destination: SponsorView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
                         Text("Sponsra Tifogruppen")
                             .frame(width: 200, height: 50)
                             .background(Color.ui.blue)
@@ -119,7 +125,7 @@ struct ButtonView: View {
                             .cornerRadius(10)
                     }
                     Spacer()
-                    NavigationLink(destination: NewsView()){
+                    NavigationLink(destination: NewsView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
                         Text("Kontakta styrelsen")
                             .frame(width: 200, height: 50)
                             .background(Color.ui.blue)

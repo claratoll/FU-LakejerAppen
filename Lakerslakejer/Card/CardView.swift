@@ -15,17 +15,17 @@ struct CardView: View {
                
                
                    Text("Name")
-                       .position(x:-30,y:160)
-                       .rotationEffect(Angle(degrees: 90))
+                   .position(x:70, y: 30)
+                       
                    Text("Card Number")
-                       .rotationEffect(Angle(degrees: 90))
-                       .position(x: 313,y: 460)
+                   .position(x:250, y: 30)
+                       
                    Text("Season")
-                   .position(x:-30,y:400)
-                   .rotationEffect(Angle(degrees: 90))
+                   .position(x:70, y: 170)
+                   
                
                
-           }.frame(width: 350, height: 600)
+           }.frame(width: 350, height: 200)
                .cornerRadius(12)
           
        }
