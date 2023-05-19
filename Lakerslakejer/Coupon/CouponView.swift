@@ -28,6 +28,8 @@ struct CouponView: View {
                 Text("Du har en till 10-Block som visas när din första är förbrukat")
                     .onAppear(perform: {
                         newCoupons = coupons - 10
+                        
+                        //jag hantera visst inte om man har mer än tjugo,... men tänker det händer inte 
                     })
             }
             else{

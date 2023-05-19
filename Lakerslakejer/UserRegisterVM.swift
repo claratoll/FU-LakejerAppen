@@ -53,5 +53,44 @@ class UserRegisterVM: ObservableObject{
                 print("Error encoding admin object: \(error)")
             }
         }
+    
+    
+//    func getCurrentUserDetails (){
+//        
+//        guard let currentUser = Auth.auth().currentUser else {
+//        
+//            return
+//        }
+//        
+//        let userRef = db.collection("Members").document(currentUser.uid)
+//           
+//         userRef.getDocument { (document, error) in
+//                if let document = document, document.exists {
+//                    do {
+//                        let user = try document.data(as: User.self)
+//                        if let user = user {
+//                           
+//                            print("User ID: \(user.id)")
+//                            print("User Name: \(user.name)")
+//                            print("User Email: \(user.email)")
+//                        
+//                        }
+//                    } catch {
+//                        print("Error decoding user document: \(error)")
+//                    }
+//                } else {
+//                    print("User document does not exist")
+//                }
+//            }
+//        
+//        
+//        
+//        
+//        
+//    }
+        
+    
+    
+    
 }
 
