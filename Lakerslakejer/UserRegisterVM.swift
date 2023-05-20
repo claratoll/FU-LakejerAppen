@@ -13,6 +13,7 @@ import FirebaseFirestoreSwift
 
 class UserRegisterVM: ObservableObject{
     @Published var name = ""
+    @Published var memberNr : Int = 0
     @Published var email = ""
     @Published var password = ""
     @Published var isSignedUp = false
@@ -39,7 +40,7 @@ class UserRegisterVM: ObservableObject{
     
     
     private func uploadMemberInfo(id: String) {
-        let newMember = User(id: id, name: name, email: email)
+        let newMember = User(id: id, name: name, email: email, memberNr: memberNr)
             
             do {
                 let db = Firestore.firestore()

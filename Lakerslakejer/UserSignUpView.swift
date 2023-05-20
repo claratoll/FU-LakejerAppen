@@ -41,6 +41,18 @@ struct UserSignUpView: View {
                             .cornerRadius(20)
                             .padding()
                         
+                        TextField("Membership number", text:Binding<String>(
+                            get: { viewModel.memberNr != 0 ? String(viewModel.memberNr) : "" },
+                            set: { viewModel.memberNr = Int($0) ?? 0 }))
+                        
+                            .font(.headline)
+                            .frame(width: 220, height: 42)
+                            .foregroundColor(.white)
+                            .background(.gray)
+                            .cornerRadius(20)
+                            .padding()
+                            .keyboardType(.numberPad)
+                        
                         TextField("Email", text: $viewModel.email)
                                .font(.headline)
                                .frame(width: 220, height: 42)
