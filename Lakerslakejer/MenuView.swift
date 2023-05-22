@@ -11,6 +11,10 @@ import Firebase
 struct MenuView: View {
     @State var showLogoutAlert = false
     @Binding var signedIn : Bool
+    @ObservedObject var couponVM = CouponViewModel()
+    @State var triggerCouponView = false
+    @State private var selectedTab = 0
+
     var auth = Auth.auth()
     var body: some View {
         ZStack{
@@ -22,17 +26,18 @@ struct MenuView: View {
                
                 
                 
-                TabView{
-                    ButtonView()
+                TabView(selection: $selectedTab){
+                    ButtonView(selectedTab: $selectedTab)
                         .tabItem{
                             Label("Home", systemImage: "house.fill")
                             
                             
-                        }
-                    CouponView()
+                        }.tag(0)
+                    CouponView(couponVM: couponVM )
                         .tabItem{
                             Label("Klippkort", systemImage: "greetingcard.fill")
                         }
+                        .tag(1)
                     
                     Button (action: {showLogoutAlert = true})
                     {
@@ -41,7 +46,7 @@ struct MenuView: View {
                     .tabItem{
                         
                         Label("Logout", systemImage: "rectangle.portrait.and.arrow.forward")}
-                }
+                }.tag(2)
             }
             
             
@@ -77,7 +82,7 @@ struct MenuView_Previews: PreviewProvider {
 
 struct ButtonView: View {
     @State private var isCardViewVisible = true
-    
+    @Binding var selectedTab: Int
     
     var body: some View {
         
@@ -100,13 +105,22 @@ struct ButtonView: View {
             NavigationView {
                 VStack{
                     Spacer()
-                    NavigationLink(destination: CouponView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
+                    Button(action: {
+                                    selectedTab = 1
+                                }) {
                         Text("Klippkort")
                             .frame(width: 200, height: 50)
                             .background(Color.ui.blue)
                             .foregroundColor(Color.ui.gray)
                             .cornerRadius(10)
                     }
+//                      NavigationLink(destination: CouponView(couponVM: CouponViewModel()).onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
+//                        Text("Klippkort")
+//                            .frame(width: 200, height: 50)
+//                            .background(Color.ui.blue)
+//                            .foregroundColor(Color.ui.gray)
+//                            .cornerRadius(10)
+//                    }
                     
                     Spacer()
                     NavigationLink(destination: NewsView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {

@@ -17,10 +17,11 @@ struct CouponView: View {
     
     @State var coupons = 7
     @State var newCoupons = 0
+    @ObservedObject var couponVM : CouponViewModel
     
     var body: some View {
         let totalCoupons = 10 // Total number of coupons
-        
+       
        
         
         Grid(alignment: .center, horizontalSpacing: 1, verticalSpacing: 1) {
@@ -70,7 +71,7 @@ struct CouponView: View {
                     Image(index < newCoupons ? "Coupon" : "UsedCoupon")
                         .padding()
                     
-                }}
+                }}.onAppear{couponVM.getCoupons()}
             
             Spacer()
             VStack {
@@ -78,7 +79,10 @@ struct CouponView: View {
                     .frame(width: 130, height: 130)
                     .foregroundColor(.ui.gold)
                     .padding(.bottom, 30)
-                Text("Medlem 2343")
+                HStack{
+                  Text("Medlem: ")
+                    Text(String(couponVM.memberNr))}
+                Text(String(couponVM.coupons))
             }
             Spacer()
         }
@@ -86,8 +90,8 @@ struct CouponView: View {
     }
 }
 
-struct CouponView_Previews: PreviewProvider {
-    static var previews: some View {
-        CouponView()
-    }
-}
+//struct CouponView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CouponView()
+//    }
+//}

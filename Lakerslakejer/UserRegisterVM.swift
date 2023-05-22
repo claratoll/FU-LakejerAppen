@@ -56,59 +56,7 @@ class UserRegisterVM: ObservableObject{
             }
         }
     
-    func getCoupons (){
-        guard let currenUser = Auth.auth().currentUser else {return}
-       
-        let userRef = db.collection("Members").document(currenUser.uid)
-            
-        userRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                do {
-                    var user = try document.data(as: User.self)
-                        
-                        let coupons = user.coupons
-                        self.coupons = coupons
-                        
-                     }catch {
-                        print("Error decoding user document: \(error)")
-                    }
-            } else {
-                print("User document does not exist")
-            }
-        }
-    }
     
-    func listenToFirestore(){
-        // viktig så att det kan uppdateras när man tog bort en coupon
-        // fast kankse inte - kan ju bara läsa ner för den som är inloggat
-        // MEN kankse behöver admin sen en lista för att se nånting - låta den vara här just nu
-        // och chatten
-        
-        db.collection("Members").addSnapshotListener() {
-            //fick lägga till self här och förstår ej varför
-            snapshot, err in
-            guard let snapshot = snapshot else {return}
-            
-            if let err = err{
-                print("somethings really, really wrong")}
-            else{
-                self.members.removeAll()
-                for document in snapshot.documents{
-                    do{
-                        
-                        let member = try document.data(as : User.self)
-                        self.members.append(member)
-                    } catch {
-                        print("nope")
-                    }
-                }
-                
-            }
-            
-            
-            
-        }
-        
         
         
     }
@@ -150,5 +98,5 @@ class UserRegisterVM: ObservableObject{
     
     
     
-}
+
 
