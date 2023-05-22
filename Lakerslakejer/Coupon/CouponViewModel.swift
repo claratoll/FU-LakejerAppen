@@ -21,28 +21,28 @@ class CouponViewModel: ObservableObject{
     
 
     
-    func getCoupons (){
-        guard let currenUser = Auth.auth().currentUser else {return}
-       
-        
-        let userRef = db.collection("Members").document(currenUser.uid)
-            
-        userRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                do {
-                    var user = try document.data(as: User.self)
-                        
-                        let coupons = user.coupons
-                        self.coupons = coupons
-                        let memberNr = user.memberNr
-                        self.memberNr = memberNr
-                    print (String(coupons))
-                        
-                     }catch {
-                        print("Error decoding user document: \(error)")
-                    }
-            } else {
-                print("User document does not exist")
+    func getCoupons() {
+        guard let currentUser = Auth.auth().currentUser else { return }
+
+        let userRef = db.collection("Members").document(currentUser.uid)
+
+        userRef.addSnapshotListener { (documentSnapshot, error) in
+            guard let document = documentSnapshot else {
+                print("Error fetching document: \(error!)")
+                return
+            }
+
+            do {
+                var user = try document.data(as: User.self)
+
+                let coupons = user.coupons
+                self.coupons = coupons
+                let memberNr = user.memberNr
+                self.memberNr = memberNr
+                print(String(coupons))
+
+            } catch {
+                print("Error decoding user document: \(error)")
             }
         }
     }
