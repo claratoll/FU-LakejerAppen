@@ -26,6 +26,12 @@ struct NewsView: View {
                         NavigationLink(destination: NewsEntryView(newsEntry: newsEntry)){
                             RowView(newsEntry: newsEntry)
                         }
+                                                    
+                        }
+                    .onDelete(){ indexSet in
+                        for index in indexSet{
+                            newsVM.deleteNewsFromUserList(index: index)
+                        }
                     }
                 }
                 .navigationTitle("Nyheter från klubben")
