@@ -41,6 +41,15 @@ class NewsVM : ObservableObject {
         
     }
     
+    func deleteNewsFromList(index: Int){
+        
+        
+        
+        
+        
+        
+    }
+    
     /*
     func update(news: News, with  content: String){
 
