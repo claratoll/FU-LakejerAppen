@@ -13,25 +13,14 @@ struct ContentView: View {
     
     var body: some View {
         
+      
+    
         if !signedIn{
             LoginView(signedIn: $signedIn)
         } else{
             MenuView(signedIn: $signedIn)
         }
         
-        
-//        VStack{
-//         
-//        
-//            Image("Poseidon_transparant")
-//                .resizable()
-//
-//
-//            //Alex var här
-//            //Mouhammads branch
-//
-//        }
-//        .background(Color.ui.blue)
         
     }
 }

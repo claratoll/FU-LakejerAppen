@@ -105,6 +105,10 @@ struct ButtonView: View {
             NavigationView {
                 VStack{
                     Spacer()
+                    
+                    //if user = admin -- scannerview
+                    //if user != admin -- couponview
+                    
                     Button(action: {
                                     selectedTab = 1
                                 }) {
