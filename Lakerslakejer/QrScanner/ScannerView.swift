@@ -12,7 +12,10 @@ struct ScannerView: View {
     
     var body: some View {
         ZStack {
-            Text("Scanner goes here...")
+            QrCodeScannerView()
+            .found(r: self.viewModel.onFoundQrCode)
+            .torchLight(isOn: self.viewModel.torchIsOn)
+            .interval(delay: self.viewModel.scanInterval)
             
             
             VStack {

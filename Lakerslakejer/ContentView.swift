@@ -13,15 +13,15 @@ struct ContentView: View {
     
     var body: some View {
         
-      
-    
+        ScannerView()
+    /*
         if !signedIn{
             LoginView(signedIn: $signedIn)
         } else{
             MenuView(signedIn: $signedIn)
         }
         
-        
+        */
     }
 }
 
