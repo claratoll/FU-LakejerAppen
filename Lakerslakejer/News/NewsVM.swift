@@ -41,6 +41,23 @@ class NewsVM : ObservableObject {
         
     }
     
+    func deleteNewsFromUserList(index: Int){
+        
+        guard let user = auth.currentUser else {return}
+        
+        // Har ej kört igång den pga av uid problemen
+       //
+        let newsRef = db.collection("news").document(user.uid).collection("")
+        
+        let newNews = news[index]
+        
+        if let id = newNews.id {
+            newsRef.document(id).delete()
+        }
+        
+        
+    }
+    
     /*
     func update(news: News, with  content: String){
 
