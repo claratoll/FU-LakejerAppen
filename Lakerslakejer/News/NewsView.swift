@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseFirestore
+import FirebaseAuth
 
 
 struct NewsView: View {
+    @State var isAdmin = false
     
     // här skapar vi listan för tableviewn
 
@@ -35,12 +39,29 @@ struct NewsView: View {
                     }
                 }
                 .navigationTitle("Nyheter från klubben")
+                .onAppear {
+                    checkUserAuthorization { isAdmin in
+                        // Handle the value of isAdmin here
+                        if isAdmin {
+                            print("User is an admin")
+                            DispatchQueue.main.async {
+                                self.isAdmin = true
+                            }
+                        } else {
+                            print("User is not an admin")
+                            DispatchQueue.main.async {
+                                self.isAdmin = false
+                            }
+                        }
+                    }
+                }
+
                 
-                
-                .navigationBarItems(trailing: NavigationLink(destination: CreateNewsView()){
+                .navigationBarItems(trailing: isAdmin ? NavigationLink(destination: CreateNewsView()) {
                     Image(systemName: "plus.circle")
-                      
-                })
+                } : nil)
+
+
             }
             .onAppear(){
                 newsVM.listenToFirebase()
@@ -116,6 +137,32 @@ struct RowView: View {
         }
     }
 }
+
+func checkUserAuthorization(completion: @escaping (Bool) -> Void) {
+    let auth = Auth.auth()
+    let db = Firestore.firestore()
+    
+    if let id = auth.currentUser?.uid {
+        db.collection("Members").document(id).getDocument { (document, error) in
+            if let document = document, document.exists {
+                do {
+                    if let data = document.data(),
+                        let jsonData = try? JSONSerialization.data(withJSONObject: data),
+                        let myDocument = try? JSONDecoder().decode(User.self, from: jsonData) {
+                        let isAdmin = myDocument.admin
+                        
+                        completion(isAdmin)
+                    }
+                } catch {
+                    print("Error decoding document: \(error)")
+                }
+            } else {
+                print("Document does not exist")
+            }
+        }
+    }
+}
+
 
 
 struct NewsView_Previews: PreviewProvider {
