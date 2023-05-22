@@ -15,27 +15,31 @@ struct CouponView: View {
     //två typ av Coupontecken available - 1 unavailabel
     //CouponViewn ska med en Loop kolla hur många är available och isf väljer availablepic och om resten är unavailabel
     
+    //OBS just nu inte dynamistk bara on appear ohc ladda inte in första gången
+    
     @State var coupons = 7
     @State var newCoupons = 0
+    @ObservedObject var couponVM : CouponViewModel
     
     var body: some View {
-        let totalCoupons = 10 // Total number of coupons
-        
+       // let totalCoupons = 10 // Total number of coupons
+       
        
         
         Grid(alignment: .center, horizontalSpacing: 1, verticalSpacing: 1) {
-            if coupons > 10 {
+            Text(String(couponVM.coupons))
+            if couponVM.coupons > 10 {
                 Text("Du har en till 10-Block som visas när din första är förbrukat")
                     .onAppear(perform: {
-                        newCoupons = coupons - 10
+                        newCoupons = couponVM.coupons - 10
                         
                         //jag hantera visst inte om man har mer än tjugo,... men tänker det händer inte 
                     })
             }
-            else{
-                Text("")
+            else {
+                 Text("Test")
                     .onAppear(perform: {
-                        newCoupons = coupons
+                        newCoupons = couponVM.coupons
                     })
                 
             }
@@ -78,16 +82,19 @@ struct CouponView: View {
                     .frame(width: 130, height: 130)
                     .foregroundColor(.ui.gold)
                     .padding(.bottom, 30)
-                Text("Medlem 2343")
+                HStack{
+                  Text("Medlem: ")
+                    Text(String(couponVM.memberNr))}
+                Text(String(couponVM.coupons))
             }
             Spacer()
-        }
+        }.onAppear{couponVM.getCoupons()}
         
     }
 }
 
-struct CouponView_Previews: PreviewProvider {
-    static var previews: some View {
-        CouponView()
-    }
-}
+//struct CouponView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CouponView()
+//    }
+//}
