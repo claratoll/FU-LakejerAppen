@@ -14,7 +14,8 @@ struct MenuView: View {
     @ObservedObject var couponVM = CouponViewModel()
     @State var triggerCouponView = false
     @State private var selectedTab = 0
-
+    @StateObject private var notificationManager = NotificationManager()
+    
     var auth = Auth.auth()
     var body: some View {
         ZStack{
@@ -47,7 +48,28 @@ struct MenuView: View {
                         
                         Label("Logout", systemImage: "rectangle.portrait.and.arrow.forward")}
                 }.tag(2)
-            }
+            }.onAppear(perform: notificationManager.reloadAuthorizationStatus)
+                .onChange(of: notificationManager.authorizationStatus){
+                    authorizationStatus in
+                    
+                    switch authorizationStatus{
+                    case .notDetermined:
+                        //fråga om lov
+                        notificationManager.requestAuthorization()
+                        
+                    case .authorized :
+                        notificationManager.reloadLocalNotificatins()
+                        
+                  
+                    case .denied:
+                         break
+                        
+                    default:
+                        break
+                    }
+                    
+                    
+                }
             
             
         }.alert(isPresented: $showLogoutAlert)
