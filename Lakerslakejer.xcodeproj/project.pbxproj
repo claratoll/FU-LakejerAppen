@@ -133,8 +133,6 @@
 				1DBD55EE2A13C22700CC31EA /* News */,
 				1D87FBC62A0CCEB50013AC3C /* LakerslakejerApp.swift */,
 				1D87FBC82A0CCEB50013AC3C /* ContentView.swift */,
-				B9721DBB2A1288F200493CF3 /* LoginView.swift */,
-				61FC44772A12A58E00D7F502 /* UserSignUpView.swift */,
 				1D87FBCA2A0CCEB70013AC3C /* Assets.xcassets */,
 				1D87FBCF2A0CCEB70013AC3C /* Persistence.swift */,
 				1D87FBD12A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld */,
@@ -143,8 +141,6 @@
 				4E12541D2A1762E2004B8B47 /* SponsorView.swift */,
 				1D85F8962A12396500EB810C /* Extension.swift */,
 				61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */,
-				61FC44792A13E73D00D7F502 /* User.swift */,
-				61FC447F2A13FAC100D7F502 /* UserRegisterVM.swift */,
 			);
 			path = Lakerslakejer;
 			sourceTree = "<group>";
@@ -160,6 +156,10 @@
 		1D9163922A13F3E600036CA0 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				B9721DBB2A1288F200493CF3 /* LoginView.swift */,
+				61FC44772A12A58E00D7F502 /* UserSignUpView.swift */,
+				61FC44792A13E73D00D7F502 /* User.swift */,
+				61FC447F2A13FAC100D7F502 /* UserRegisterVM.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";

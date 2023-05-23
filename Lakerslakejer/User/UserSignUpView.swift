@@ -6,10 +6,20 @@
 //
 
 import SwiftUI
+import Firebase
+
 
 struct UserSignUpView: View {
     @StateObject var viewModel = UserRegisterVM()
-    
+    var auth = Auth.auth()
+    @State var name = ""
+    @State var password = ""
+    @State var memberNRText = ""
+    var memberNr : Int {
+        return Int(memberNRText) ?? 0
+    }
+    @State var email = ""
+  
     var body: some View {
         ZStack{
             Image("klack2")
@@ -33,7 +43,7 @@ struct UserSignUpView: View {
                         .frame(width: 420, height: 452)
                         .foregroundColor(.white)
                     VStack {
-                        TextField("Name", text: $viewModel.name)
+                        TextField("Name", text: $name)
                             .font(.headline)
                             .frame(width: 220, height: 42)
                             .foregroundColor(.white)
@@ -41,9 +51,7 @@ struct UserSignUpView: View {
                             .cornerRadius(20)
                             .padding()
                         
-                        TextField("Membership number", text:Binding<String>(
-                            get: { viewModel.memberNr != 0 ? String(viewModel.memberNr) : "" },
-                            set: { viewModel.memberNr = Int($0) ?? 0 }))
+                        TextField("Membership number", text: $memberNRText)
                         
                             .font(.headline)
                             .frame(width: 220, height: 42)
@@ -53,7 +61,7 @@ struct UserSignUpView: View {
                             .padding()
                             .keyboardType(.numberPad)
                         
-                        TextField("Email", text: $viewModel.email)
+                        TextField("Email", text: $email)
                                .font(.headline)
                                .frame(width: 220, height: 42)
                                .foregroundColor(.white)
@@ -62,7 +70,7 @@ struct UserSignUpView: View {
                                .padding()
                                
                            
-                        SecureField("Lösenord", text: $viewModel.password)
+                        SecureField("Lösenord", text: $password)
                  
                              .font(.headline)
                             .frame(width: 220, height: 42)
@@ -71,7 +79,8 @@ struct UserSignUpView: View {
                             .cornerRadius(20)
                             .padding()
                         Button{
-                            viewModel.register()
+                            viewModel.register(email: email, password: password)
+                            viewModel.saveMemberInfo(name: name, email: email, memberNr: memberNr)
                         }
                     label: {
                                Text("Sign up")
