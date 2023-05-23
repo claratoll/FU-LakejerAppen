@@ -36,6 +36,7 @@
 		61FC44782A12A58E00D7F502 /* UserSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC44772A12A58E00D7F502 /* UserSignUpView.swift */; };
 		61FC447A2A13E73D00D7F502 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC44792A13E73D00D7F502 /* User.swift */; };
 		61FC44802A13FAC100D7F502 /* UserRegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC447F2A13FAC100D7F502 /* UserRegisterVM.swift */; };
+		B93AC17C2A1C89B10081C9D0 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AC17B2A1C89B10081C9D0 /* NotificationManager.swift */; };
 		B9721DB82A12593F00493CF3 /* CouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DB72A12593F00493CF3 /* CouponView.swift */; };
 		B9721DBC2A1288F200493CF3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DBB2A1288F200493CF3 /* LoginView.swift */; };
 		B9721DCE2A14F63800493CF3 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DCD2A14F63800493CF3 /* Coupon.swift */; };
@@ -68,6 +69,7 @@
 		61FC44772A12A58E00D7F502 /* UserSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpView.swift; sourceTree = "<group>"; };
 		61FC44792A13E73D00D7F502 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		61FC447F2A13FAC100D7F502 /* UserRegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterVM.swift; sourceTree = "<group>"; };
+		B93AC17B2A1C89B10081C9D0 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		B9721DB72A12593F00493CF3 /* CouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponView.swift; sourceTree = "<group>"; };
 		B9721DBB2A1288F200493CF3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B9721DCD2A14F63800493CF3 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		1D87FBC52A0CCEB50013AC3C /* Lakerslakejer */ = {
 			isa = PBXGroup;
 			children = (
+				B93AC17A2A1C894E0081C9D0 /* Notifications */,
 				1D8414232A1BB3BC000FA14C /* QrScanner */,
 				1D9163942A13F3FA00036CA0 /* Coupon */,
 				1D9163932A13F3F300036CA0 /* Card */,
@@ -189,6 +192,14 @@
 				1DAFFEDE2A14D88700212C61 /* NewsView.swift */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		B93AC17A2A1C894E0081C9D0 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				B93AC17B2A1C89B10081C9D0 /* NotificationManager.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +290,7 @@
 				4E12541E2A1762E2004B8B47 /* SponsorView.swift in Sources */,
 				1DAFFEDF2A14D88700212C61 /* NewsView.swift in Sources */,
 				B9721DD02A14F64800493CF3 /* CouponViewModel.swift in Sources */,
+				B93AC17C2A1C89B10081C9D0 /* NotificationManager.swift in Sources */,
 				B9721DCE2A14F63800493CF3 /* Coupon.swift in Sources */,
 				1D8414292A1BB610000FA14C /* QrCodeCameraDelegate.swift in Sources */,
 				1D85F8972A12396500EB810C /* Extension.swift in Sources */,
