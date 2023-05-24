@@ -38,6 +38,7 @@ struct NewsView: View {
                         }
                     }
                 }
+               
                 .navigationTitle("Nyheter från klubben")
                 .onAppear {
                     checkUserAuthorization { isAdmin in
@@ -77,6 +78,7 @@ struct RowView: View {
         ZStack{
          //  Color(.systemBlue)
             //.ignoresSafeArea()
+          //  Text("Nyheter från klubben")
             
             VStack(alignment: .center, spacing: 5.0){
                 Image(newsEntry.image ?? "eventgruppen")
@@ -99,7 +101,7 @@ struct RowView: View {
                         
                     }
                     
-                    Spacer()
+                   // Spacer()
                     VStack{
                         Spacer()
                         Text(newsEntry.newsText ?? "news text")
