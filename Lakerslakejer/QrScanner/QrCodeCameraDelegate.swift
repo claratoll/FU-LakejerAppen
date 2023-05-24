@@ -13,6 +13,9 @@ class QrCodeCameraDelegate: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     var scanInterval: Double = 1.0
     var lastTime = Date(timeIntervalSince1970: 0)
     
+    var memberNumber = 0000
+    var couponNUmber = 0
+    
     var onResult: (String) -> Void = { _  in }
     var mockData: String?
     

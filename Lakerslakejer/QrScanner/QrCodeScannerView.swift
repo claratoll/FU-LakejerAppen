@@ -9,6 +9,7 @@ import SwiftUI
 import UIKit
 import AVFoundation
 
+
 struct QrCodeScannerView: UIViewRepresentable {
     
     var supportedBarcodeTypes: [AVMetadataObject.ObjectType] = [.qr]
