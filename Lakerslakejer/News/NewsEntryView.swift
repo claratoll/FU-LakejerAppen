@@ -36,8 +36,9 @@ struct NewsEntryView: View {
                     .cornerRadius(10)
                     .padding(.top,-40)
             }
-            TextEditor(text:$headline)
-            //Text(newsEntry.headLine ?? "headline")                .font(.title)
+            TextEditor(text: $headline)
+            //Text(newsEntry.headLine ?? "headline")
+                .font(.title)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.leading)
             
@@ -56,7 +57,7 @@ struct NewsEntryView: View {
                     .padding(.top, -80)
             
             // Här kan datum och skribent stå skrivet.
-            TextEditor(text:$headline)
+            TextEditor(text:$content)
                 .font(.title3)
                 .fontWeight(.ultraLight)
                 .multilineTextAlignment(.leading)
