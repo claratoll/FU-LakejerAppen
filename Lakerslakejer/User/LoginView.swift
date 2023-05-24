@@ -77,7 +77,7 @@ struct LoginView: View {
                         })
                         .navigationBarTitle("Sign Up Type")
                                     .sheet(isPresented: $showSignUpType) {
-                                        UserSignUpView()
+                                        UserSignUpView(signedIn: $signedIn)
                                     }
                        }
                 }

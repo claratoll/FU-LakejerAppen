@@ -24,7 +24,7 @@ class CouponViewModel: ObservableObject{
     func getCoupons() {
         guard let currentUser = Auth.auth().currentUser else { return }
 
-        let userRef = db.collection("Members").document(currentUser.uid)
+        let userRef = db.collection("users").document(currentUser.uid)
 
         userRef.addSnapshotListener { (documentSnapshot, error) in
             guard let document = documentSnapshot else {
@@ -53,7 +53,7 @@ class CouponViewModel: ObservableObject{
         // MEN kankse behöver admin sen en lista för att se nånting - låta den vara här just nu
         // och chatten
         
-        db.collection("Members").addSnapshotListener() {
+        db.collection("users").addSnapshotListener() {
         
             snapshot, err in
             guard let snapshot = snapshot else {return}
@@ -89,7 +89,7 @@ func getCurrentUserDetails (){
                 return
             }
     
-            let userRef = db.collection("Members").document(currentUser.uid)
+            let userRef = db.collection("users").document(currentUser.uid)
     
              userRef.getDocument { (document, error) in
                     if let document = document, document.exists {
@@ -97,7 +97,7 @@ func getCurrentUserDetails (){
                             let user = try document.data(as: User?.self)
                             if let user = user {
     
-                                print("User ID: \(user.id)")
+                              
                                 print("User Name: \(user.name)")
                                 print("User Email: \(user.email)")
     
