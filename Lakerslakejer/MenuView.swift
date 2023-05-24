@@ -12,6 +12,7 @@ struct MenuView: View {
     @State var showLogoutAlert = false
     @Binding var signedIn : Bool
     @ObservedObject var couponVM = CouponViewModel()
+    @ObservedObject var cardVM = CardViewModel()
     @State var triggerCouponView = false
     @State private var selectedTab = 0
     @StateObject private var notificationManager = NotificationManager()
@@ -116,8 +117,7 @@ struct ButtonView: View {
             //placeholder
            
             if isCardViewVisible {
-                CardView()
-                    .frame(width: 30, height: 200)
+                CardView(cardVM:CardViewModel())                    .frame(width: 30, height: 200)
             }
                 
         }
