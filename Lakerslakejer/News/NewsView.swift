@@ -38,6 +38,7 @@ struct NewsView: View {
                         }
                     }
                 }
+               
                 .navigationTitle("Nyheter från klubben")
                 .onAppear {
                     checkUserAuthorization { isAdmin in
@@ -75,18 +76,14 @@ struct RowView: View {
     let newsEntry : News
     var body: some View {
         ZStack{
-         //  Color(.systemBlue)
-            //.ignoresSafeArea()
+           Color(.white)
             
-            VStack(alignment: .center, spacing: 5.0){
+            VStack(alignment: .leading, spacing: 5.0){
                 Image(newsEntry.image ?? "eventgruppen")
-                    .frame(width: 300, height: 200)
-                   // .resizable()
+                    .frame(width: 310, height: 200)
                     .aspectRatio(contentMode: .fill)
-                // Gör hörnen runda
                     .cornerRadius(10)
-                   // .ignoresSafeArea()
-                Spacer()
+             //   Spacer()
                 
                     HStack{
                         
@@ -99,7 +96,7 @@ struct RowView: View {
                         
                     }
                     
-                    Spacer()
+                   // Spacer()
                     VStack{
                         Spacer()
                         Text(newsEntry.newsText ?? "news text")
@@ -124,11 +121,10 @@ struct RowView: View {
             
             .padding(.top,10)
             .background(Rectangle()
-                .frame(minWidth: 320)
+                .frame(minWidth: 330)
                 .foregroundColor(.white)
-                        //hörnen blir runda på kortet
                 .cornerRadius(10)
-                .shadow(radius: 15))
+            .shadow(radius: 15))
             .padding(.bottom,5)
             .padding(.trailing, 5)
             .padding(.leading, 15)
