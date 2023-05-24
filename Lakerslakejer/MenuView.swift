@@ -149,12 +149,13 @@ struct ButtonView: View {
 //                    }
                     
                     Spacer()
-                    NavigationLink(destination: NewsView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
+                    NavigationLink(destination: NewsView().navigationBarBackButtonHidden(true).onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
                         Text("Nyheter")
                             .frame(width: 200, height: 50)
                             .background(Color.ui.blue)
                             .foregroundColor(Color.ui.gray)
                             .cornerRadius(10)
+                          
                     }
                     Spacer()
                     NavigationLink(destination: SponsorView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
