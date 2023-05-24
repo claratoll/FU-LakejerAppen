@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D8414252A1BB42D000FA14C /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8414242A1BB42D000FA14C /* ScannerView.swift */; };
-		1D8414272A1BB439000FA14C /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8414262A1BB439000FA14C /* ScannerViewModel.swift */; };
-		1D8414292A1BB610000FA14C /* QrCodeCameraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8414282A1BB610000FA14C /* QrCodeCameraDelegate.swift */; };
-		1D84142B2A1BB68C000FA14C /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84142A2A1BB68C000FA14C /* CameraPreview.swift */; };
-		1D84142D2A1BB7EA000FA14C /* QrCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84142C2A1BB7EA000FA14C /* QrCodeScannerView.swift */; };
+		1D8529492A1E47F900E19D7A /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8529482A1E47F900E19D7A /* CodeScanner */; };
+		1D85294B2A1E497600E19D7A /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85294A2A1E497600E19D7A /* Prospect.swift */; };
+		1D85294D2A1E498E00E19D7A /* ScannedMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85294C2A1E498E00E19D7A /* ScannedMembersView.swift */; };
 		1D85F8972A12396500EB810C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85F8962A12396500EB810C /* Extension.swift */; };
 		1D87FBC72A0CCEB50013AC3C /* LakerslakejerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87FBC62A0CCEB50013AC3C /* LakerslakejerApp.swift */; };
 		1D87FBC92A0CCEB50013AC3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87FBC82A0CCEB50013AC3C /* ContentView.swift */; };
@@ -47,11 +45,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D8414242A1BB42D000FA14C /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
-		1D8414262A1BB439000FA14C /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
-		1D8414282A1BB610000FA14C /* QrCodeCameraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeCameraDelegate.swift; sourceTree = "<group>"; };
-		1D84142A2A1BB68C000FA14C /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
-		1D84142C2A1BB7EA000FA14C /* QrCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeScannerView.swift; sourceTree = "<group>"; };
+		1D85294A2A1E497600E19D7A /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
+		1D85294C2A1E498E00E19D7A /* ScannedMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedMembersView.swift; sourceTree = "<group>"; };
 		1D85F8962A12396500EB810C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		1D87FBC32A0CCEB50013AC3C /* Lakerslakejer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lakerslakejer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D87FBC62A0CCEB50013AC3C /* LakerslakejerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LakerslakejerApp.swift; sourceTree = "<group>"; };
@@ -91,6 +86,7 @@
 				61FC446E2A129F4700D7F502 /* FirebaseFirestore in Frameworks */,
 				61FC446A2A129F4700D7F502 /* FirebaseDatabase in Frameworks */,
 				61FC44682A129F4700D7F502 /* FirebaseAuth in Frameworks */,
+				1D8529492A1E47F900E19D7A /* CodeScanner in Frameworks */,
 				61FC44722A129F4700D7F502 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,11 +97,8 @@
 		1D8414232A1BB3BC000FA14C /* QrScanner */ = {
 			isa = PBXGroup;
 			children = (
-				1D8414242A1BB42D000FA14C /* ScannerView.swift */,
-				1D8414262A1BB439000FA14C /* ScannerViewModel.swift */,
-				1D8414282A1BB610000FA14C /* QrCodeCameraDelegate.swift */,
-				1D84142A2A1BB68C000FA14C /* CameraPreview.swift */,
-				1D84142C2A1BB7EA000FA14C /* QrCodeScannerView.swift */,
+				1D85294A2A1E497600E19D7A /* Prospect.swift */,
+				1D85294C2A1E498E00E19D7A /* ScannedMembersView.swift */,
 			);
 			path = QrScanner;
 			sourceTree = "<group>";
@@ -231,6 +224,7 @@
 				61FC446D2A129F4700D7F502 /* FirebaseFirestore */,
 				61FC446F2A129F4700D7F502 /* FirebaseFirestoreSwift */,
 				61FC44712A129F4700D7F502 /* FirebaseStorage */,
+				1D8529482A1E47F900E19D7A /* CodeScanner */,
 			);
 			productName = Lakerslakejer;
 			productReference = 1D87FBC32A0CCEB50013AC3C /* Lakerslakejer.app */;
@@ -262,6 +256,7 @@
 			mainGroup = 1D87FBBA2A0CCEB50013AC3C;
 			packageReferences = (
 				61FC44662A129F4700D7F502 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				1D8529472A1E47F900E19D7A /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = 1D87FBC42A0CCEB50013AC3C /* Products */;
 			projectDirPath = "";
@@ -299,20 +294,17 @@
 				B93AC17C2A1C89B10081C9D0 /* NotificationManager.swift in Sources */,
 				B9721DCE2A14F63800493CF3 /* Coupon.swift in Sources */,
 				4EAE5F3A2A1CA8390035EED6 /* CardViewModel.swift in Sources */,
-				1D8414292A1BB610000FA14C /* QrCodeCameraDelegate.swift in Sources */,
 				1D85F8972A12396500EB810C /* Extension.swift in Sources */,
-				1D84142B2A1BB68C000FA14C /* CameraPreview.swift in Sources */,
+				1D85294D2A1E498E00E19D7A /* ScannedMembersView.swift in Sources */,
 				61FC44782A12A58E00D7F502 /* UserSignUpView.swift in Sources */,
 				1DBD55F22A13C28000CC31EA /* News.swift in Sources */,
 				1DAFFEDB2A14D6DC00212C61 /* CardView.swift in Sources */,
+				1D85294B2A1E497600E19D7A /* Prospect.swift in Sources */,
 				B9721DBC2A1288F200493CF3 /* LoginView.swift in Sources */,
-				1D8414252A1BB42D000FA14C /* ScannerView.swift in Sources */,
 				B93AC17E2A1DE24C0081C9D0 /* UserVM.swift in Sources */,
-				1D8414272A1BB439000FA14C /* ScannerViewModel.swift in Sources */,
 				1D87FBD02A0CCEB70013AC3C /* Persistence.swift in Sources */,
 				1D87FBC92A0CCEB50013AC3C /* ContentView.swift in Sources */,
 				1DAFFEDD2A14D86100212C61 /* NewsEntryView.swift in Sources */,
-				1D84142D2A1BB7EA000FA14C /* QrCodeScannerView.swift in Sources */,
 				1D87FBD32A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld in Sources */,
 				1DBD55F02A13C24300CC31EA /* CreateNewsView.swift in Sources */,
 				1D87FBC72A0CCEB50013AC3C /* LakerslakejerApp.swift in Sources */,
@@ -532,6 +524,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1D8529472A1E47F900E19D7A /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		61FC44662A129F4700D7F502 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -543,6 +543,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1D8529482A1E47F900E19D7A /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D8529472A1E47F900E19D7A /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
 		61FC44672A129F4700D7F502 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 61FC44662A129F4700D7F502 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
