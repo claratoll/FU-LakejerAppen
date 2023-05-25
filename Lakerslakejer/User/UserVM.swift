@@ -15,6 +15,32 @@ class UserVM : ObservableObject{
     let auth = Auth.auth()
     @Published var isSignedUp = false
     
+    
+    func checkUserAuthorization(completion: @escaping (Bool) -> Void) {
+       
+        guard let currentUser = Auth.auth().currentUser else {
+        
+            completion(false)
+            return
+        }
+        
+        let db = Firestore.firestore()
+        let userRef = db.collection("users").document(currentUser.uid)
+        
+        userRef.getDocument { document, error in
+            if let document = document, document.exists {
+             
+                let data = document.data()
+                let admin = data?["admin"] as? Bool ?? false
+                completion(admin)
+            } else {
+              
+                completion(false)
+                print("Error fetching user document: \(error?.localizedDescription ?? "")")
+            }
+        }
+    }
+    
     func registerUser(email: String, password: String, name: String, memberNr: Int){
         
         auth.createUser(withEmail: email, password: password){ result, error in
