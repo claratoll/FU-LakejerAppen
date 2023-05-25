@@ -21,7 +21,7 @@ class CardViewModel: ObservableObject{
     func getDetails() {
         guard let currentUser = Auth.auth().currentUser else { return }
         
-        let userRef = db.collection("Members").document(currentUser.uid)
+        let userRef = db.collection("users").document(currentUser.uid)
         
         userRef.addSnapshotListener { (documentSnapshot, error) in
             guard let document = documentSnapshot else {
@@ -51,7 +51,7 @@ class CardViewModel: ObservableObject{
             return
         }
         
-        let userRef = db.collection("Members").document(currentUser.uid)
+        let userRef = db.collection("users").document(currentUser.uid)
         
         userRef.getDocument { (document, error) in
             if let document = document, document.exists {

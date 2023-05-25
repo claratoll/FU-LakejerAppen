@@ -105,10 +105,17 @@ struct CouponView: View {
             
             Spacer()
             VStack {
-                Rectangle()
-                    .frame(width: 130, height: 130)
-                    .foregroundColor(.ui.gold)
-                    .padding(.bottom, 30)
+    
+                
+                let coupontext = "\(couponVM.memberNr) + coupons left is \(couponVM.coupons)"
+               // qrcoupon = coupontext
+                
+                if coupontext != ""{
+                    Image(uiImage: UIImage(data: returnData(str: coupontext))!).resizable().frame(width: 150, height: 150)
+                }
+                
+             
+                
                 HStack{
                   Text("Medlem: ")
                     Text(String(couponVM.memberNr))}
@@ -117,6 +124,15 @@ struct CouponView: View {
             Spacer()
         }.onAppear{couponVM.getCoupons()}
         
+    }
+    
+    func returnData(str : String)-> Data{
+        let filter = CIFilter(name: "CIQRCodeGenerator")
+        let data = str.data(using: .ascii, allowLossyConversion: false)
+        filter?.setValue(data, forKey: "inputMessage")
+        let image = filter?.outputImage
+        let uiimage = UIImage(ciImage: image!)
+        return uiimage.pngData()!
     }
 }
 

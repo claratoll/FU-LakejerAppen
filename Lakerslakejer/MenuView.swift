@@ -132,29 +132,38 @@ struct ButtonView: View {
                     //if user != admin -- couponview
                     
                     Button(action: {
-                                    selectedTab = 1
-                                }) {
+                        selectedTab = 1
+                    }) {
                         Text("Klippkort")
                             .frame(width: 200, height: 50)
                             .background(Color.ui.blue)
                             .foregroundColor(Color.ui.gray)
                             .cornerRadius(10)
                     }
-//                      NavigationLink(destination: CouponView(couponVM: CouponViewModel()).onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
-//                        Text("Klippkort")
-//                            .frame(width: 200, height: 50)
-//                            .background(Color.ui.blue)
-//                            .foregroundColor(Color.ui.gray)
-//                            .cornerRadius(10)
-//                    }
+                    //                      NavigationLink(destination: CouponView(couponVM: CouponViewModel()).onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
+                    //                        Text("Klippkort")
+                    //                            .frame(width: 200, height: 50)
+                    //                            .background(Color.ui.blue)
+                    //                            .foregroundColor(Color.ui.gray)
+                    //                            .cornerRadius(10)
+                    //                    }
+                    Spacer()
+                    NavigationLink(destination: ScannedMembersView().environmentObject(Prospects()).onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
+                        Text("ScannerView")
+                            .frame(width: 200, height: 50)
+                            .background(Color.ui.blue)
+                            .foregroundColor(Color.ui.gray)
+                            .cornerRadius(10)
+                    }
                     
                     Spacer()
-                    NavigationLink(destination: NewsView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
+                    NavigationLink(destination: NewsView().navigationBarBackButtonHidden(true).onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
                         Text("Nyheter")
                             .frame(width: 200, height: 50)
                             .background(Color.ui.blue)
                             .foregroundColor(Color.ui.gray)
                             .cornerRadius(10)
+                          
                     }
                     Spacer()
                     NavigationLink(destination: SponsorView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
@@ -172,7 +181,8 @@ struct ButtonView: View {
                             .foregroundColor(Color.ui.gray)
                             .cornerRadius(10)
                     }
-                    Spacer()
+                    //Spacer()
+                    //vet inte varför det inte går att ha spacer här??
                 }
                 
                 

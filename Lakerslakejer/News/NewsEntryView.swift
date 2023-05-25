@@ -37,12 +37,12 @@ struct NewsEntryView: View {
                     .padding(.top,-40)
             }
             TextEditor(text: $headline)
-            
+            //Text(newsEntry.headLine ?? "headline")
                 .font(.title)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.leading)
             
-            TextEditor(text: $text)
+            TextEditor(text:$text)
                 
                     .font(.title3)
                     .fontWeight(.light)
@@ -57,14 +57,14 @@ struct NewsEntryView: View {
                     .padding(.top, -80)
             
             // Här kan datum och skribent stå skrivet.
-            TextEditor(text: $content)
+            TextEditor(text:$content)
                 .font(.title3)
                 .fontWeight(.ultraLight)
                 .multilineTextAlignment(.leading)
         }
 
         .onAppear(perform: setContent)
-        .navigationBarItems(trailing: Button("Lägg till"){
+        .navigationBarItems(trailing: Button("Spara nyhet"){
             saveNews()
             presentationMode.wrappedValue.dismiss()
 
