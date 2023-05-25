@@ -45,8 +45,7 @@ class NewsVM : ObservableObject {
         
         guard let user = auth.currentUser else {return}
         
-        // Har ej kört igång den pga av uid problemen
-       //
+        
         let newsRef = db.collection("news")
         
         let newNews = news[index]

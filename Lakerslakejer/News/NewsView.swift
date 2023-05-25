@@ -108,7 +108,7 @@ struct RowView: View {
                             Spacer()
                             Text(newsEntry.content ?? "Dagens datum eller mer text ")
                                 .font(.title3)
-                                .fontWeight(.ultraLight)               .multilineTextAlignment(.center)
+                                .fontWeight(.ultraLight)               .multilineTextAlignment(.leading)
                             Spacer()
                         }
                     }
