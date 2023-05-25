@@ -12,6 +12,7 @@
 		00F0D7A22A1F8E8D00ECEB3A /* cconfetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F0D7A12A1F8E8D00ECEB3A /* cconfetti.json */; };
 		00F0D7A42A1F8FCD00ECEB3A /* heavyconfetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F0D7A32A1F8FCD00ECEB3A /* heavyconfetti.json */; };
 		00F0D7A62A1F917C00ECEB3A /* flyconfetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F0D7A52A1F917C00ECEB3A /* flyconfetti.json */; };
+		00F0D7A82A1F952500ECEB3A /* goldconfetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F0D7A72A1F952500ECEB3A /* goldconfetti.json */; };
 		1D8529492A1E47F900E19D7A /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8529482A1E47F900E19D7A /* CodeScanner */; };
 		1D85294B2A1E497600E19D7A /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85294A2A1E497600E19D7A /* Scan.swift */; };
 		1D85294D2A1E498E00E19D7A /* ScannedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85294C2A1E498E00E19D7A /* ScannedView.swift */; };
@@ -57,6 +58,7 @@
 		00F0D7A12A1F8E8D00ECEB3A /* cconfetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cconfetti.json; sourceTree = "<group>"; };
 		00F0D7A32A1F8FCD00ECEB3A /* heavyconfetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heavyconfetti.json; sourceTree = "<group>"; };
 		00F0D7A52A1F917C00ECEB3A /* flyconfetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flyconfetti.json; sourceTree = "<group>"; };
+		00F0D7A72A1F952500ECEB3A /* goldconfetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = goldconfetti.json; sourceTree = "<group>"; };
 		1D85294A2A1E497600E19D7A /* Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
 		1D85294C2A1E498E00E19D7A /* ScannedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedView.swift; sourceTree = "<group>"; };
 		1D85F8962A12396500EB810C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		00F0D79E2A1F8CC300ECEB3A /* LottieFiles */ = {
 			isa = PBXGroup;
 			children = (
+				00F0D7A72A1F952500ECEB3A /* goldconfetti.json */,
 				00F0D7A52A1F917C00ECEB3A /* flyconfetti.json */,
 				00F0D7A32A1F8FCD00ECEB3A /* heavyconfetti.json */,
 				00F0D7A12A1F8E8D00ECEB3A /* cconfetti.json */,
@@ -326,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D87FBCE2A0CCEB70013AC3C /* Preview Assets.xcassets in Resources */,
+				00F0D7A82A1F952500ECEB3A /* goldconfetti.json in Resources */,
 				00F0D7A42A1F8FCD00ECEB3A /* heavyconfetti.json in Resources */,
 				1D87FBCB2A0CCEB70013AC3C /* Assets.xcassets in Resources */,
 				00F0D7A62A1F917C00ECEB3A /* flyconfetti.json in Resources */,

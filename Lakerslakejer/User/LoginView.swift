@@ -19,11 +19,12 @@ struct LoginView: View {
     var body: some View {
         ZStack{
             Image("klack2")
+       
             VStack{
                 Spacer()
                 ZStack{
-                    LottieView(loopMode: .loop, animationName: "cconfetti").frame(width: 40,height: 40)
-                        .scaleEffect(0.9)
+                    LottieView(loopMode: .loop, animationName: "goldconfetti").frame(width: 40,height: 40)
+                        .scaleEffect(0.7)
 
                     Ellipse()
                         .frame(width: 400, height: 132)
