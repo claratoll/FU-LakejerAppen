@@ -39,29 +39,33 @@ struct LoginView: View {
                         .frame(width: 420, height: 452)
                         .foregroundColor(.white)
                     VStack {
+                        
                         Text("Email")
-                            
-                           TextField("  Email", text: $email)
+                            .padding(-9)
+                            .multilineTextAlignment(.leading)
+                        TextField("  Email", text: $email)
                                .font(.headline)
                                .padding(10)
                                .frame(width: 220, height: 42)
                                .foregroundColor(.white)
                                .background(.gray)
-                               .cornerRadius(20)
+                               .cornerRadius(15)
+                               .multilineTextAlignment(.leading)
                                .padding()
                                
                                
                            
                         Text("Lösenord")
-                           SecureField("  Lösenord", text: $password)
+                            .padding(-1)
+                        SecureField("  Lösenord", text: $password)
                  
                              .font(.headline)
                              .padding(10)
                             .frame(width: 220, height: 42)
                             .foregroundColor(.white)
                             .background(.gray)
-                            .cornerRadius(20)
-                           // .padding()
+                            .cornerRadius(15)
+                            .multilineTextAlignment(.leading)
                         Button{
                             login()
                         }
@@ -71,8 +75,8 @@ struct LoginView: View {
                            .frame(width: 220, height: 42)
                            .foregroundColor(.white)
                            .background(Color.orange)
-                           .cornerRadius(20)
-                           .padding()
+                           .cornerRadius(15)
+                           .padding(30)
                         
                         Button(action: {
                             showSignUpType = true
