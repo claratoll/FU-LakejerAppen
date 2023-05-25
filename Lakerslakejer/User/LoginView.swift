@@ -40,6 +40,7 @@ struct LoginView: View {
                         .foregroundColor(.white)
                     VStack {
                         Text("Email")
+                            
                            TextField("  Email", text: $email)
                                .font(.headline)
                                .padding(10)
@@ -60,16 +61,16 @@ struct LoginView: View {
                             .foregroundColor(.white)
                             .background(.gray)
                             .cornerRadius(20)
-                            .padding()
+                           // .padding()
                         Button{
                             login()
                         }
                     label: {
                                Text("Logga in")
                            }
-                           .frame(width: 120, height: 42)
+                           .frame(width: 220, height: 42)
                            .foregroundColor(.white)
-                           .background(Color.gray)
+                           .background(Color.orange)
                            .cornerRadius(20)
                            .padding()
                         
