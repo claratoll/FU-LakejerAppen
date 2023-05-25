@@ -40,7 +40,7 @@ struct LoginView: View {
                         .foregroundColor(.white)
                     VStack {
                         Text("Email")
-                           TextField("Email", text: $email)
+                           TextField("  Email", text: $email)
                                .font(.headline)
                                .frame(width: 220, height: 42)
                                .foregroundColor(.white)
@@ -48,9 +48,10 @@ struct LoginView: View {
                                .cornerRadius(20)
                                .padding()
                                
+                               
                            
                         Text("Lösenord")
-                           SecureField("Lösenord", text: $password)
+                           SecureField("  Lösenord", text: $password)
                  
                              .font(.headline)
                             .frame(width: 220, height: 42)
@@ -100,11 +101,10 @@ struct LoginView: View {
         
     }
     
-/*
+
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView(signedIn: .constant(false))
     }
 }
-*/
