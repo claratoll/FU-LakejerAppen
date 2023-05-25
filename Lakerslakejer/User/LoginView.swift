@@ -42,6 +42,7 @@ struct LoginView: View {
                         Text("Email")
                            TextField("  Email", text: $email)
                                .font(.headline)
+                               .padding(10)
                                .frame(width: 220, height: 42)
                                .foregroundColor(.white)
                                .background(.gray)
@@ -54,6 +55,7 @@ struct LoginView: View {
                            SecureField("  Lösenord", text: $password)
                  
                              .font(.headline)
+                             .padding(10)
                             .frame(width: 220, height: 42)
                             .foregroundColor(.white)
                             .background(.gray)
@@ -63,7 +65,7 @@ struct LoginView: View {
                             login()
                         }
                     label: {
-                               Text("Login")
+                               Text("Logga in")
                            }
                            .frame(width: 120, height: 42)
                            .foregroundColor(.white)
@@ -74,7 +76,7 @@ struct LoginView: View {
                         Button(action: {
                             showSignUpType = true
                         }, label: {
-                            Text("Don't have an account? Sign up")
+                            Text("Har du inget konto? Bli medlem här")
                         })
                         .navigationBarTitle("Sign Up Type")
                                     .sheet(isPresented: $showSignUpType) {
