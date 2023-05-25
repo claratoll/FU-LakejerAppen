@@ -66,31 +66,7 @@ class NewsVM : ObservableObject {
         }
 
     }*/
-    func checkUserAuthorization(completion: @escaping (Bool) -> Void) {
-       
-        guard let currentUser = Auth.auth().currentUser else {
-        
-            completion(false)
-            return
-        }
-        
-        let db = Firestore.firestore()
-        let userRef = db.collection("users").document(currentUser.uid)
-        
-        userRef.getDocument { document, error in
-            if let document = document, document.exists {
-             
-                let data = document.data()
-                let admin = data?["admin"] as? Bool ?? false
-                completion(admin)
-            } else {
-              
-                completion(false)
-                print("Error fetching user document: \(error?.localizedDescription ?? "")")
-            }
-        }
-    }
-    
+
     func listenToFirebase(){
         let newsRef = db.collection("news")
         

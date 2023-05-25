@@ -11,7 +11,7 @@ import Firebase
 
 struct UserSignUpView: View {
 //    @StateObject var viewModel = UserRegisterVM()
-    @StateObject var vm = UserVM()
+    @ObservedObject var vm = UserVM()
     @Binding var signedIn : Bool
     var auth = Auth.auth()
     @State var name = ""

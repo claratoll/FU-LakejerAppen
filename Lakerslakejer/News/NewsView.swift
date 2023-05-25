@@ -17,7 +17,7 @@ struct NewsView: View {
     // här skapar vi listan för tableviewn
 
     @StateObject var newsVM = NewsVM()
-    
+    @ObservedObject var userVm = UserVM()
     var body: some View {
         
         NavigationView {
@@ -41,7 +41,7 @@ struct NewsView: View {
                
                 .navigationTitle("Nyheter från klubben")
                 .onAppear {
-                    newsVM.checkUserAuthorization { isAdmin in
+                    userVm.checkUserAuthorization { isAdmin in
                         // Handle the value of isAdmin here
                         if isAdmin {
                             print("User is an admin")

@@ -13,9 +13,11 @@ struct MenuView: View {
     @Binding var signedIn : Bool
     @ObservedObject var couponVM = CouponViewModel()
     @ObservedObject var cardVM = CardViewModel()
+    @ObservedObject var userVM = UserVM()
     @State var triggerCouponView = false
     @State private var selectedTab = 0
     @StateObject private var notificationManager = NotificationManager()
+    @State var isAdmin = false
     
     var auth = Auth.auth()
     var body: some View {
@@ -107,7 +109,8 @@ struct MenuView_Previews: PreviewProvider {
 struct ButtonView: View {
     @State private var isCardViewVisible = true
     @Binding var selectedTab: Int
-    
+    @ObservedObject var userVM = UserVM()
+    @State var isAdmin = false
     var body: some View {
         
         VStack{
@@ -116,11 +119,11 @@ struct ButtonView: View {
             Button {}
         label:{
             //placeholder
-           
+            
             if isCardViewVisible {
                 CardView(cardVM:CardViewModel())                    .frame(width: 30, height: 200)
             }
-                
+            
         }
             
             //.padding(.bottom, 20)
@@ -132,39 +135,39 @@ struct ButtonView: View {
                     //if user = admin -- scannerview
                     //if user != admin -- couponview
                     
-                    Button(action: {
-                        selectedTab = 1
-                    }) {
-                        Text("Klippkort")
-                            .frame(width: 200, height: 50)
-                            .background(Color.ui.blue)
-                            .foregroundColor(Color.ui.gray)
-                            .cornerRadius(10)
-                    }
-                    //                      NavigationLink(destination: CouponView(couponVM: CouponViewModel()).onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
-                    //                        Text("Klippkort")
-                    //                            .frame(width: 200, height: 50)
-                    //                            .background(Color.ui.blue)
-                    //                            .foregroundColor(Color.ui.gray)
-                    //                            .cornerRadius(10)
-                    //                    }
-                    Spacer()
-                    NavigationLink(destination: ScannedView(scanVM: ScanVM()).environmentObject(Members()).onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
-                        Text("ScannerView")
-                            .frame(width: 200, height: 50)
-                            .background(Color.ui.blue)
-                            .foregroundColor(Color.ui.gray)
-                            .cornerRadius(10)
-                    }
                     
-                    Spacer()
+                    if !isAdmin{
+                        Button(action: {
+                            selectedTab = 1
+                        }) {
+                            
+                            Text("Klippkort")
+                                .frame(width: 200, height: 50)
+                                .background(Color.ui.blue)
+                                .foregroundColor(Color.ui.gray)
+                                .cornerRadius(10)
+                        }
+                        
+                        
+                        Spacer()}
+                    else{
+                        NavigationLink(destination: ScannedView(scanVM: ScanVM()).environmentObject(Members()).onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
+                            Text("ScannerView")
+                                .frame(width: 200, height: 50)
+                                .background(Color.ui.blue)
+                                .foregroundColor(Color.ui.gray)
+                                .cornerRadius(10)
+                        }
+                        Spacer()
+                        
+                    }
                     NavigationLink(destination: NewsView().navigationBarBackButtonHidden(true).onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
                         Text("Nyheter")
                             .frame(width: 200, height: 50)
                             .background(Color.ui.blue)
                             .foregroundColor(Color.ui.gray)
                             .cornerRadius(10)
-                          
+                        
                     }
                     Spacer()
                     NavigationLink(destination: SponsorView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
@@ -184,36 +187,27 @@ struct ButtonView: View {
                     }
                     //Spacer()
                     //vet inte varför det inte går att ha spacer här??
+                }.onAppear{
+                    
+                    userVM.checkUserAuthorization { isAdmin in
+                        
+                        if isAdmin {
+                            print("User is an admin")
+                            DispatchQueue.main.async {
+                                self.isAdmin = true
+                            }
+                        } else {
+                            // print("User is not an admin")
+                            DispatchQueue.main.async {
+                                self.isAdmin = false}
+                            
+                        }
+                    }
                 }
                 
                 
                 
-                
                 Spacer()
-            }
-        }
-    }
-    func checkUserAuthorization(completion: @escaping (Bool) -> Void) {
-       
-        guard let currentUser = Auth.auth().currentUser else {
-        
-            completion(false)
-            return
-        }
-        
-        let db = Firestore.firestore()
-        let userRef = db.collection("users").document(currentUser.uid)
-        
-        userRef.getDocument { document, error in
-            if let document = document, document.exists {
-             
-                let data = document.data()
-                let admin = data?["admin"] as? Bool ?? false
-                completion(admin)
-            } else {
-              
-                completion(false)
-                print("Error fetching user document: \(error?.localizedDescription ?? "")")
             }
         }
     }
