@@ -147,7 +147,7 @@ struct ButtonView: View {
                     //                            .foregroundColor(Color.ui.gray)
                     //                            .cornerRadius(10)
                     //                    }
-                    Spacer()
+                    .padding()
                     NavigationLink(destination: ScannerView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
                         Text("ScannerView")
                             .frame(width: 200, height: 50)
@@ -156,8 +156,8 @@ struct ButtonView: View {
                             .cornerRadius(10)
                     }
                     
-                    Spacer()
-                    NavigationLink(destination: NewsView().navigationBarBackButtonHidden(true).onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
+                    .padding()
+                    NavigationLink(destination: NewsView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
                         Text("Nyheter")
                             .frame(width: 200, height: 50)
                             .background(Color.ui.blue)
@@ -165,7 +165,18 @@ struct ButtonView: View {
                             .cornerRadius(10)
                           
                     }
-                    Spacer()
+                    .padding()
+                    
+                    NavigationLink(destination: AwayMatchesView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
+                        Text("Borta Resor")
+                            .frame(width: 200, height: 50)
+                            .background(Color.ui.blue)
+                            .foregroundColor(Color.ui.gray)
+                            .cornerRadius(10)
+                          
+                    }
+                    .padding()
+                    
                     NavigationLink(destination: SponsorView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
                         Text("Sponsra Tifogruppen")
                             .frame(width: 200, height: 50)
@@ -173,7 +184,7 @@ struct ButtonView: View {
                             .foregroundColor(Color.ui.gray)
                             .cornerRadius(10)
                     }
-                    Spacer()
+                    .padding()
                     NavigationLink(destination: NewsView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
                         Text("Kontakta styrelsen")
                             .frame(width: 200, height: 50)
@@ -181,7 +192,8 @@ struct ButtonView: View {
                             .foregroundColor(Color.ui.gray)
                             .cornerRadius(10)
                     }
-                    //Spacer()
+                    .padding()
+                    Spacer()
                     //vet inte varför det inte går att ha spacer här??
                 }
                 
