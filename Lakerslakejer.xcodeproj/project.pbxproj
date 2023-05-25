@@ -238,11 +238,8 @@
 				61FC446D2A129F4700D7F502 /* FirebaseFirestore */,
 				61FC446F2A129F4700D7F502 /* FirebaseFirestoreSwift */,
 				61FC44712A129F4700D7F502 /* FirebaseStorage */,
-
 				B970E65E2A1E2AB200664C32 /* FirebaseMessaging */,
-
 				1D8529482A1E47F900E19D7A /* CodeScanner */,
-
 			);
 			productName = Lakerslakejer;
 			productReference = 1D87FBC32A0CCEB50013AC3C /* Lakerslakejer.app */;
@@ -457,7 +454,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Lakerslakejer/Preview Content\"";
-				DEVELOPMENT_TEAM = RW7JF623GP;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Lakerslakejer/Info.plist;
