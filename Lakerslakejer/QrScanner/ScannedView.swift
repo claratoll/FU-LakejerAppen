@@ -10,12 +10,10 @@ import CodeScanner
 import SwiftUI
 import UserNotifications
 
-struct ScannedMembersView: View {
-    /*enum FilterType {
-        case none, contacted, uncontacted
-    }*/
+struct ScannedView: View {
+    @ObservedObject var scanVM: ScanVM
 
-    @EnvironmentObject var prospects: Prospects
+    @EnvironmentObject var members: Members
     @State private var isShowingScanner = false
 
    // let filter: FilterType
@@ -23,6 +21,12 @@ struct ScannedMembersView: View {
     var body: some View {
         NavigationView {
             List {
+                ForEach(scanVM.games) { game in
+                    Text(game.awayName)
+                    Text(game.awayDate.description)
+                }
+                
+                
                 ForEach(filteredProspects) { prospect in
                     VStack(alignment: .leading) {
                         Text(prospect.memberNumber)
@@ -44,11 +48,14 @@ struct ScannedMembersView: View {
                 CodeScannerView(codeTypes: [.qr], simulatedData: "0000\n0", completion: handleScan)
             }
         }
+        .onAppear{
+            scanVM.fetchGames()
+        }
     }
 
     var title: String = "Scanned members"
 
-    var filteredProspects: [Prospect] {return prospects.memberArray}
+    var filteredProspects: [Scan] {return members.memberArray}
 
     func handleScan(result: Result<ScanResult, ScanError>) {
         isShowingScanner = false
@@ -58,10 +65,10 @@ struct ScannedMembersView: View {
             let details = result.string.components(separatedBy: "\n")
             guard details.count == 2 else { return }
 
-            let member = Prospect()
+            let member = Scan()
             member.memberNumber = details[0]
             member.couponNumber = details[1]
-            prospects.add(member)
+            members.add(member)
         case .failure(let error):
             print("Scanning failed: \(error.localizedDescription)")
         }
@@ -71,7 +78,8 @@ struct ScannedMembersView: View {
 
 struct ProspectsView_Previews: PreviewProvider {
     static var previews: some View {
-        ScannedMembersView()
-            .environmentObject(Prospects())
+        ScannedView(scanVM: ScanVM())
+            .environmentObject(Members())
     }
 }
+

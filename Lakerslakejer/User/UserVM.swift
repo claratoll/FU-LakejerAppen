@@ -19,19 +19,19 @@ class UserVM : ObservableObject{
         
         auth.createUser(withEmail: email, password: password){ result, error in
             
-        if let error = error{
-            print("error signing up \(error)")
-          
-        }else{
-            print("sign up successfull")
-            saveMemberInfo (name: name, email: email, memberNr: memberNr)
-            self.isSignedUp = true
-            
+            if let error = error{
+                print("error signing up \(error)")
+                
+            }else{
+                print("sign up successfull")
+                saveMemberInfo (name: name, email: email, memberNr: memberNr)
+                self.isSignedUp = true
+                
+            }
         }
-    }
         
         
-func saveMemberInfo (name: String, email: String, memberNr: Int){
+        func saveMemberInfo (name: String, email: String, memberNr: Int){
             guard let user = auth.currentUser else {return}
             
             let itemsRef = db.collection("users").document(user.uid)
@@ -39,7 +39,7 @@ func saveMemberInfo (name: String, email: String, memberNr: Int){
             //If sats om den redan finnst!
             
             do{
-    //            try itemsRef.addDocument(data: ["name": name, "email": email, "memberNr": memberNr, "coupons": 0, "admin": false])
+                //            try itemsRef.addDocument(data: ["name": name, "email": email, "memberNr": memberNr, "coupons": 0, "admin": false])
                 try itemsRef.setData(from: myuser)
                 
             } catch{
@@ -50,7 +50,7 @@ func saveMemberInfo (name: String, email: String, memberNr: Int){
             
         }
         
-}
+    }
     
     func isValidInput(name: String, memberNr: String, email: String, password: String) -> Bool{
         
@@ -66,7 +66,7 @@ func saveMemberInfo (name: String, email: String, memberNr: Int){
         
         return true
     }
-
+    
     
     
     

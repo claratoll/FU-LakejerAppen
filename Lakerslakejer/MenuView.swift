@@ -148,7 +148,7 @@ struct ButtonView: View {
                     //                            .cornerRadius(10)
                     //                    }
                     Spacer()
-                    NavigationLink(destination: ScannedMembersView().environmentObject(Prospects()).onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
+                    NavigationLink(destination: ScannedView(scanVM: ScanVM()).environmentObject(Members()).onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
                         Text("ScannerView")
                             .frame(width: 200, height: 50)
                             .background(Color.ui.blue)

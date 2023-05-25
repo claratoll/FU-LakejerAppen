@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1D8529492A1E47F900E19D7A /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8529482A1E47F900E19D7A /* CodeScanner */; };
-		1D85294B2A1E497600E19D7A /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85294A2A1E497600E19D7A /* Prospect.swift */; };
-		1D85294D2A1E498E00E19D7A /* ScannedMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85294C2A1E498E00E19D7A /* ScannedMembersView.swift */; };
+		1D85294B2A1E497600E19D7A /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85294A2A1E497600E19D7A /* Scan.swift */; };
+		1D85294D2A1E498E00E19D7A /* ScannedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85294C2A1E498E00E19D7A /* ScannedView.swift */; };
 		1D85F8972A12396500EB810C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85F8962A12396500EB810C /* Extension.swift */; };
 		1D864A272A1F55C10028FB90 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D864A262A1F55C10028FB90 /* Game.swift */; };
+		1D864A292A1F5F0A0028FB90 /* ScanVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D864A282A1F5F0A0028FB90 /* ScanVM.swift */; };
 		1D87FBC72A0CCEB50013AC3C /* LakerslakejerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87FBC62A0CCEB50013AC3C /* LakerslakejerApp.swift */; };
 		1D87FBC92A0CCEB50013AC3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87FBC82A0CCEB50013AC3C /* ContentView.swift */; };
 		1D87FBCB2A0CCEB70013AC3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D87FBCA2A0CCEB70013AC3C /* Assets.xcassets */; };
@@ -46,10 +47,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D85294A2A1E497600E19D7A /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
-		1D85294C2A1E498E00E19D7A /* ScannedMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedMembersView.swift; sourceTree = "<group>"; };
+		1D85294A2A1E497600E19D7A /* Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
+		1D85294C2A1E498E00E19D7A /* ScannedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedView.swift; sourceTree = "<group>"; };
 		1D85F8962A12396500EB810C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		1D864A262A1F55C10028FB90 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		1D864A282A1F5F0A0028FB90 /* ScanVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanVM.swift; sourceTree = "<group>"; };
 		1D87FBC32A0CCEB50013AC3C /* Lakerslakejer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lakerslakejer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D87FBC62A0CCEB50013AC3C /* LakerslakejerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LakerslakejerApp.swift; sourceTree = "<group>"; };
 		1D87FBC82A0CCEB50013AC3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,8 +101,9 @@
 		1D8414232A1BB3BC000FA14C /* QrScanner */ = {
 			isa = PBXGroup;
 			children = (
-				1D85294A2A1E497600E19D7A /* Prospect.swift */,
-				1D85294C2A1E498E00E19D7A /* ScannedMembersView.swift */,
+				1D85294A2A1E497600E19D7A /* Scan.swift */,
+				1D85294C2A1E498E00E19D7A /* ScannedView.swift */,
+				1D864A282A1F5F0A0028FB90 /* ScanVM.swift */,
 			);
 			path = QrScanner;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			files = (
 				B9721DB82A12593F00493CF3 /* CouponView.swift in Sources */,
 				61FC44802A13FAC100D7F502 /* UserRegisterVM.swift in Sources */,
+				1D864A292A1F5F0A0028FB90 /* ScanVM.swift in Sources */,
 				B9B40FEB2A12349F009CA9C0 /* MenuView.swift in Sources */,
 				1D864A272A1F55C10028FB90 /* Game.swift in Sources */,
 				4E12541E2A1762E2004B8B47 /* SponsorView.swift in Sources */,
@@ -307,11 +311,11 @@
 				B9721DCE2A14F63800493CF3 /* Coupon.swift in Sources */,
 				4EAE5F3A2A1CA8390035EED6 /* CardViewModel.swift in Sources */,
 				1D85F8972A12396500EB810C /* Extension.swift in Sources */,
-				1D85294D2A1E498E00E19D7A /* ScannedMembersView.swift in Sources */,
+				1D85294D2A1E498E00E19D7A /* ScannedView.swift in Sources */,
 				61FC44782A12A58E00D7F502 /* UserSignUpView.swift in Sources */,
 				1DBD55F22A13C28000CC31EA /* News.swift in Sources */,
 				1DAFFEDB2A14D6DC00212C61 /* CardView.swift in Sources */,
-				1D85294B2A1E497600E19D7A /* Prospect.swift in Sources */,
+				1D85294B2A1E497600E19D7A /* Scan.swift in Sources */,
 				B9721DBC2A1288F200493CF3 /* LoginView.swift in Sources */,
 				B93AC17E2A1DE24C0081C9D0 /* UserVM.swift in Sources */,
 				1D87FBD02A0CCEB70013AC3C /* Persistence.swift in Sources */,
