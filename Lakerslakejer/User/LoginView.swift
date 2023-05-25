@@ -22,13 +22,16 @@ struct LoginView: View {
             VStack{
                 Spacer()
                 ZStack{
+                    LottieView(loopMode: .loop, animationName: "cconfetti").frame(width: 40,height: 40)
+                        .scaleEffect(0.9)
+
                     Ellipse()
                         .frame(width: 400, height: 132)
                         .foregroundColor(.white)
                     .offset(x:0, y:64)
                     Image("Logoskrift")
                         .resizable()
-                        .frame(width: 180,height: 31)
+                        .frame(width: 190,height: 31)
                         .offset(x:0, y:34)
                         .padding(.top, 10)
                     
@@ -41,7 +44,10 @@ struct LoginView: View {
                     VStack {
                         
                         Text("Email")
+                            .font(.title3)
+                            .fontWeight(.semibold)
                             .padding(-9)
+                            .offset(x:-70, y:6)
                             .multilineTextAlignment(.leading)
                         TextField("  Email", text: $email)
                                .font(.headline)
@@ -55,8 +61,11 @@ struct LoginView: View {
                                
                                
                            
-                        Text("Lösenord")
+                        Text("Lösenord ")
+                            .font(.title3)
+                            .fontWeight(.semibold)
                             .padding(-1)
+                            .offset(x:-50, y:2)
                         SecureField("  Lösenord", text: $password)
                  
                              .font(.headline)
@@ -72,7 +81,7 @@ struct LoginView: View {
                     label: {
                                Text("Logga in")
                            }
-                           .frame(width: 220, height: 42)
+                           .frame(width: 220, height: 52)
                            .foregroundColor(.white)
                            .background(Color.orange)
                            .cornerRadius(15)
@@ -81,7 +90,7 @@ struct LoginView: View {
                         Button(action: {
                             showSignUpType = true
                         }, label: {
-                            Text("Har du inget konto? Bli medlem här")
+                            Text("Har du inget konto? Bli medlem här!")
                         })
                         .navigationBarTitle("Sign Up Type")
                                     .sheet(isPresented: $showSignUpType) {
