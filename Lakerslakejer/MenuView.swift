@@ -201,6 +201,18 @@ struct ButtonView: View {
                         
                     }
                     Spacer()
+                    
+                    NavigationLink(destination: AwayMatchesView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
+                                            Text("Borta Resor")
+                                                .frame(width: 200, height: 50)
+                                                .background(Color.ui.blue)
+                                                .foregroundColor(Color.ui.gray)
+                                                .cornerRadius(10)
+                                              
+                                        }
+
+                    
+                    Spacer()
                     NavigationLink(destination: SponsorView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
                         Text("Sponsra Tifogruppen")
                             .frame(width: 200, height: 50)
