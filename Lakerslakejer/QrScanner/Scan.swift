@@ -8,20 +8,21 @@
 
 import SwiftUI
 
-class Prospect: Identifiable, Codable {
+class Scan: Identifiable, Codable {
     var id = UUID()
-    var memberNumber = "Anonymous"
-    var couponNumber = ""
-    fileprivate(set) var isContacted = false
+    var memberNumber = "0000"
+    var couponNumber = "0"
+    //fileprivate(set) var isContacted = false
 }
 
-@MainActor class Prospects: ObservableObject {
-    @Published private(set) var memberArray: [Prospect]
+
+@MainActor class Members: ObservableObject {
+    @Published private(set) var memberArray: [Scan]
     let saveKey = "SavedData"
 
     init() {
         if let data = UserDefaults.standard.data(forKey: saveKey) {
-            if let decoded = try? JSONDecoder().decode([Prospect].self, from: data) {
+            if let decoded = try? JSONDecoder().decode([Scan].self, from: data) {
                 memberArray = decoded
                 return
             }
@@ -37,14 +38,10 @@ class Prospect: Identifiable, Codable {
         }
     }
 
-    func add(_ prospect: Prospect) {
+    func add(_ prospect: Scan) {
         memberArray.append(prospect)
         save()
     }
 
-    func toggle(_ prospect: Prospect) {
-        objectWillChange.send()
-        prospect.isContacted.toggle()
-        save()
-    }
+    
 }

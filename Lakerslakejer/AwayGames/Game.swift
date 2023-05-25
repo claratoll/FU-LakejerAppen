@@ -15,4 +15,5 @@ struct Game: Codable, Identifiable {
     var awayName: String
     var firstBookDate: Date
     var lastBookDate: Date
+    var users: [User]
 }
