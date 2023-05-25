@@ -39,6 +39,7 @@
 		61FC44802A13FAC100D7F502 /* UserRegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC447F2A13FAC100D7F502 /* UserRegisterVM.swift */; };
 		B93AC17C2A1C89B10081C9D0 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AC17B2A1C89B10081C9D0 /* NotificationManager.swift */; };
 		B93AC17E2A1DE24C0081C9D0 /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AC17D2A1DE24C0081C9D0 /* UserVM.swift */; };
+		B970E65F2A1E2AB200664C32 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B970E65E2A1E2AB200664C32 /* FirebaseMessaging */; };
 		B9721DB82A12593F00493CF3 /* CouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DB72A12593F00493CF3 /* CouponView.swift */; };
 		B9721DBC2A1288F200493CF3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DBB2A1288F200493CF3 /* LoginView.swift */; };
 		B9721DCE2A14F63800493CF3 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DCD2A14F63800493CF3 /* Coupon.swift */; };
@@ -74,6 +75,8 @@
 		61FC447F2A13FAC100D7F502 /* UserRegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterVM.swift; sourceTree = "<group>"; };
 		B93AC17B2A1C89B10081C9D0 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		B93AC17D2A1DE24C0081C9D0 /* UserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
+		B970E6602A1E2BD800664C32 /* Lakerslakejer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lakerslakejer.entitlements; sourceTree = "<group>"; };
+		B970E6612A1F462A00664C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9721DB72A12593F00493CF3 /* CouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponView.swift; sourceTree = "<group>"; };
 		B9721DBB2A1288F200493CF3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B9721DCD2A14F63800493CF3 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 			files = (
 				61FC44702A129F4700D7F502 /* FirebaseFirestoreSwift in Frameworks */,
 				61FC446C2A129F4700D7F502 /* FirebaseDatabaseSwift in Frameworks */,
+				B970E65F2A1E2AB200664C32 /* FirebaseMessaging in Frameworks */,
 				61FC446E2A129F4700D7F502 /* FirebaseFirestore in Frameworks */,
 				61FC446A2A129F4700D7F502 /* FirebaseDatabase in Frameworks */,
 				61FC44682A129F4700D7F502 /* FirebaseAuth in Frameworks */,
@@ -115,6 +119,7 @@
 			children = (
 				1D87FBC52A0CCEB50013AC3C /* Lakerslakejer */,
 				1D87FBC42A0CCEB50013AC3C /* Products */,
+				B970E65D2A1E2AB200664C32 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +134,8 @@
 		1D87FBC52A0CCEB50013AC3C /* Lakerslakejer */ = {
 			isa = PBXGroup;
 			children = (
+				B970E6612A1F462A00664C32 /* Info.plist */,
+				B970E6602A1E2BD800664C32 /* Lakerslakejer.entitlements */,
 				B93AC17A2A1C894E0081C9D0 /* Notifications */,
 				1D8414232A1BB3BC000FA14C /* QrScanner */,
 				1D9163942A13F3FA00036CA0 /* Coupon */,
@@ -208,6 +215,13 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
+		B970E65D2A1E2AB200664C32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -231,6 +245,7 @@
 				61FC446D2A129F4700D7F502 /* FirebaseFirestore */,
 				61FC446F2A129F4700D7F502 /* FirebaseFirestoreSwift */,
 				61FC44712A129F4700D7F502 /* FirebaseStorage */,
+				B970E65E2A1E2AB200664C32 /* FirebaseMessaging */,
 			);
 			productName = Lakerslakejer;
 			productReference = 1D87FBC32A0CCEB50013AC3C /* Lakerslakejer.app */;
@@ -443,13 +458,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Lakerslakejer/Lakerslakejer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Lakerslakejer/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RW7JF623GP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) photo use";
+				INFOPLIST_FILE = Lakerslakejer/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Lakerslakejer photo use";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -478,13 +495,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Lakerslakejer/Lakerslakejer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Lakerslakejer/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RW7JF623GP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) photo use";
+				INFOPLIST_FILE = Lakerslakejer/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Lakerslakejer photo use";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -572,6 +591,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 61FC44662A129F4700D7F502 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		B970E65E2A1E2AB200664C32 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61FC44662A129F4700D7F502 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 
