@@ -14,6 +14,7 @@ struct MenuView: View {
     @ObservedObject var couponVM = CouponViewModel()
     @ObservedObject var cardVM = CardViewModel()
     @ObservedObject var userVM = UserVM()
+    //@ObservedObject var scanVM = ScanVM
     @State var triggerCouponView = false
     @State private var selectedTab = 0
     @StateObject private var notificationManager = NotificationManager()
@@ -31,18 +32,30 @@ struct MenuView: View {
                 
                 
                 TabView(selection: $selectedTab){
+                
                     ButtonView(selectedTab: $selectedTab)
                         .tabItem{
                             Label("Home", systemImage: "house.fill")
                             
                             
                         }.tag(0)
-                    
-                    CouponView(couponVM: couponVM )
-                        .tabItem{
-                            Label("Klippkort", systemImage: "greetingcard.fill")
-                        }
-                        .tag(1)
+                    if !isAdmin{
+                        CouponView(couponVM: couponVM )
+                            .tabItem{
+                                Label("Klippkort", systemImage: "greetingcard.fill")
+                            }
+                            .tag(1)
+                    }
+                    else{
+
+                       ScannedView(scanVM: ScanVM()).environmentObject(Members())
+                            .tabItem{
+                                Label("Scanner", systemImage: "qrcode.viewfinder")
+                            }
+                            .tag(1)
+
+                    }
+
                     
                     Button (action: {showLogoutAlert = true})
                     {
@@ -73,6 +86,22 @@ struct MenuView: View {
                     }
                     
                     
+                }.onAppear{
+                    
+                    userVM.checkUserAuthorization { isAdmin in
+                        
+                        if isAdmin {
+                            print("User is an admin")
+                            DispatchQueue.main.async {
+                                self.isAdmin = true
+                            }
+                        } else {
+                            // print("User is not an admin")
+                            DispatchQueue.main.async {
+                                self.isAdmin = false}
+                            
+                        }
+                    }
                 }
             
             
@@ -111,6 +140,8 @@ struct ButtonView: View {
     @Binding var selectedTab: Int
     @ObservedObject var userVM = UserVM()
     @State var isAdmin = false
+    
+    
     var body: some View {
         
         VStack{
@@ -185,7 +216,7 @@ struct ButtonView: View {
                             .foregroundColor(Color.ui.gray)
                             .cornerRadius(10)
                     }
-                    //Spacer()
+                    Spacer()
                     //vet inte varför det inte går att ha spacer här??
                 }.onAppear{
                     
