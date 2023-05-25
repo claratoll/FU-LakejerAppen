@@ -135,30 +135,29 @@ struct RowView: View {
 }
 
 func checkUserAuthorization(completion: @escaping (Bool) -> Void) {
-    let auth = Auth.auth()
-    let db = Firestore.firestore()
+   
+    guard let currentUser = Auth.auth().currentUser else {
     
-    if let id = auth.currentUser?.uid {
-        db.collection("Members").document(id).getDocument { (document, error) in
-            if let document = document, document.exists {
-                do {
-                    if let data = document.data(),
-                        let jsonData = try? JSONSerialization.data(withJSONObject: data),
-                        let myDocument = try? JSONDecoder().decode(User.self, from: jsonData) {
-                        let isAdmin = myDocument.admin
-                        
-                        completion(isAdmin)
-                    }
-                } catch {
-                    print("Error decoding document: \(error)")
-                }
-            } else {
-                print("Document does not exist")
-            }
+        completion(false)
+        return
+    }
+    
+    let db = Firestore.firestore()
+    let userRef = db.collection("users").document(currentUser.uid)
+    
+    userRef.getDocument { document, error in
+        if let document = document, document.exists {
+         
+            let data = document.data()
+            let admin = data?["admin"] as? Bool ?? false
+            completion(admin)
+        } else {
+          
+            completion(false)
+            print("Error fetching user document: \(error?.localizedDescription ?? "")")
         }
     }
 }
-
 
 
 struct NewsView_Previews: PreviewProvider {
