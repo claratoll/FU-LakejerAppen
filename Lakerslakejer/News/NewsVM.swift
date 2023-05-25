@@ -47,7 +47,7 @@ class NewsVM : ObservableObject {
         
         // Har ej kört igång den pga av uid problemen
        //
-        let newsRef = db.collection("news").document(user.uid).collection("")
+        let newsRef = db.collection("news")
         
         let newNews = news[index]
         
