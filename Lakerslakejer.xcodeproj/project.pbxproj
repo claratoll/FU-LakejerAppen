@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00F0D79D2A1F8CA700ECEB3A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 00F0D79C2A1F8CA700ECEB3A /* Lottie */; };
+		00F0D7A02A1F8CDF00ECEB3A /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0D79F2A1F8CDF00ECEB3A /* LottieView.swift */; };
+		00F0D7A22A1F8E8D00ECEB3A /* cconfetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F0D7A12A1F8E8D00ECEB3A /* cconfetti.json */; };
+		00F0D7A42A1F8FCD00ECEB3A /* heavyconfetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F0D7A32A1F8FCD00ECEB3A /* heavyconfetti.json */; };
+		00F0D7A62A1F917C00ECEB3A /* flyconfetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F0D7A52A1F917C00ECEB3A /* flyconfetti.json */; };
+		00F0D7A82A1F952500ECEB3A /* goldconfetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F0D7A72A1F952500ECEB3A /* goldconfetti.json */; };
 		1D8529492A1E47F900E19D7A /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8529482A1E47F900E19D7A /* CodeScanner */; };
 		1D85294B2A1E497600E19D7A /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85294A2A1E497600E19D7A /* Scan.swift */; };
 		1D85294D2A1E498E00E19D7A /* ScannedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85294C2A1E498E00E19D7A /* ScannedView.swift */; };
@@ -49,6 +55,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00F0D79F2A1F8CDF00ECEB3A /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		00F0D7A12A1F8E8D00ECEB3A /* cconfetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cconfetti.json; sourceTree = "<group>"; };
+		00F0D7A32A1F8FCD00ECEB3A /* heavyconfetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heavyconfetti.json; sourceTree = "<group>"; };
+		00F0D7A52A1F917C00ECEB3A /* flyconfetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flyconfetti.json; sourceTree = "<group>"; };
+		00F0D7A72A1F952500ECEB3A /* goldconfetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = goldconfetti.json; sourceTree = "<group>"; };
 		1D85294A2A1E497600E19D7A /* Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
 		1D85294C2A1E498E00E19D7A /* ScannedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedView.swift; sourceTree = "<group>"; };
 		1D85F8962A12396500EB810C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -92,6 +103,7 @@
 			files = (
 				61FC44702A129F4700D7F502 /* FirebaseFirestoreSwift in Frameworks */,
 				61FC446C2A129F4700D7F502 /* FirebaseDatabaseSwift in Frameworks */,
+				00F0D79D2A1F8CA700ECEB3A /* Lottie in Frameworks */,
 				B970E65F2A1E2AB200664C32 /* FirebaseMessaging in Frameworks */,
 				61FC446E2A129F4700D7F502 /* FirebaseFirestore in Frameworks */,
 				61FC446A2A129F4700D7F502 /* FirebaseDatabase in Frameworks */,
@@ -104,6 +116,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00F0D79E2A1F8CC300ECEB3A /* LottieFiles */ = {
+			isa = PBXGroup;
+			children = (
+				00F0D7A72A1F952500ECEB3A /* goldconfetti.json */,
+				00F0D7A52A1F917C00ECEB3A /* flyconfetti.json */,
+				00F0D7A32A1F8FCD00ECEB3A /* heavyconfetti.json */,
+				00F0D7A12A1F8E8D00ECEB3A /* cconfetti.json */,
+				00F0D79F2A1F8CDF00ECEB3A /* LottieView.swift */,
+			);
+			path = LottieFiles;
+			sourceTree = "<group>";
+		};
 		1D8414232A1BB3BC000FA14C /* QrScanner */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				B9721DBB2A1288F200493CF3 /* LoginView.swift */,
+				00F0D79E2A1F8CC300ECEB3A /* LottieFiles */,
 				61FC44772A12A58E00D7F502 /* UserSignUpView.swift */,
 				61FC44792A13E73D00D7F502 /* User.swift */,
 				61FC447F2A13FAC100D7F502 /* UserRegisterVM.swift */,
@@ -257,6 +282,7 @@
 				61FC44712A129F4700D7F502 /* FirebaseStorage */,
 				B970E65E2A1E2AB200664C32 /* FirebaseMessaging */,
 				1D8529482A1E47F900E19D7A /* CodeScanner */,
+				00F0D79C2A1F8CA700ECEB3A /* Lottie */,
 			);
 			productName = Lakerslakejer;
 			productReference = 1D87FBC32A0CCEB50013AC3C /* Lakerslakejer.app */;
@@ -289,6 +315,7 @@
 			packageReferences = (
 				61FC44662A129F4700D7F502 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				1D8529472A1E47F900E19D7A /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				00F0D79B2A1F8CA700ECEB3A /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 1D87FBC42A0CCEB50013AC3C /* Products */;
 			projectDirPath = "";
@@ -305,7 +332,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D87FBCE2A0CCEB70013AC3C /* Preview Assets.xcassets in Resources */,
+				00F0D7A82A1F952500ECEB3A /* goldconfetti.json in Resources */,
+				00F0D7A42A1F8FCD00ECEB3A /* heavyconfetti.json in Resources */,
 				1D87FBCB2A0CCEB70013AC3C /* Assets.xcassets in Resources */,
+				00F0D7A62A1F917C00ECEB3A /* flyconfetti.json in Resources */,
+				00F0D7A22A1F8E8D00ECEB3A /* cconfetti.json in Resources */,
 				61FC44652A129F1E00D7F502 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +357,7 @@
 				1DAFFEDF2A14D88700212C61 /* NewsView.swift in Sources */,
 				B9721DD02A14F64800493CF3 /* CouponViewModel.swift in Sources */,
 				B93AC17C2A1C89B10081C9D0 /* NotificationManager.swift in Sources */,
+				00F0D7A02A1F8CDF00ECEB3A /* LottieView.swift in Sources */,
 				B9721DCE2A14F63800493CF3 /* Coupon.swift in Sources */,
 				4EAE5F3A2A1CA8390035EED6 /* CardViewModel.swift in Sources */,
 				1D85F8972A12396500EB810C /* Extension.swift in Sources */,
@@ -563,6 +595,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		00F0D79B2A1F8CA700ECEB3A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		1D8529472A1E47F900E19D7A /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/CodeScanner";
@@ -582,6 +622,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		00F0D79C2A1F8CA700ECEB3A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00F0D79B2A1F8CA700ECEB3A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		1D8529482A1E47F900E19D7A /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1D8529472A1E47F900E19D7A /* XCRemoteSwiftPackageReference "CodeScanner" */;
