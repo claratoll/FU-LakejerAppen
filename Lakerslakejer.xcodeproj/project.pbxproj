@@ -27,6 +27,7 @@
 		1DBD55F42A13C29700CC31EA /* NewsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBD55F32A13C29700CC31EA /* NewsVM.swift */; };
 		4E12541E2A1762E2004B8B47 /* SponsorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E12541D2A1762E2004B8B47 /* SponsorView.swift */; };
 		4EAE5F3A2A1CA8390035EED6 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAE5F392A1CA8390035EED6 /* CardViewModel.swift */; };
+		613030542A1FC4D40001BFA5 /* AwayMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613030532A1FC4D40001BFA5 /* AwayMatchesView.swift */; };
 		61FC44652A129F1E00D7F502 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */; };
 		61FC44682A129F4700D7F502 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 61FC44672A129F4700D7F502 /* FirebaseAuth */; };
 		61FC446A2A129F4700D7F502 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 61FC44692A129F4700D7F502 /* FirebaseDatabase */; };
@@ -68,6 +69,7 @@
 		1DBD55F32A13C29700CC31EA /* NewsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVM.swift; sourceTree = "<group>"; };
 		4E12541D2A1762E2004B8B47 /* SponsorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorView.swift; sourceTree = "<group>"; };
 		4EAE5F392A1CA8390035EED6 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		613030532A1FC4D40001BFA5 /* AwayMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayMatchesView.swift; sourceTree = "<group>"; };
 		61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61FC44772A12A58E00D7F502 /* UserSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpView.swift; sourceTree = "<group>"; };
 		61FC44792A13E73D00D7F502 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -140,12 +142,9 @@
 		1D87FBC52A0CCEB50013AC3C /* Lakerslakejer */ = {
 			isa = PBXGroup;
 			children = (
-
 				1D864A252A1F55AF0028FB90 /* AwayGames */,
-
 				B970E6612A1F462A00664C32 /* Info.plist */,
 				B970E6602A1E2BD800664C32 /* Lakerslakejer.entitlements */,
-
 				B93AC17A2A1C894E0081C9D0 /* Notifications */,
 				1D8414232A1BB3BC000FA14C /* QrScanner */,
 				1D9163942A13F3FA00036CA0 /* Coupon */,
@@ -162,6 +161,7 @@
 				4E12541D2A1762E2004B8B47 /* SponsorView.swift */,
 				1D85F8962A12396500EB810C /* Extension.swift */,
 				61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */,
+				613030532A1FC4D40001BFA5 /* AwayMatchesView.swift */,
 			);
 			path = Lakerslakejer;
 			sourceTree = "<group>";
@@ -339,6 +339,7 @@
 				1D87FBD02A0CCEB70013AC3C /* Persistence.swift in Sources */,
 				1D87FBC92A0CCEB50013AC3C /* ContentView.swift in Sources */,
 				1DAFFEDD2A14D86100212C61 /* NewsEntryView.swift in Sources */,
+				613030542A1FC4D40001BFA5 /* AwayMatchesView.swift in Sources */,
 				1D87FBD32A0CCEB70013AC3C /* Lakerslakejer.xcdatamodeld in Sources */,
 				1DBD55F02A13C24300CC31EA /* CreateNewsView.swift in Sources */,
 				1D87FBC72A0CCEB50013AC3C /* LakerslakejerApp.swift in Sources */,
