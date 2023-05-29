@@ -11,9 +11,8 @@ import Firebase
 
 class ScanVM: ObservableObject {
     
-    @Published var games: [Game] = []
-
-    private var db = Firestore.firestore()
+    @Published var games = [Game]()
+    let db = Firestore.firestore()
 
     func fetchGames() {
         db.collection("games").addSnapshotListener { (querySnapshot, error) in
@@ -30,11 +29,18 @@ class ScanVM: ObservableObject {
     }
     
     
-    func saveMemberToFirebase() {
+    func saveMemberToFirebase(name: String, memberNr: Int) {
+        var game = "2YoJFhbZkCsEL6DOEFtt"
         
-        let user = User(name: "clara", email: "clara@clara.se", memberNr: 3452)
+        let user = User(name: name, email: "hej@hej.se", memberNr: memberNr)
         
-        let gameRef = db.collection("games").document()
+        let gameRef = db.collection("games").document(game).collection("bookedUser")
+        
+        do {
+            try gameRef.addDocument(from: user)
+        } catch {
+            print("error saving to db")
+        }
     }
     
 }
