@@ -11,7 +11,7 @@ import SwiftUI
 import UserNotifications
 
 struct ScannedView: View {
-    @ObservedObject var scanVM: ScanVM
+    @StateObject var scanVM = ScanVM()
 
     @EnvironmentObject var members: Members
     @State private var isShowingScanner = false
@@ -65,9 +65,14 @@ struct ScannedView: View {
             let details = result.string.components(separatedBy: "\n")
             guard details.count == 2 else { return }
 
-            let member = Scan()
+            var member = Scan()
             member.memberNumber = details[0]
             member.couponNumber = details[1]
+            var memberNr = details[0]
+            
+            
+            scanVM.saveMemberToFirebase(name: "clara", memberNr: Int(memberNr) ?? 0000)
+            
             members.add(member)
         case .failure(let error):
             print("Scanning failed: \(error.localizedDescription)")

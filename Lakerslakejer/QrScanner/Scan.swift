@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class Scan: Identifiable, Codable {
+struct Scan: Identifiable, Codable {
     var id = UUID()
     var memberNumber = "0000"
     var couponNumber = "0"

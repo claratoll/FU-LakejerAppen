@@ -22,7 +22,7 @@ struct SponsorView: View {
                 Text("via Swish")
                     .font(.title)
                     
-                Text("07xxxxxx")
+                Text("1233200839")
                     .textSelection(.enabled)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .font(.title)
