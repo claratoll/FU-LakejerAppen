@@ -19,6 +19,7 @@ struct MenuView: View {
     @State private var selectedTab = 0
     @StateObject private var notificationManager = NotificationManager()
     @State var isAdmin = false
+    @State var isButtonview = true
     
     var auth = Auth.auth()
     var body: some View {
@@ -26,37 +27,35 @@ struct MenuView: View {
             
             
             VStack{
-                //              ButtonView()
-                
-               
                 
                 
                 TabView(selection: $selectedTab){
-                
-                    ButtonView(selectedTab: $selectedTab)
+                 ButtonView(selectedTab: $selectedTab)
+                    
                         .tabItem{
                             Label("Home", systemImage: "house.fill")
                             
                             
                         }.tag(0)
+                   
+                    
                     if !isAdmin{
                         CouponView(couponVM: couponVM )
                             .tabItem{
                                 Label("Klippkort", systemImage: "greetingcard.fill")
                             }
                             .tag(1)
+                        
                     }
                     else{
-
-                       ScannedView(scanVM: ScanVM()).environmentObject(Members())
+                        
+                        ScannedView(scanVM: ScanVM()).environmentObject(Members())
                             .tabItem{
                                 Label("Scanner", systemImage: "qrcode.viewfinder")
                             }
                             .tag(1)
-
+                        
                     }
-
-                    
                     Button (action: {showLogoutAlert = true})
                     {
                         Label("Logout", systemImage: "rectangle.portrait.and.arrow.forward")
@@ -64,8 +63,12 @@ struct MenuView: View {
                     .tabItem{
                         
                         Label("Logout", systemImage: "rectangle.portrait.and.arrow.forward")}
-                }.tag(2)
-            }.onAppear(perform: notificationManager.reloadAuthorizationStatus)
+                    .tag(2)
+                }
+              
+              
+            }
+            .onAppear(perform: notificationManager.reloadAuthorizationStatus)
                 .onChange(of: notificationManager.authorizationStatus){
                     authorizationStatus in
                     
@@ -102,10 +105,15 @@ struct MenuView: View {
                             
                         }
                     }
+                    
+                   
                 }
+              
             
-            
-        }.alert(isPresented: $showLogoutAlert)
+        }
+      
+        .alert(isPresented: $showLogoutAlert)
+        
         {
             Alert(
                 title: Text("Logga ut"),
@@ -116,6 +124,7 @@ struct MenuView: View {
         }
     }
     
+
     
     private func performLogout(){
         do {
@@ -140,8 +149,10 @@ struct ButtonView: View {
     @Binding var selectedTab: Int
     @ObservedObject var userVM = UserVM()
     @State var isAdmin = false
-    
-    
+    @State var isButtonview = true
+    @State var newsIsPresented = false
+    @State var awayIsPresented = false
+    @State var isSwiftpresentet = false
     var body: some View {
         
         VStack{
@@ -170,6 +181,7 @@ struct ButtonView: View {
                     if !isAdmin{
                         Button(action: {
                             selectedTab = 1
+                            print("\(selectedTab)")
                         }) {
                             
                             Text("Klippkort")
@@ -182,7 +194,10 @@ struct ButtonView: View {
                         
                         Spacer()}
                     else{
-                        NavigationLink(destination: ScannedView(scanVM: ScanVM()).environmentObject(Members()).onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
+                        Button(action: {
+                            selectedTab = 1
+                            
+                        }) {
                             Text("ScannerView")
                                 .frame(width: 200, height: 50)
                                 .background(Color.ui.blue)
@@ -192,28 +207,61 @@ struct ButtonView: View {
                         Spacer()
                         
                     }
-                    NavigationLink(destination: NewsView().navigationBarBackButtonHidden(true).onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
-                        Text("Nyheter")
-                            .frame(width: 200, height: 50)
-                            .background(Color.ui.blue)
-                            .foregroundColor(Color.ui.gray)
-                            .cornerRadius(10)
+                    
+                    Button(action: {newsIsPresented = true
+                 
+                    }){
+
                         
-                    }
+                            Text("Nyheter")
+                                .frame(width: 200, height: 50)
+                                .background(Color.ui.blue)
+                                .foregroundColor(Color.ui.gray)
+                                .cornerRadius(10)
+                        }
+//                    }
+                    
+//                    NavigationLink(destination: NewsView()
+//                                   //.navigationBarBackButtonHidden(true)
+//                        .onAppear { isCardViewVisible = false }
+//                        .onDisappear { isCardViewVisible = true}) {
+//                        Text("Nyheter")
+//                            .frame(width: 200, height: 50)
+//                            .background(Color.ui.blue)
+//                            .foregroundColor(Color.ui.gray)
+//                            .cornerRadius(10)
+//
+//                    }
                     Spacer()
                     
-                    NavigationLink(destination: AwayMatchesView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
-                                            Text("Borta Resor")
-                                                .frame(width: 200, height: 50)
-                                                .background(Color.ui.blue)
-                                                .foregroundColor(Color.ui.gray)
-                                                .cornerRadius(10)
-                                              
-                                        }
+                    Button(action: {awayIsPresented = true
+                 
+                    }){
+                                           Text("Borta Resor")
+                                               .frame(width: 200, height: 50)
+                                               .background(Color.ui.blue)
+                                               .foregroundColor(Color.ui.gray)
+                                               .cornerRadius(10)
+                                             
+                                       }
+                    
+                    
+//
+//                    NavigationLink(destination: AwayMatchesView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
+//                                            Text("Borta Resor")
+//                                                .frame(width: 200, height: 50)
+//                                                .background(Color.ui.blue)
+//                                                .foregroundColor(Color.ui.gray)
+//                                                .cornerRadius(10)
+//
+//                                        }
 
                     
                     Spacer()
-                    NavigationLink(destination: SponsorView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
+                    Button(action: { isSwiftpresentet = true
+                 
+                    }){
+                  
                         Text("Sponsra Tifogruppen")
                             .frame(width: 200, height: 50)
                             .background(Color.ui.blue)
@@ -221,14 +269,14 @@ struct ButtonView: View {
                             .cornerRadius(10)
                     }
                     Spacer()
-                    NavigationLink(destination: NewsView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
-                        Text("Kontakta styrelsen")
-                            .frame(width: 200, height: 50)
-                            .background(Color.ui.blue)
-                            .foregroundColor(Color.ui.gray)
-                            .cornerRadius(10)
-                    }
-                    Spacer()
+//                    NavigationLink(destination: NewsView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
+//                        Text("Kontakta styrelsen")
+//                            .frame(width: 200, height: 50)
+//                            .background(Color.ui.blue)
+//                            .foregroundColor(Color.ui.gray)
+//                            .cornerRadius(10)
+//                    }
+                    //Spacer()
                     //vet inte varför det inte går att ha spacer här??
                 }.onAppear{
                     
@@ -252,6 +300,14 @@ struct ButtonView: View {
                 
                 Spacer()
             }
+        }.sheet(isPresented: $awayIsPresented ){
+            AwayMatchesView()
+        }
+        .sheet(isPresented: $isSwiftpresentet){
+            SponsorView()
+        }
+        .sheet(isPresented: $newsIsPresented){
+            NewsView()
         }
     }
 }
