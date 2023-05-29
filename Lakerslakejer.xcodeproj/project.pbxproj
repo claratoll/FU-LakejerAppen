@@ -34,6 +34,7 @@
 		4E12541E2A1762E2004B8B47 /* SponsorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E12541D2A1762E2004B8B47 /* SponsorView.swift */; };
 		4EAE5F3A2A1CA8390035EED6 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAE5F392A1CA8390035EED6 /* CardViewModel.swift */; };
 		613030542A1FC4D40001BFA5 /* AwayMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613030532A1FC4D40001BFA5 /* AwayMatchesView.swift */; };
+		613030562A252C6C0001BFA5 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613030552A252C6C0001BFA5 /* ContactView.swift */; };
 		61FC44652A129F1E00D7F502 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */; };
 		61FC44682A129F4700D7F502 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 61FC44672A129F4700D7F502 /* FirebaseAuth */; };
 		61FC446A2A129F4700D7F502 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 61FC44692A129F4700D7F502 /* FirebaseDatabase */; };
@@ -81,6 +82,7 @@
 		4E12541D2A1762E2004B8B47 /* SponsorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorView.swift; sourceTree = "<group>"; };
 		4EAE5F392A1CA8390035EED6 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		613030532A1FC4D40001BFA5 /* AwayMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayMatchesView.swift; sourceTree = "<group>"; };
+		613030552A252C6C0001BFA5 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61FC44772A12A58E00D7F502 /* UserSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpView.swift; sourceTree = "<group>"; };
 		61FC44792A13E73D00D7F502 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				1D85F8962A12396500EB810C /* Extension.swift */,
 				61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */,
 				613030532A1FC4D40001BFA5 /* AwayMatchesView.swift */,
+				613030552A252C6C0001BFA5 /* ContactView.swift */,
 			);
 			path = Lakerslakejer;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				B9721DCE2A14F63800493CF3 /* Coupon.swift in Sources */,
 				4EAE5F3A2A1CA8390035EED6 /* CardViewModel.swift in Sources */,
 				1D85F8972A12396500EB810C /* Extension.swift in Sources */,
+				613030562A252C6C0001BFA5 /* ContactView.swift in Sources */,
 				1D85294D2A1E498E00E19D7A /* ScannedView.swift in Sources */,
 				61FC44782A12A58E00D7F502 /* UserSignUpView.swift in Sources */,
 				1DBD55F22A13C28000CC31EA /* News.swift in Sources */,
