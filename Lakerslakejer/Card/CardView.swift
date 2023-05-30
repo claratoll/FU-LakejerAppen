@@ -33,7 +33,7 @@ struct CardView: View {
                
                
            }.onAppear(perform: cardVM.getDetails)
-           .frame(width: 350, height: 200)
+      .frame(width: 350, height: 200)
                .cornerRadius(12)
           
        }

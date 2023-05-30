@@ -156,49 +156,95 @@ struct ButtonView: View {
     @State var isSwiftpresentet = false
     @State var isContactPresented = false
     var body: some View {
-        
+        GeometryReader { geometry in
         VStack{
-            
-            
-//            Button {}
-//        label:{
-//
-//            if isCardViewVisible {
+            if geometry.size.width > geometry.size.height{
+                CardView(cardVM: cardVM)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
+            } else{
+                
+                //            Button {}
+                //        label:{
+                //
+                //            if isCardViewVisible {
                 CardView(cardVM: cardVM)                    .frame(width: 30, height: 200)
-//            }
-//
-//        }
-
-            Spacer()
-            NavigationView {
-                VStack{
-                    Spacer()
-                    
-                    //if user = admin -- scannerview
-                    //if user != admin -- couponview
-                    
-                    
-                    if !isAdmin{
-                        Button(action: {
-                            selectedTab = 1
-                            print("\(selectedTab)")
-                        }) {
+                //            }
+                //
+                //        }
+                
+                Spacer()
+                NavigationView {
+                    VStack{
+                        Spacer()
+                        
+                        //if user = admin -- scannerview
+                        //if user != admin -- couponview
+                        
+                        
+                        if !isAdmin{
+                            Button(action: {
+                                selectedTab = 1
+                                print("\(selectedTab)")
+                            }) {
+                                
+                                Text("Klippkort")
+                                    .frame(width: 200, height: 50)
+                                    .background(Color.ui.blue)
+                                    .foregroundColor(Color.ui.gray)
+                                    .cornerRadius(10)
+                            }
                             
-                            Text("Klippkort")
+                            
+                            Spacer()}
+                        else{
+                            Button(action: {
+                                selectedTab = 1
+                                
+                            }) {
+                                Text("ScannerView")
+                                    .frame(width: 200, height: 50)
+                                    .background(Color.ui.blue)
+                                    .foregroundColor(Color.ui.gray)
+                                    .cornerRadius(10)
+                            }
+                            Spacer()
+                            
+                        }
+                        
+                        Button(action: {newsIsPresented = true
+                            
+                        }){
+                            
+                            
+                            Text("Nyheter")
                                 .frame(width: 200, height: 50)
                                 .background(Color.ui.blue)
                                 .foregroundColor(Color.ui.gray)
                                 .cornerRadius(10)
                         }
                         
+                        Spacer()
                         
-                        Spacer()}
-                    else{
-                        Button(action: {
-                            selectedTab = 1
+                        Button(action: {awayIsPresented = true
                             
-                        }) {
-                            Text("ScannerView")
+                        }){
+                            Text("Borta Resor")
+                                .frame(width: 200, height: 50)
+                                .background(Color.ui.blue)
+                                .foregroundColor(Color.ui.gray)
+                                .cornerRadius(10)
+                            
+                        }
+                        
+                        
+                        
+                        Spacer()
+                        Button(action: { isSwiftpresentet = true
+                            
+                        }){
+                            
+                            Text("Sponsra Tifogruppen")
                                 .frame(width: 200, height: 50)
                                 .background(Color.ui.blue)
                                 .foregroundColor(Color.ui.gray)
@@ -206,83 +252,43 @@ struct ButtonView: View {
                         }
                         Spacer()
                         
-                    }
-                    
-                    Button(action: {newsIsPresented = true
-                 
-                    }){
-
                         
-                            Text("Nyheter")
+                        Button(action: { isContactPresented = true
+                            
+                        }){
+                            
+                            Text("Kontakta styrelsen")
                                 .frame(width: 200, height: 50)
                                 .background(Color.ui.blue)
                                 .foregroundColor(Color.ui.gray)
                                 .cornerRadius(10)
                         }
-
-                    Spacer()
-                    
-                    Button(action: {awayIsPresented = true
-                 
-                    }){
-                                           Text("Borta Resor")
-                                               .frame(width: 200, height: 50)
-                                               .background(Color.ui.blue)
-                                               .foregroundColor(Color.ui.gray)
-                                               .cornerRadius(10)
-                                             
-                                       }
-                    
- 
-                    
-                    Spacer()
-                    Button(action: { isSwiftpresentet = true
-                 
-                    }){
-                  
-                        Text("Sponsra Tifogruppen")
-                            .frame(width: 200, height: 50)
-                            .background(Color.ui.blue)
-                            .foregroundColor(Color.ui.gray)
-                            .cornerRadius(10)
-                    }
-                    Spacer()
-t
-                    
-                    Button(action: { isContactPresented = true
-                 
-                    }){
-                  
-                        Text("Kontakta styrelsen")
-                            .frame(width: 200, height: 50)
-                            .background(Color.ui.blue)
-                            .foregroundColor(Color.ui.gray)
-                            .cornerRadius(10)
-                    }
-                    Spacer()
-
-
-                }.onAppear{
-                    
-                    userVM.checkUserAuthorization { isAdmin in
+                        Spacer()
                         
-                        if isAdmin {
-                            print("User is an admin")
-                            DispatchQueue.main.async {
-                                self.isAdmin = true
-                            }
-                        } else {
-                            // print("User is not an admin")
-                            DispatchQueue.main.async {
-                                self.isAdmin = false}
+                        
+                    }.onAppear{
+                        
+                        userVM.checkUserAuthorization { isAdmin in
                             
+                            if isAdmin {
+                                print("User is an admin")
+                                DispatchQueue.main.async {
+                                    self.isAdmin = true
+                                }
+                            } else {
+                                // print("User is not an admin")
+                                DispatchQueue.main.async {
+                                    self.isAdmin = false}
+                                
+                            }
                         }
                     }
+                    
+                    
+                    
+                    Spacer()
                 }
-                
-                
-                
-                Spacer()
+            }
             }
         }.sheet(isPresented: $awayIsPresented ){
             AwayMatchesView()
