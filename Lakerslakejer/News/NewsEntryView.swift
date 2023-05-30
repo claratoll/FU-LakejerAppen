@@ -14,7 +14,8 @@ struct NewsEntryView: View {
 
 
     @EnvironmentObject var newsPlaceholder : NewsVM
-
+    
+    @State var isAdmin = false
     @State var content : String = ""
     @State var headline : String = ""
     @State var text : String = ""
@@ -64,12 +65,13 @@ struct NewsEntryView: View {
         }
 
         .onAppear(perform: setContent)
-        .navigationBarItems(trailing: Button("Spara nyhet"){
+        .navigationBarItems(trailing: isAdmin ? Button("Spara nyhet"){
             saveNews()
             presentationMode.wrappedValue.dismiss()
 
-        })
-
+        } : nil )
+       
+        
     }
 
     private func setContent(){
