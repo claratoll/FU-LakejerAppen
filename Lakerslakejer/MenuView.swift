@@ -296,7 +296,7 @@ struct ButtonView: View {
 //        .fullScreenCover(isPresented: $isSwiftPresented){
 //            SponsorView(isSwiftPresented: $isSwiftPresented)
 //
-//        }
+//        } vet inte varför det inte funkar
         .sheet(isPresented: $isSwiftPresented){
             SponsorView(isSwiftPresented: $isSwiftPresented)
                 
