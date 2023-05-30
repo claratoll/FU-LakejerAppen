@@ -10,33 +10,41 @@ import CodeScanner
 import SwiftUI
 import UserNotifications
 
+struct GameDetailView: View {
+    let game: Game
+    
+    var body: some View {
+        VStack {
+            Text(game.awayName)
+                .font(.title)
+            Text(game.awayDate.description)
+                .font(.subheadline)
+            // Add more details or customize the view as needed
+        }
+        .navigationTitle("Scanned members")
+    }
+}
+
+
 struct ScannedView: View {
     @StateObject var scanVM = ScanVM()
 
     @EnvironmentObject var members: Members
     @State private var isShowingScanner = false
 
-   // let filter: FilterType
 
     var body: some View {
         NavigationView {
             List {
                 ForEach(scanVM.games) { game in
-                    Text(game.awayName)
-                    Text(game.awayDate.description)
-                }
-                
-                
-                ForEach(filteredProspects) { prospect in
-                    VStack(alignment: .leading) {
-                        Text(prospect.memberNumber)
-                            .font(.headline)
-                        Text(prospect.couponNumber)
-                            .foregroundColor(.secondary)
+                    NavigationLink(destination: GameDetailView(game: game)){
+                        Text(game.awayName)
+                        Text(formattedDate(game.awayDate))
                     }
                 }
+                
             }
-            .navigationTitle(title)
+            .navigationTitle("Games")
             .toolbar {
                 Button {
                     isShowingScanner = true
@@ -52,10 +60,13 @@ struct ScannedView: View {
             scanVM.fetchGames()
         }
     }
-
-    var title: String = "Scanned members"
-
-    var filteredProspects: [Scan] {return members.memberArray}
+    
+    private func formattedDate(_ date: Date) -> String {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .short
+            return formatter.string(from: date)
+        }
 
     func handleScan(result: Result<ScanResult, ScanError>) {
         isShowingScanner = false
@@ -65,15 +76,11 @@ struct ScannedView: View {
             let details = result.string.components(separatedBy: "\n")
             guard details.count == 2 else { return }
 
-            var member = Scan()
-            member.memberNumber = details[0]
-            member.couponNumber = details[1]
-            var memberNr = details[0]
+            var memberNumber = details[0]
+            var couponNumber = details[1]
+
+            scanVM.saveMemberToFirebase(memberNr: Int(memberNumber) ?? 0000, couponNumber: Int(couponNumber) ?? 00)
             
-            
-            scanVM.saveMemberToFirebase(name: "clara", memberNr: Int(memberNr) ?? 0000)
-            
-            members.add(member)
         case .failure(let error):
             print("Scanning failed: \(error.localizedDescription)")
         }

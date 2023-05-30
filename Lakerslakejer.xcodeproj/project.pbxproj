@@ -14,7 +14,7 @@
 		00F0D7A62A1F917C00ECEB3A /* flyconfetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F0D7A52A1F917C00ECEB3A /* flyconfetti.json */; };
 		00F0D7A82A1F952500ECEB3A /* goldconfetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F0D7A72A1F952500ECEB3A /* goldconfetti.json */; };
 		1D8529492A1E47F900E19D7A /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8529482A1E47F900E19D7A /* CodeScanner */; };
-		1D85294B2A1E497600E19D7A /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85294A2A1E497600E19D7A /* Scan.swift */; };
+		1D85294B2A1E497600E19D7A /* BookedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85294A2A1E497600E19D7A /* BookedUser.swift */; };
 		1D85294D2A1E498E00E19D7A /* ScannedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85294C2A1E498E00E19D7A /* ScannedView.swift */; };
 		1D85F8972A12396500EB810C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D85F8962A12396500EB810C /* Extension.swift */; };
 		1D864A272A1F55C10028FB90 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D864A262A1F55C10028FB90 /* Game.swift */; };
@@ -61,7 +61,7 @@
 		00F0D7A32A1F8FCD00ECEB3A /* heavyconfetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heavyconfetti.json; sourceTree = "<group>"; };
 		00F0D7A52A1F917C00ECEB3A /* flyconfetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flyconfetti.json; sourceTree = "<group>"; };
 		00F0D7A72A1F952500ECEB3A /* goldconfetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = goldconfetti.json; sourceTree = "<group>"; };
-		1D85294A2A1E497600E19D7A /* Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
+		1D85294A2A1E497600E19D7A /* BookedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookedUser.swift; sourceTree = "<group>"; };
 		1D85294C2A1E498E00E19D7A /* ScannedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedView.swift; sourceTree = "<group>"; };
 		1D85F8962A12396500EB810C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		1D864A262A1F55C10028FB90 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		1D8414232A1BB3BC000FA14C /* QrScanner */ = {
 			isa = PBXGroup;
 			children = (
-				1D85294A2A1E497600E19D7A /* Scan.swift */,
+				1D85294A2A1E497600E19D7A /* BookedUser.swift */,
 				1D85294C2A1E498E00E19D7A /* ScannedView.swift */,
 				1D864A282A1F5F0A0028FB90 /* ScanVM.swift */,
 			);
@@ -369,7 +369,7 @@
 				61FC44782A12A58E00D7F502 /* UserSignUpView.swift in Sources */,
 				1DBD55F22A13C28000CC31EA /* News.swift in Sources */,
 				1DAFFEDB2A14D6DC00212C61 /* CardView.swift in Sources */,
-				1D85294B2A1E497600E19D7A /* Scan.swift in Sources */,
+				1D85294B2A1E497600E19D7A /* BookedUser.swift in Sources */,
 				B9721DBC2A1288F200493CF3 /* LoginView.swift in Sources */,
 				B93AC17E2A1DE24C0081C9D0 /* UserVM.swift in Sources */,
 				1D87FBD02A0CCEB70013AC3C /* Persistence.swift in Sources */,
