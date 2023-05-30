@@ -154,6 +154,7 @@ struct ButtonView: View {
     @State var newsIsPresented = false
     @State var awayIsPresented = false
     @State var isSwiftpresentet = false
+    @State var isContactPresented = false
     var body: some View {
         
         VStack{
@@ -246,6 +247,20 @@ struct ButtonView: View {
                             .cornerRadius(10)
                     }
                     Spacer()
+t
+                    
+                    Button(action: { isContactPresented = true
+                 
+                    }){
+                  
+                        Text("Kontakta styrelsen")
+                            .frame(width: 200, height: 50)
+                            .background(Color.ui.blue)
+                            .foregroundColor(Color.ui.gray)
+                            .cornerRadius(10)
+                    }
+                    Spacer()
+
 
                 }.onAppear{
                     
@@ -277,6 +292,9 @@ struct ButtonView: View {
         }
         .sheet(isPresented: $newsIsPresented){
             NewsView()
+        }
+        .sheet(isPresented: $isContactPresented){
+            ContactView()
         }
     }
 }
