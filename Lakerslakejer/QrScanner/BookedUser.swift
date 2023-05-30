@@ -7,22 +7,24 @@
 
 
 import SwiftUI
+import FirebaseFirestoreSwift
 
-struct Scan: Identifiable, Codable {
-    var id = UUID()
-    var memberNumber = "0000"
-    var couponNumber = "0"
-    //fileprivate(set) var isContacted = false
+struct BookedUser: Identifiable, Codable {
+    @DocumentID var id : String?
+    var memberNumber : Int
+    var couponNumber : Int
+    var booked: Bool = false
+    var scanned: Bool = false
 }
 
 
 @MainActor class Members: ObservableObject {
-    @Published private(set) var memberArray: [Scan]
+    @Published private(set) var memberArray: [BookedUser]
     let saveKey = "SavedData"
 
     init() {
         if let data = UserDefaults.standard.data(forKey: saveKey) {
-            if let decoded = try? JSONDecoder().decode([Scan].self, from: data) {
+            if let decoded = try? JSONDecoder().decode([BookedUser].self, from: data) {
                 memberArray = decoded
                 return
             }
@@ -38,7 +40,7 @@ struct Scan: Identifiable, Codable {
         }
     }
 
-    func add(_ prospect: Scan) {
+    func add(_ prospect: BookedUser) {
         memberArray.append(prospect)
         save()
     }
