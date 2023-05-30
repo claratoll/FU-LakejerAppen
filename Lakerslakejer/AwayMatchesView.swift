@@ -16,7 +16,7 @@ struct AwayMatchesView: View {
     let images = ["FHC", "IKO", "LH", "HV71", "LHC", "LIF", "MALMO", "MODO", "OHK", "RBK", "SAIK", "TIK"].map { ImageItem(id: $0, imageName: $0) }
     
     @State private var selectedImage: ImageItem? = nil
-    
+    @Binding var awayIsPresented : Bool
     var body: some View {
         NavigationView {
             ScrollView {
@@ -57,13 +57,26 @@ struct AwayMatchesView: View {
                 }
             }
             .navigationBarTitle("Bortaresor")
+            .toolbar{
+                ToolbarItem(placement: .bottomBar) {
+                                   Button(action: {
+                                       awayIsPresented = false
+                
+                                   }) {
+                                                     Image(systemName: "house.fill").foregroundColor(.ui.black)
+                                                 }
+                                             }
+                                         }
+                
+            
+            
         }
     }
 }
 
 struct AwayMatchesView_Previews: PreviewProvider {
     static var previews: some View {
-        AwayMatchesView()
+        AwayMatchesView(awayIsPresented: .constant(true))
     }
 }
 

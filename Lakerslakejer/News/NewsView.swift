@@ -13,6 +13,7 @@ import FirebaseAuth
 
 struct NewsView: View {
     @State var isAdmin = false
+    @Binding var newsIsPresented : Bool
     
     // här skapar vi listan för tableviewn
 
@@ -55,7 +56,17 @@ struct NewsView: View {
                             }
                         }
                     }
-                }
+                }.navigationTitle("Nyheter")
+                    .toolbar{
+                        ToolbarItem(placement: .bottomBar) {
+                                           Button(action: {
+                                           newsIsPresented = false
+                        
+                                           }) {
+                                               Image(systemName: "house.fill").foregroundColor(.ui.black)
+                                                         }
+                                                     }
+                                                 }
 
                 
                 .navigationBarItems(trailing: isAdmin ? NavigationLink(destination: CreateNewsView()) {
@@ -118,6 +129,7 @@ struct RowView: View {
              
                 
             }
+                            
             
             .padding(.top,10)
             .background(Rectangle()
@@ -139,7 +151,7 @@ struct RowView: View {
 
 struct NewsView_Previews: PreviewProvider {
     static var previews: some View {
-        NewsView().environmentObject(NewsVM())
+        NewsView(newsIsPresented: .constant(true)).environmentObject(NewsVM())
     }
 }
 

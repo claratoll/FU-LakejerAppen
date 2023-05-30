@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SponsorView: View {
+    @Binding var isSwiftPresented : Bool
     var body: some View {
         VStack {
             
@@ -28,7 +29,16 @@ struct SponsorView: View {
                     .font(.title)
                 Spacer()
                 Spacer()
-                    
+              
+            }  .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    Button(action: {
+                        isSwiftPresented = false
+                    }) {
+                        Image(systemName: "house.fill")
+                            .foregroundColor(.black)
+                    }
+                }
             }
                             
         }
@@ -38,7 +48,7 @@ struct SponsorView: View {
 
 struct SponsorView_Previews: PreviewProvider {
     static var previews: some View {
-        SponsorView()
+        SponsorView(isSwiftPresented: .constant(true))
     }
 }
 //

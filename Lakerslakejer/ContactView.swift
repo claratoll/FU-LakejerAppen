@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContactView: View {
     @State private var message: String = ""
+    @Binding var isContactPresented : Bool
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -36,6 +37,6 @@ struct ContactView: View {
 
 struct ContactView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactView()
+        ContactView(isContactPresented: .constant(true))
     }
 }
