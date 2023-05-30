@@ -30,7 +30,7 @@ struct MenuView: View {
                 
                 
                 TabView(selection: $selectedTab){
-                 ButtonView(selectedTab: $selectedTab)
+                    ButtonView(selectedTab: $selectedTab, cardVM: cardVM)
                     
                         .tabItem{
                             Label("Home", systemImage: "house.fill")
@@ -148,6 +148,7 @@ struct ButtonView: View {
     @State private var isCardViewVisible = true
     @Binding var selectedTab: Int
     @ObservedObject var userVM = UserVM()
+    @ObservedObject var cardVM : CardViewModel
     @State var isAdmin = false
     @State var isButtonview = true
     @State var newsIsPresented = false
@@ -159,17 +160,15 @@ struct ButtonView: View {
         VStack{
             
             
-            Button {}
-        label:{
-            //placeholder
-            
-            if isCardViewVisible {
-                CardView(cardVM:CardViewModel())                    .frame(width: 30, height: 200)
-            }
-            
-        }
-            
-            //.padding(.bottom, 20)
+//            Button {}
+//        label:{
+//
+//            if isCardViewVisible {
+                CardView(cardVM: cardVM)                    .frame(width: 30, height: 200)
+//            }
+//
+//        }
+
             Spacer()
             NavigationView {
                 VStack{
@@ -220,19 +219,7 @@ struct ButtonView: View {
                                 .foregroundColor(Color.ui.gray)
                                 .cornerRadius(10)
                         }
-//                    }
-                    
-//                    NavigationLink(destination: NewsView()
-//                                   //.navigationBarBackButtonHidden(true)
-//                        .onAppear { isCardViewVisible = false }
-//                        .onDisappear { isCardViewVisible = true}) {
-//                        Text("Nyheter")
-//                            .frame(width: 200, height: 50)
-//                            .background(Color.ui.blue)
-//                            .foregroundColor(Color.ui.gray)
-//                            .cornerRadius(10)
-//
-//                    }
+
                     Spacer()
                     
                     Button(action: {awayIsPresented = true
@@ -246,17 +233,7 @@ struct ButtonView: View {
                                              
                                        }
                     
-                    
-//
-//                    NavigationLink(destination: AwayMatchesView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}) {
-//                                            Text("Borta Resor")
-//                                                .frame(width: 200, height: 50)
-//                                                .background(Color.ui.blue)
-//                                                .foregroundColor(Color.ui.gray)
-//                                                .cornerRadius(10)
-//
-//                                        }
-
+ 
                     
                     Spacer()
                     Button(action: { isSwiftpresentet = true
@@ -270,6 +247,7 @@ struct ButtonView: View {
                             .cornerRadius(10)
                     }
                     Spacer()
+t
                     
                     Button(action: { isContactPresented = true
                  
@@ -282,15 +260,8 @@ struct ButtonView: View {
                             .cornerRadius(10)
                     }
                     Spacer()
-//                    NavigationLink(destination: NewsView().onAppear { isCardViewVisible = false } .onDisappear { isCardViewVisible = true}){
-//                        Text("Kontakta styrelsen")
-//                            .frame(width: 200, height: 50)
-//                            .background(Color.ui.blue)
-//                            .foregroundColor(Color.ui.gray)
-//                            .cornerRadius(10)
-//                    }
-                    //Spacer()
-                    //vet inte varför det inte går att ha spacer här??
+
+
                 }.onAppear{
                     
                     userVM.checkUserAuthorization { isAdmin in
