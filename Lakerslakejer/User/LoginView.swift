@@ -23,7 +23,7 @@ struct LoginView: View {
             VStack{
                 Spacer()
                 ZStack{
-                    LottieView(loopMode: .loop, animationName: "goldconfetti").frame(width: 40,height: 40)
+                    LottieView(loopMode: .playOnce, animationName: "goldconfetti").frame(width: 40,height: 40)
                         .scaleEffect(0.7)
 
                     Ellipse()
