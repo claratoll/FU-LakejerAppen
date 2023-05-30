@@ -10,7 +10,7 @@ import CoreData
 
 struct ContentView: View {
     @State var signedIn = false
-    
+    @ObservedObject var cardVM = CardViewModel()
     var body: some View {
         
         
@@ -19,10 +19,11 @@ struct ContentView: View {
             LoginView(signedIn: $signedIn)
         } else{
             MenuView(signedIn: $signedIn)
+               }
         }
         
         
-    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
