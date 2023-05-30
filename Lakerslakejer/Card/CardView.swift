@@ -11,6 +11,7 @@ struct CardView: View {
     
     @ObservedObject var cardVM : CardViewModel
     
+    
     var body: some View {
            ZStack {
                

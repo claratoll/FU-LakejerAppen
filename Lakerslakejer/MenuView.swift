@@ -152,8 +152,8 @@ struct ButtonView: View {
     @State var isAdmin = false
     @State var isButtonview = true
     @State var newsIsPresented = false
-    @State var awayIsPresented = false
-    @State var isSwiftpresentet = false
+    @State var awayIsPresented : Bool = false
+    @State var isSwiftPresented = false
     @State var isContactPresented = false
     var body: some View {
         GeometryReader { geometry in
@@ -240,7 +240,7 @@ struct ButtonView: View {
                         
                         
                         Spacer()
-                        Button(action: { isSwiftpresentet = true
+                        Button(action: { isSwiftPresented = true
                             
                         }){
                             
@@ -290,17 +290,22 @@ struct ButtonView: View {
                 }
             }
             }
-        }.sheet(isPresented: $awayIsPresented ){
-            AwayMatchesView()
+        }.fullScreenCover(isPresented: $awayIsPresented ){
+            AwayMatchesView(awayIsPresented: $awayIsPresented)
         }
-        .sheet(isPresented: $isSwiftpresentet){
-            SponsorView()
+//        .fullScreenCover(isPresented: $isSwiftPresented){
+//            SponsorView(isSwiftPresented: $isSwiftPresented)
+//
+//        }
+        .sheet(isPresented: $isSwiftPresented){
+            SponsorView(isSwiftPresented: $isSwiftPresented)
+                
         }
-        .sheet(isPresented: $newsIsPresented){
-            NewsView()
+        .fullScreenCover(isPresented: $newsIsPresented){
+            NewsView(newsIsPresented: $newsIsPresented)
         }
-        .sheet(isPresented: $isContactPresented){
-            ContactView()
+        .fullScreenCover(isPresented: $isContactPresented){
+            ContactView(isContactPresented: $isContactPresented)
         }
     }
 }
