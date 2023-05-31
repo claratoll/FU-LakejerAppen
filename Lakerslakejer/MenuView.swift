@@ -49,7 +49,7 @@ struct MenuView: View {
                     }
                     else{
                         
-                        ScannedView(scanVM: ScanVM()).environmentObject(Members())
+                        ScannedView(scanVM: ScanVM())
                             .tabItem{
                                 Label("Scanner", systemImage: "qrcode.viewfinder")
                             }
