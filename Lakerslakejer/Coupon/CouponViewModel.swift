@@ -18,9 +18,7 @@ class CouponViewModel: ObservableObject{
     let auth = Auth.auth()
     let db = Firestore.firestore()
     //@Binding var signedIn : Bool
-    
 
-    
     func getCoupons() {
         guard let currentUser = Auth.auth().currentUser else { return }
 
@@ -73,13 +71,9 @@ class CouponViewModel: ObservableObject{
                 }
                 
             }
-            
-            
-            
+
         }
-        
-        
-        
+
     }
     
 func getCurrentUserDetails (){
@@ -109,15 +103,8 @@ func getCurrentUserDetails (){
                         print("User document does not exist")
                     }
                 }
-    
-    
-    
-    
-    
+
         }
-        
-    
-    
     
 }
 
