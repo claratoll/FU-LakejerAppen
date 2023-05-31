@@ -42,7 +42,7 @@ struct GameDetailView: View {
             }
         }
         .sheet(isPresented: $isShowingScanner) {
-            CodeScannerView(codeTypes: [.qr], simulatedData: "2222/n22", completion: handleScan)
+            CodeScannerView(codeTypes: [.qr], simulatedData: "2222\n22", completion: handleScan)
         }
         .onAppear{
             scanVM.fetchScannedMembers(gamesID: game.id ?? "")
@@ -52,10 +52,12 @@ struct GameDetailView: View {
     
     func handleScan(result: Result<ScanResult, ScanError>) {
         isShowingScanner = false
+        
+        print("hej")
 
         switch result {
         case .success(let result):
-            let details = result.string.components(separatedBy: "/n")
+            let details = result.string.components(separatedBy: "\n")
             guard details.count == 2 else { return }
 
             var memberNumber = details[0]

@@ -22,8 +22,7 @@ struct CouponView: View {
     
     var body: some View {
        // let totalCoupons = 10 // Total number of coupons
-       
-       
+
         
         Grid(alignment: .center, horizontalSpacing: 1, verticalSpacing: 1) {
             Text(String(couponVM.coupons))
@@ -31,7 +30,6 @@ struct CouponView: View {
                 Text("Du har en till 10-Block som visas när din första är förbrukat")
                  
                         //jag hantera visst inte om man har mer än tjugo,... men tänker det händer inte
-                
             }
             
             Spacer()
@@ -51,7 +49,6 @@ struct CouponView: View {
                     }}}
             
             GridRow{
-                
                 
                 if couponVM.coupons > 10 {
                     ForEach(13..<16) { index in
@@ -105,17 +102,12 @@ struct CouponView: View {
             
             Spacer()
             VStack {
-    
-                
-                let coupontext = "\(couponVM.memberNr) + coupons left is \(couponVM.coupons)"
+                let coupontext = "\(couponVM.memberNr)\n\(couponVM.coupons)"
                // qrcoupon = coupontext
                 
                 if coupontext != ""{
                     Image(uiImage: UIImage(data: returnData(str: coupontext))!).resizable().frame(width: 150, height: 150)
                 }
-                
-             
-                
                 HStack{
                   Text("Medlem: ")
                     Text(String(couponVM.memberNr))}

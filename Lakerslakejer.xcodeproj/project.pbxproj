@@ -50,7 +50,6 @@
 		B970E65F2A1E2AB200664C32 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B970E65E2A1E2AB200664C32 /* FirebaseMessaging */; };
 		B9721DB82A12593F00493CF3 /* CouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DB72A12593F00493CF3 /* CouponView.swift */; };
 		B9721DBC2A1288F200493CF3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DBB2A1288F200493CF3 /* LoginView.swift */; };
-		B9721DCE2A14F63800493CF3 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DCD2A14F63800493CF3 /* Coupon.swift */; };
 		B9721DD02A14F64800493CF3 /* CouponViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DCF2A14F64800493CF3 /* CouponViewModel.swift */; };
 		B9B40FEB2A12349F009CA9C0 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B40FEA2A12349F009CA9C0 /* MenuView.swift */; };
 /* End PBXBuildFile section */
@@ -93,7 +92,6 @@
 		B970E6612A1F462A00664C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9721DB72A12593F00493CF3 /* CouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponView.swift; sourceTree = "<group>"; };
 		B9721DBB2A1288F200493CF3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		B9721DCD2A14F63800493CF3 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		B9721DCF2A14F64800493CF3 /* CouponViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponViewModel.swift; sourceTree = "<group>"; };
 		B9B40FEA2A12349F009CA9C0 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,7 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				B9721DB72A12593F00493CF3 /* CouponView.swift */,
-				B9721DCD2A14F63800493CF3 /* Coupon.swift */,
 				B9721DCF2A14F64800493CF3 /* CouponViewModel.swift */,
 			);
 			path = Coupon;
@@ -361,7 +358,6 @@
 				B9721DD02A14F64800493CF3 /* CouponViewModel.swift in Sources */,
 				B93AC17C2A1C89B10081C9D0 /* NotificationManager.swift in Sources */,
 				00F0D7A02A1F8CDF00ECEB3A /* LottieView.swift in Sources */,
-				B9721DCE2A14F63800493CF3 /* Coupon.swift in Sources */,
 				4EAE5F3A2A1CA8390035EED6 /* CardViewModel.swift in Sources */,
 				1D85F8972A12396500EB810C /* Extension.swift in Sources */,
 				613030562A252C6C0001BFA5 /* ContactView.swift in Sources */,
