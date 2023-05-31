@@ -17,41 +17,71 @@ struct CardView: View {
             ZStack {
                 if geometry.size.width > geometry.size.height{
            
-                    LinearGradient(gradient: Gradient(colors: [.ui.orange,.ui.blue]), startPoint: .topTrailing, endPoint: .bottomLeading)
-                        .frame(width: 500, height: 300)
+//                    LinearGradient(gradient: Gradient(colors: [.ui.orange,.ui.blue]), startPoint: .topTrailing, endPoint: .bottomLeading)
+//                        .frame(width: 500, height: 300)
+//                        .cornerRadius(12)
+//
+                    Image("MedlemLakersLakejer 1")
+                        .frame(width: 600, height: 350)
                         .cornerRadius(12)
-                  
+                    
+                    Text(String("Medlem"))
+                        .position(x:170, y: 40)
+                        .foregroundColor(.white)
+                        .italic()
+                    
+                    
                     Text(String(cardVM.name))
-                        .position(x:170, y: 70)
-                        .foregroundColor(.white)
-                    
-                    Text(String(cardVM.memberNr))
-                        .position(x:550, y: 70)
-                        .foregroundColor(.white)
-                    
-                    Text(Date.now, format: .dateTime.year())
                         .position(x:170, y: 290)
                         .foregroundColor(.white)
+                        .italic()
+                    
+                    Text("Lakej # " + String(cardVM.memberNr))
+                        .position(x:550, y: 290)
+                        .foregroundColor(.white)
+                        .italic()
+                    
+//                    Text(Date.now, format: .dateTime.year())
+//                        .position(x:550, y: 40)
+//                        .foregroundColor(.white)
+//                        .italic()
+                    Text("Giltigt t.o.m. 2023-04-30")
+                        .position(x:550, y: 40)
+                        .foregroundColor(.white)
+                        .italic()
+               
                     
                 }
                 else{
                    
-                    LinearGradient(gradient: Gradient(colors: [.ui.orange,.ui.blue]), startPoint: .topLeading, endPoint: .bottomLeading)
+//                    LinearGradient(gradient: Gradient(colors: [.ui.orange,.ui.blue]), startPoint: .topLeading, endPoint: .bottomLeading)
+                    Image("MedlemLakersLakejer 2")
                         .frame(width: 350, height: 200)
                         .cornerRadius(12)
-                  
+                    
+                    Text(String("Medlem"))
+                        .position(x:50, y: 15)
+                        .foregroundColor(.white)
+                        .italic()
+                        .font(.caption)
                     
                     Text(String(cardVM.name))
-                        .position(x:70, y: 30)
+                        .position(x:50, y: 170)
                         .foregroundColor(.white)
+                        .italic()
                     
-                    Text(String(cardVM.memberNr))
-                        .position(x:250, y: 30)
+                    Text("Lakej # " + String(cardVM.memberNr))
+                        .position(x:260, y: 170)
                         .foregroundColor(.white)
+                        .italic()
+           
                     
-                    Text(Date.now, format: .dateTime.year())
-                        .position(x:70, y: 170)
+//                    Text(Date.now, format: .dateTime.year())
+                    Text("Giltigt t.o.m. 2023-04-30")
+                        .position(x:250, y: 15)
                         .foregroundColor(.white)
+                        .italic()
+                        .font(.caption)
                     
                 }
             }
