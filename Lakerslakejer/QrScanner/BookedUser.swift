@@ -17,7 +17,7 @@ struct BookedUser: Identifiable, Codable {
     var scanned: Bool = false
 }
 
-
+/*
 @MainActor class Members: ObservableObject {
     @Published private(set) var memberArray: [BookedUser]
     let saveKey = "SavedData"
@@ -47,3 +47,4 @@ struct BookedUser: Identifiable, Codable {
 
     
 }
+*/
