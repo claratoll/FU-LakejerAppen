@@ -43,13 +43,20 @@ class ScanVM: ObservableObject {
         }
     }
     
+    func formattedDate(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter.string(from: date)
+    }
     
-    func saveMemberToFirebase(memberNr: Int, couponNumber: Int) {
-        var game = "2YoJFhbZkCsEL6DOEFtt"
+    
+    func saveMemberToFirebase(memberNr: Int, couponNumber: Int, gameID: String) {
+      //  var game = "2YoJFhbZkCsEL6DOEFtt"
         
         let user = BookedUser(memberNumber: memberNr, couponNumber: couponNumber, scanned: true)
         
-        let gameRef = db.collection("games").document(game).collection("bookedUser")
+        let gameRef = db.collection("games").document(gameID).collection("bookedUser")
         
         do {
             try gameRef.addDocument(from: user)

@@ -12,62 +12,43 @@ import UserNotifications
 
 struct GameDetailView: View {
     let game: Game
+    @StateObject var scanVM = ScanVM()
+    @State private var isShowingScanner = false
     
     var body: some View {
         VStack {
             Text(game.awayName)
                 .font(.title)
-            Text(game.awayDate.description)
+            Text(scanVM.formattedDate(game.awayDate))
                 .font(.subheadline)
-            // Add more details or customize the view as needed
-        }
-        .navigationTitle("Scanned members")
-    }
-}
-
-
-struct ScannedView: View {
-    @StateObject var scanVM = ScanVM()
-
-    @EnvironmentObject var members: Members
-    @State private var isShowingScanner = false
-
-
-    var body: some View {
-        NavigationView {
-            List {
-                ForEach(scanVM.games) { game in
-                    NavigationLink(destination: GameDetailView(game: game)){
-                        Text(game.awayName)
-                        Text(formattedDate(game.awayDate))
-                    }
-                }
+                .padding(.bottom, 20)
+            
+            ForEach(scanVM.bookedUser) { member in
+                Text("Member Number: \(member.memberNumber)")
+                Text("Booked: \(member.booked.description)")
+                Text("Scanned: \(member.scanned.description)")
+                    .padding(.bottom, 20)
                 
             }
-            .navigationTitle("Games")
-            .toolbar {
-                Button {
-                    isShowingScanner = true
-                } label: {
-                    Label("Scan", systemImage: "qrcode.viewfinder")
-                }
-            }
-            .sheet(isPresented: $isShowingScanner) {
-                CodeScannerView(codeTypes: [.qr], simulatedData: "0000\n0", completion: handleScan)
+            Spacer()
+        }
+        .navigationTitle("Scanned members")
+        .toolbar {
+            Button {
+                isShowingScanner = true
+            } label: {
+                Label("Scan", systemImage: "qrcode.viewfinder")
             }
         }
+        .sheet(isPresented: $isShowingScanner) {
+            CodeScannerView(codeTypes: [.qr], simulatedData: "0000\n0", completion: handleScan)
+        }
         .onAppear{
-            scanVM.fetchGames()
+            scanVM.fetchScannedMembers(gamesID: game.id ?? "")
+            
         }
     }
     
-    private func formattedDate(_ date: Date) -> String {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .medium
-            formatter.timeStyle = .short
-            return formatter.string(from: date)
-        }
-
     func handleScan(result: Result<ScanResult, ScanError>) {
         isShowingScanner = false
 
@@ -76,13 +57,40 @@ struct ScannedView: View {
             let details = result.string.components(separatedBy: "\n")
             guard details.count == 2 else { return }
 
-            var memberNumber = details[0]
-            var couponNumber = details[1]
+            let memberNumber = details[0]
+            let couponNumber = details[1]
 
-            scanVM.saveMemberToFirebase(memberNr: Int(memberNumber) ?? 0000, couponNumber: Int(couponNumber) ?? 00)
+            scanVM.saveMemberToFirebase(memberNr: Int(memberNumber) ?? 0000, couponNumber: Int(couponNumber) ?? 00, gameID: game.id ?? "")
             
         case .failure(let error):
             print("Scanning failed: \(error.localizedDescription)")
+        }
+    }
+}
+
+
+struct ScannedView: View {
+    @StateObject var scanVM = ScanVM()
+
+    @EnvironmentObject var members: Members
+    
+
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(scanVM.games) { game in
+                    NavigationLink(destination: GameDetailView(game: game)){
+                        Text(game.awayName)
+                        Text(scanVM.formattedDate(game.awayDate))
+                    }
+                }
+                
+            }
+            .navigationTitle("Games")
+            
+        }
+        .onAppear{
+            scanVM.fetchGames()
         }
     }
 }
