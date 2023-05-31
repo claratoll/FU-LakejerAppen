@@ -155,24 +155,25 @@ struct ButtonView: View {
     @State var awayIsPresented : Bool = false
     @State var isSwiftPresented = false
     @State var isContactPresented = false
+
+    
+    
     var body: some View {
         GeometryReader { geometry in
         VStack{
             if geometry.size.width > geometry.size.height{
+              
                 CardView(cardVM: cardVM)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
             } else{
-                
-                //            Button {}
-                //        label:{
-                //
-                //            if isCardViewVisible {
-                CardView(cardVM: cardVM)                    .frame(width: 30, height: 200)
-                //            }
-                //
-                //        }
-                
+          
+                CardView(cardVM: cardVM)
+                    
+                    .frame(width: 200, height: 200)
+                    .padding()
+                    .offset(x:-73, y:2)
+           
                 Spacer()
                 NavigationView {
                     VStack{
@@ -293,14 +294,14 @@ struct ButtonView: View {
         }.fullScreenCover(isPresented: $awayIsPresented ){
             AwayMatchesView(awayIsPresented: $awayIsPresented)
         }
-//        .fullScreenCover(isPresented: $isSwiftPresented){
+        .fullScreenCover(isPresented: $isSwiftPresented){
+            SponsorView(isSwiftPresented: $isSwiftPresented)
+        }
+//        } vet inte varför det inte funkar
+//        .sheet(isPresented: $isSwiftPresented){
 //            SponsorView(isSwiftPresented: $isSwiftPresented)
 //
-//        } vet inte varför det inte funkar
-        .sheet(isPresented: $isSwiftPresented){
-            SponsorView(isSwiftPresented: $isSwiftPresented)
-                
-        }
+//        }
         .fullScreenCover(isPresented: $newsIsPresented){
             NewsView(newsIsPresented: $newsIsPresented)
         }

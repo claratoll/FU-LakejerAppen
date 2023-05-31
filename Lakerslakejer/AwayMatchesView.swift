@@ -59,15 +59,15 @@ struct AwayMatchesView: View {
             .navigationBarTitle("Bortaresor")
             .toolbar{
                 ToolbarItem(placement: .bottomBar) {
-                                   Button(action: {
-                                       awayIsPresented = false
-                
-                                   }) {
-                                                     Image(systemName: "house.fill").foregroundColor(.ui.black)
-                                                 }
-                                             }
-                                         }
-                
+                    Button(action: {
+                        awayIsPresented = false
+                        
+                    }) {
+                        Image(systemName: "house.fill").foregroundColor(.ui.black)
+                    }
+                }
+            }
+            
             
             
         }

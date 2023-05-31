@@ -57,7 +57,7 @@ struct NewsView: View {
                         }
                     }
                 }.navigationTitle("Nyheter")
-                    .toolbar{
+                .toolbar{
                         ToolbarItem(placement: .bottomBar) {
                                            Button(action: {
                                            newsIsPresented = false
