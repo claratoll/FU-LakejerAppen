@@ -86,6 +86,7 @@ struct CardView: View {
                 }
             }
            }.onAppear(perform: cardVM.getDetails)
+            //.onAppear(perform: cardVM.dataMatches) if you want to add more data
               
        }
    }
