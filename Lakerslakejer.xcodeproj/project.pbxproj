@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0070B5D52A28E44600583A60 /* NewsImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070B5D42A28E44600583A60 /* NewsImagePicker.swift */; };
 		00F0D79D2A1F8CA700ECEB3A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 00F0D79C2A1F8CA700ECEB3A /* Lottie */; };
 		00F0D7A02A1F8CDF00ECEB3A /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0D79F2A1F8CDF00ECEB3A /* LottieView.swift */; };
 		00F0D7A22A1F8E8D00ECEB3A /* cconfetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F0D7A12A1F8E8D00ECEB3A /* cconfetti.json */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0070B5D42A28E44600583A60 /* NewsImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsImagePicker.swift; sourceTree = "<group>"; };
 		00F0D79F2A1F8CDF00ECEB3A /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		00F0D7A12A1F8E8D00ECEB3A /* cconfetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cconfetti.json; sourceTree = "<group>"; };
 		00F0D7A32A1F8FCD00ECEB3A /* heavyconfetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heavyconfetti.json; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				1DBD55EF2A13C24300CC31EA /* CreateNewsView.swift */,
+				0070B5D42A28E44600583A60 /* NewsImagePicker.swift */,
 				1DBD55F12A13C28000CC31EA /* News.swift */,
 				1DBD55F32A13C29700CC31EA /* NewsVM.swift */,
 				1DAFFEDC2A14D86100212C61 /* NewsEntryView.swift */,
@@ -352,6 +355,7 @@
 				61FC44802A13FAC100D7F502 /* UserRegisterVM.swift in Sources */,
 				1D864A292A1F5F0A0028FB90 /* ScanVM.swift in Sources */,
 				B9B40FEB2A12349F009CA9C0 /* MenuView.swift in Sources */,
+				0070B5D52A28E44600583A60 /* NewsImagePicker.swift in Sources */,
 				1D864A272A1F55C10028FB90 /* Game.swift in Sources */,
 				4E12541E2A1762E2004B8B47 /* SponsorView.swift in Sources */,
 				1DAFFEDF2A14D88700212C61 /* NewsView.swift in Sources */,

@@ -14,6 +14,7 @@ struct CreateNewsView: View {
     @StateObject var newsVM = NewsVM()
    // @State var newsImage: UIImage?
    // @State var retPictures = [UIImage]()
+    @State var picturePickerShow = false
     
     var body: some View {
         VStack {
@@ -26,7 +27,18 @@ struct CreateNewsView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .lineLimit(15, reservesSpace: true)
                 .padding()
-             
+            
+            Button{
+                picturePickerShow = true
+            } label: {
+                Text("Välj en bild här för din nyhet")
+            }
+            .frame(width: 360, height: 62)
+            .foregroundColor(.white)
+            .background(Color.orange)
+            .cornerRadius(12)
+            .padding(30)
+            
             Spacer()
             Button("Spara") {
             //    let newNews = News(date: Date(), headLine: headline, newsText: newsText)
@@ -37,14 +49,19 @@ struct CreateNewsView: View {
                 presentationMode.wrappedValue.dismiss()
             }
             .padding()
+            .sheet(isPresented: $picturePickerShow, onDismiss: nil){
+                NewsImagePicker()
+            }
         }
         .background(Color.ui.blue)
+       
     }
     
     
 }
 
-/*func uploadPhotoToFirebase() {
+/*
+ func uploadPhotoToFirebase() {
     
     guard selectedImage != nil else {
         return
@@ -123,7 +140,6 @@ struct CreateNewsView: View {
  }
  
  }
- // visa bilderna
  
  
  }
