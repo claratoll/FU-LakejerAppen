@@ -56,10 +56,61 @@ class ScanVM: ObservableObject {
         
         let gameRef = db.collection("games").document(gameID).collection("bookedUser")
         
-        do {
-            try gameRef.addDocument(from: user)
-        } catch {
-            print("error saving to db")
+        // Query to check if the user already exists
+        gameRef.whereField("memberNumber", isEqualTo: memberNr).getDocuments { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("Error fetching user documents: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+            
+            if documents.isEmpty {
+                // User does not exist, save the member to Firebase
+                do {
+                    try gameRef.addDocument(from: user)
+                    self.updateCouponsOnFirebase(memberNr: memberNr)
+                } catch {
+                    print("Error saving to db: \(error)")
+                }
+            } else {
+                // User already exists, handle accordingly (e.g., show an alert)
+                print("User already scanned")
+            }
+        }
+    }
+    
+    
+    func updateCouponsOnFirebase(memberNr: Int){
+        let userRef = db.collection("users")
+        
+        userRef.whereField("memberNr", isEqualTo: memberNr).getDocuments { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("Error fetching user documents")
+                return
+            }
+            
+            
+            if let document = documents.first {
+                do {
+                    var user: User? = try document.data(as: User.self)
+                    if let coupons = user?.coupons, coupons > 0 {
+                        // Coupons are greater than 0, decrement the value by 1
+                        user?.coupons -= 1
+                        print("One coupon used")
+                    } else {
+                        // Coupons are 0, handle accordingly (e.g., show "no more coupons" message)
+                        print("No more coupons")
+                    }
+                    
+                    if let user = user {
+                        try document.reference.setData(from: user)
+                    }
+                } catch {
+                    print("Error updating user document: \(error)")
+                }
+            } else {
+                // Member not found, handle accordingly
+                print("Member not found")
+            }
         }
     }
     
