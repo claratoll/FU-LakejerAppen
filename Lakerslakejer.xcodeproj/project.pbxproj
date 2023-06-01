@@ -51,6 +51,7 @@
 		B9721DB82A12593F00493CF3 /* CouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DB72A12593F00493CF3 /* CouponView.swift */; };
 		B9721DBC2A1288F200493CF3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DBB2A1288F200493CF3 /* LoginView.swift */; };
 		B9721DD02A14F64800493CF3 /* CouponViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9721DCF2A14F64800493CF3 /* CouponViewModel.swift */; };
+		B99C25662A286F9400774594 /* AllMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C25652A286F9400774594 /* AllMatchesView.swift */; };
 		B9B40FEB2A12349F009CA9C0 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B40FEA2A12349F009CA9C0 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		B9721DB72A12593F00493CF3 /* CouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponView.swift; sourceTree = "<group>"; };
 		B9721DBB2A1288F200493CF3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B9721DCF2A14F64800493CF3 /* CouponViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponViewModel.swift; sourceTree = "<group>"; };
+		B99C25652A286F9400774594 /* AllMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMatchesView.swift; sourceTree = "<group>"; };
 		B9B40FEA2A12349F009CA9C0 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +189,7 @@
 				61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */,
 				613030532A1FC4D40001BFA5 /* AwayMatchesView.swift */,
 				613030552A252C6C0001BFA5 /* ContactView.swift */,
+				B99C25652A286F9400774594 /* AllMatchesView.swift */,
 			);
 			path = Lakerslakejer;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 			files = (
 				B9721DB82A12593F00493CF3 /* CouponView.swift in Sources */,
 				61FC44802A13FAC100D7F502 /* UserRegisterVM.swift in Sources */,
+				B99C25662A286F9400774594 /* AllMatchesView.swift in Sources */,
 				1D864A292A1F5F0A0028FB90 /* ScanVM.swift in Sources */,
 				B9B40FEB2A12349F009CA9C0 /* MenuView.swift in Sources */,
 				1D864A272A1F55C10028FB90 /* Game.swift in Sources */,

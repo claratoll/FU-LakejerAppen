@@ -177,6 +177,14 @@ struct ButtonView: View {
                 Spacer()
                 NavigationView {
                     VStack{
+                        
+                        NavigationLink(destination: AllMatchesView()) {
+                                          Text("KAllat")
+                                              .frame(width: 200, height: 50)
+                                              .background(Color.ui.blue)
+                                              .foregroundColor(Color.ui.gray)
+                                              .cornerRadius(10)
+                                      }
                         Spacer()
                         
                         //if user = admin -- scannerview
@@ -264,7 +272,8 @@ struct ButtonView: View {
                                 .foregroundColor(Color.ui.gray)
                                 .cornerRadius(10)
                         }
-                        Spacer()
+                       // Spacer()
+                     
                         
                         
                     }.onAppear{
