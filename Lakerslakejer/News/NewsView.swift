@@ -90,7 +90,7 @@ struct RowView: View {
            Color(.white)
             
             VStack(alignment: .leading, spacing: 5.0){
-                Image(newsEntry.image ?? "eventgruppen")
+                Image(newsEntry.image ?? "image")
                     .frame(width: 310, height: 200)
                     .aspectRatio(contentMode: .fill)
                     .cornerRadius(10)
@@ -146,7 +146,35 @@ struct RowView: View {
     }
 }
 
-
+/*func uploadPhotoToFirebase() {
+    
+    guard selectedImage != nil else {
+        return
+    }
+    
+    // Ref
+    let storageRef = Storage.storage().reference()
+    
+    // Omvandla bild till data(storlek)
+    let imageData = selectedImage!.jpegData(compressionQuality: 0.8)
+    
+    guard imageData != nil else {
+        return
+    }
+    // Bildfilens path och namn
+    let fileRef = storageRef.child("images/\(UUID().uuidString).jpg")
+    
+    
+    
+    // Ladda upp bilden
+    let Upload = fileRef.putData(imageData!, metadata: nil) { metadata, error in
+        if error == nil && metadata != nil {
+            // Spara en referens i firebase
+        }
+    }
+    
+}
+*/
 
 
 struct NewsView_Previews: PreviewProvider {

@@ -28,7 +28,8 @@ class NewsVM : ObservableObject {
         let newsData: [String: Any] = [
                     "date": date,
                     "headLine": headline,
-                    "newsText": text
+                    "newsText": text,
+                    "image": text
                 ]
                 
         newsRef.addDocument(data: newsData) { error in
