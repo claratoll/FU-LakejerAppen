@@ -14,7 +14,6 @@ struct MenuView: View {
     @ObservedObject var couponVM = CouponViewModel()
     @ObservedObject var cardVM = CardViewModel()
     @ObservedObject var userVM = UserVM()
-    //@ObservedObject var scanVM = ScanVM
     @State var triggerCouponView = false
     @State private var selectedTab = 0
     @StateObject private var notificationManager = NotificationManager()
@@ -178,13 +177,14 @@ struct ButtonView: View {
                 NavigationView {
                     VStack{
                         
-                        NavigationLink(destination: AllMatchesView()) {
-                                          Text("KAllat")
-                                              .frame(width: 200, height: 50)
-                                              .background(Color.ui.blue)
-                                              .foregroundColor(Color.ui.gray)
-                                              .cornerRadius(10)
-                                      }
+// Bara om vi få keyn i tid
+//                        NavigationLink(destination: AllMatchesView()) {
+//                                          Text("All matches")
+//                                              .frame(width: 200, height: 50)
+//                                              .background(Color.ui.blue)
+//                                              .foregroundColor(Color.ui.gray)
+//                                              .cornerRadius(10)
+//                                      }
                         Spacer()
                         
                         //if user = admin -- scannerview
@@ -306,11 +306,7 @@ struct ButtonView: View {
         .fullScreenCover(isPresented: $isSwiftPresented){
             SponsorView(isSwiftPresented: $isSwiftPresented)
         }
-//        } vet inte varför det inte funkar
-//        .sheet(isPresented: $isSwiftPresented){
-//            SponsorView(isSwiftPresented: $isSwiftPresented)
-//
-//        }
+
         .fullScreenCover(isPresented: $newsIsPresented){
             NewsView(newsIsPresented: $newsIsPresented)
         }
