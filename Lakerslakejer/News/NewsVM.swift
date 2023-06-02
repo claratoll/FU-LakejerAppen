@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseMessaging
 
 class NewsVM : ObservableObject {
     
@@ -96,6 +97,23 @@ class NewsVM : ObservableObject {
         }
         
     }
+   /* func sendNotification() {
+        let message = [
+            "to": "<FCM-token>",
+            "notification": [
+                "title": "",
+                "body": ""
+            ]
+        ] as [String: Any]
+
+        Messaging.messaging().sendMessage(message) { error in
+            if let error = error {
+                print("Failed to send message: \(error.localizedDescription)")
+            } else {
+                print("Message sent successfully.")
+            }
+        }
+    }*/
     
     
     
