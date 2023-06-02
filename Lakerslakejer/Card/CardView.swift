@@ -17,11 +17,7 @@ struct CardView: View {
             ZStack {
                 if geometry.size.width > geometry.size.height{
            
-//                    LinearGradient(gradient: Gradient(colors: [.ui.orange,.ui.blue]), startPoint: .topTrailing, endPoint: .bottomLeading)
-//                        .frame(width: 500, height: 300)
-//                        .cornerRadius(12)
-//
-                    Image("MedlemLakersLakejer 1")
+                   Image("MedlemLakersLakejer 1")
                         .frame(width: 600, height: 350)
                         .cornerRadius(12)
                     
@@ -41,10 +37,7 @@ struct CardView: View {
                         .foregroundColor(.white)
                         .italic()
                     
-//                    Text(Date.now, format: .dateTime.year())
-//                        .position(x:550, y: 40)
-//                        .foregroundColor(.white)
-//                        .italic()
+
                     Text("Giltigt t.o.m. 2023-04-30")
                         .position(x:550, y: 40)
                         .foregroundColor(.white)
@@ -54,7 +47,7 @@ struct CardView: View {
                 }
                 else{
                    
-//                    LinearGradient(gradient: Gradient(colors: [.ui.orange,.ui.blue]), startPoint: .topLeading, endPoint: .bottomLeading)
+
                     Image("MedlemLakersLakejer 2")
                         .frame(width: 350, height: 200)
                         .cornerRadius(12)
@@ -76,7 +69,7 @@ struct CardView: View {
                         .italic()
            
                     
-//                    Text(Date.now, format: .dateTime.year())
+
                     Text("Giltigt t.o.m. 2023-04-30")
                         .position(x:250, y: 15)
                         .foregroundColor(.white)
