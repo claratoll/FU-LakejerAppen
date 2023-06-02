@@ -90,7 +90,7 @@ struct RowView: View {
            Color(.white)
             
             VStack(alignment: .leading, spacing: 5.0){
-                Image(newsEntry.image ?? "eventgruppen")
+                Image(newsEntry.image ?? "image")
                     .frame(width: 310, height: 200)
                     .aspectRatio(contentMode: .fill)
                     .cornerRadius(10)
