@@ -6,14 +6,17 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseStorage
+import FirebaseFirestore
 
 struct CreateNewsView: View {
     @State private var headline: String = ""
     @State private var newsText: String = ""
     @Environment(\.presentationMode) var presentationMode
     @StateObject var newsVM = NewsVM()
-   // @State var newsImage: UIImage?
-   // @State var retPictures = [UIImage]()
+    @State var selectedImage: UIImage?
+    // @State var retPictures = [UIImage]()
     @State var picturePickerShow = false
     
     var body: some View {
@@ -39,9 +42,24 @@ struct CreateNewsView: View {
             .cornerRadius(12)
             .padding(30)
             
+            if selectedImage != nil{
+                Button{
+                uploadPhotoToFirebase()
+                    
+                } label: {
+                    Text("Ladda upp bilden")
+                }
+                .frame(width: 360, height: 62)
+                .foregroundColor(.white)
+                .background(Color.green)
+                .cornerRadius(12)
+                .padding(30)
+                
+            }
             Spacer()
+            
             Button("Spara") {
-            //    let newNews = News(date: Date(), headLine: headline, newsText: newsText)
+                //    let newNews = News(date: Date(), headLine: headline, newsText: newsText)
                 //Sends the news to the VM
                 newsVM.saveToFirebase(headline: headline, date: Date(), text: newsText)
                 
@@ -50,18 +68,17 @@ struct CreateNewsView: View {
             }
             .padding()
             .sheet(isPresented: $picturePickerShow, onDismiss: nil){
-                NewsImagePicker()
+                NewsImagePicker(selectedImage: $selectedImage, picturePickerShow: $picturePickerShow)
             }
         }
         .background(Color.ui.blue)
-       
+        
     }
     
     
 }
 
-/*
- func uploadPhotoToFirebase() {
+func uploadPhotoToFirebase() {
     
     guard selectedImage != nil else {
         return
@@ -77,7 +94,8 @@ struct CreateNewsView: View {
         return
     }
     // Bildfilens path och namn
-    let fileRef = storageRef.child("images/\(UUID().uuidString).jpg")
+    let paht = "images/\(UUID().uuidString).jpg")
+    let fileRef = storageRef.child(path)
     
     
     
@@ -85,12 +103,13 @@ struct CreateNewsView: View {
     let Upload = fileRef.putData(imageData!, metadata: nil) { metadata, error in
         if error == nil && metadata != nil {
             // Spara en referens i firebase
+            db.collection("images").document().setData(["url":path])
         }
     }
     
 }
  
- fun getPhotosFromFirebase(){
+/* func getPhotosFromFirebase(){
  
  // Hämta datan från databasen
  let db = Firestore.firestore()
