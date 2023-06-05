@@ -15,6 +15,10 @@ struct GameDetailView: View {
     @StateObject var scanVM = ScanVM()
     @State private var isShowingScanner = false
     
+    //visar först aktuella matcher och därefter vilka användare som är anmälda till varje specifik match
+    
+    //admin kan scanna användare som läggs till varje specifik match
+    
     var body: some View {
         VStack {
             Text(game.awayName)
@@ -52,8 +56,6 @@ struct GameDetailView: View {
     
     func handleScan(result: Result<ScanResult, ScanError>) {
         isShowingScanner = false
-        
-        print("hej")
 
         switch result {
         case .success(let result):
@@ -64,8 +66,10 @@ struct GameDetailView: View {
             let couponNumber = details[1]
             print(memberNumber)
             print(couponNumber)
+            
+            //om lyckad scan så läggs användaren till på firebase
 
-            scanVM.saveMemberToFirebase(memberNr: Int(memberNumber) ?? 1111, couponNumber: Int(couponNumber) ?? 11, gameID: game.id ?? "", booked: false)
+            scanVM.saveMemberToFirebase(memberNr: Int(memberNumber) ?? 1111, couponNumber: Int(couponNumber) ?? 11, gameID: game.id ?? "", booked: true, scanned: true)
             
         case .failure(let error):
             print("Scanning failed: \(error.localizedDescription)")
