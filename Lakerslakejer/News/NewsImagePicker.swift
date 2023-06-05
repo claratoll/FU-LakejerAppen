@@ -30,8 +30,10 @@ struct NewsImagePicker: UIViewControllerRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator()
+        return Coordinator(self)
     }
+    
+    
     
     class Coordinator: NSObject, UIImagePickerControllerDelegate,
                        UINavigationControllerDelegate{
@@ -64,5 +66,6 @@ struct NewsImagePicker: UIViewControllerRepresentable {
         }
     }
     
-    
+
 }
+
