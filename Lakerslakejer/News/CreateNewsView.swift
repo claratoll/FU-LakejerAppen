@@ -44,7 +44,7 @@ struct CreateNewsView: View {
             
             // Visas endast om du valt en bild, endast då kan du ladda upp bilden på storage
             
-         //   if selectedImage != nil{
+           // if selectedImage != nil{
                 Button{
                 uploadPhotoToFirebase()
                     
@@ -57,7 +57,7 @@ struct CreateNewsView: View {
                 .cornerRadius(12)
                 .padding(-10)
                 
-          //  }
+           // }
             Spacer()
             
             Button("Spara") {
@@ -70,7 +70,7 @@ struct CreateNewsView: View {
             }
             .padding()
             .sheet(isPresented: $picturePickerShow, onDismiss: nil){
-                NewsImagePicker()
+                NewsImagePicker(selectedImage: $selectedImage, picturePickerShow: $picturePickerShow)
             }
         }
         .background(Color.ui.blue)
@@ -80,30 +80,33 @@ struct CreateNewsView: View {
         
         let db = Firestore.firestore()
 
+        // Kolla att bilden inte är nil
         guard selectedImage != nil else {
             return
         }
         
-        // Ref
+        // Reference till våran storage
         let storageRef = Storage.storage().reference()
         
         // Omvandla bild till data(storlek)
         let imageData = selectedImage!.jpegData(compressionQuality: 0.8)
         
+        
         guard imageData != nil else {
             return
         }
-        // Bildfilens path och namn
-        let path = "images/\(UUID().uuidString).jpg"
-        let fileRef = storageRef.child(path)
+        
+        // Bildfilens plats och namn
+       // let path = "images/\(UUID().uuidString).jpg"
+        let fileRef = storageRef.child("images/\(UUID().uuidString).jpg")
         
         
         
         // Ladda upp bilden
-        let Upload = fileRef.putData(imageData!, metadata: nil) { metadata, error in
+        let uploadTask = fileRef.putData(imageData!, metadata: nil) { metadata, error in
             if error == nil && metadata != nil {
                 // Spara en referens i firebase
-                db.collection("images").document().setData(["url":path])
+               // db.collection("images").document().setData(["url":path])
             }
         }
         

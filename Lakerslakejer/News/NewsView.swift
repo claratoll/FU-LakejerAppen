@@ -15,7 +15,7 @@ import FirebaseStorage
 struct NewsView: View {
     @State var isAdmin = false
     @Binding var newsIsPresented : Bool
-    @State var selectedImage: UIImage?
+   // @State var selectedImage: UIImage?
     
     // här skapar vi listan för tableviewn
 
