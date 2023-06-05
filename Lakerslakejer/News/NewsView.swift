@@ -95,7 +95,7 @@ struct RowView: View {
                 
                // if selectedImage != nil{
                 Image(newsEntry.image ?? "eventgruppen")
-                 //   Image(uiImage: selectedImage!)
+                   // Image(uiImage: selectedImage!)
                     .frame(width: 310, height: 200)
                     .aspectRatio(contentMode: .fill)
                     .cornerRadius(10)
