@@ -51,8 +51,8 @@ class ScanVM: ObservableObject {
     }
     
     
-    func saveMemberToFirebase(memberNr: Int, couponNumber: Int, gameID: String) {
-        let user = BookedUser(memberNumber: memberNr, couponNumber: couponNumber, scanned: true)
+    func saveMemberToFirebase(memberNr: Int, couponNumber: Int, gameID: String, booked : Bool) {
+        let user = BookedUser(memberNumber: memberNr, couponNumber: couponNumber,booked: booked, scanned: true)
         
         let gameRef = db.collection("games").document(gameID).collection("bookedUser")
         

@@ -65,7 +65,7 @@ struct GameDetailView: View {
             print(memberNumber)
             print(couponNumber)
 
-            scanVM.saveMemberToFirebase(memberNr: Int(memberNumber) ?? 1111, couponNumber: Int(couponNumber) ?? 11, gameID: game.id ?? "")
+            scanVM.saveMemberToFirebase(memberNr: Int(memberNumber) ?? 1111, couponNumber: Int(couponNumber) ?? 11, gameID: game.id ?? "", booked: false)
             
         case .failure(let error):
             print("Scanning failed: \(error.localizedDescription)")
