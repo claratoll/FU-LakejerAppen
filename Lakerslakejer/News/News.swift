@@ -17,7 +17,7 @@ struct News : Codable, Identifiable, Equatable {
     var headLine : String?
     var content : String?
     var newsText : String?
-    var image : String?
+    var images : String?
 }
 
 /*

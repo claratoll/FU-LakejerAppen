@@ -60,7 +60,7 @@ struct CreateNewsView: View {
             }
             Spacer()
             
-            Button("Spara") {
+            Button("Spara din nyhet") {
                 //    let newNews = News(date: Date(), headLine: headline, newsText: newsText)
                 //Sends the news to the VM
                 newsVM.saveToFirebase(headline: headline, date: Date(), text: newsText)
@@ -72,6 +72,7 @@ struct CreateNewsView: View {
             .sheet(isPresented: $picturePickerShow, onDismiss: nil){
                 NewsImagePicker(selectedImage: $selectedImage, picturePickerShow: $picturePickerShow)
             }
+            
         }
         .background(Color.ui.blue)
         
@@ -97,7 +98,7 @@ struct CreateNewsView: View {
             return
         }
         
-        // Bildfilens plats och namn
+        // Bildfilens plats och namn i firestore
         let path = "images/\(UUID().uuidString).jpg"
         let fileRef = storageRef.child(path)
         
@@ -106,7 +107,7 @@ struct CreateNewsView: View {
         // Ladda upp bilden
         let uploadTask = fileRef.putData(imageData!, metadata: nil) { metadata, error in
             if error == nil && metadata != nil {
-                // Spara en referens i firebase
+                // Spara en referens i firestore
                 let db = Firestore.firestore()
                 db.collection("images").document().setData(["url": path])
                 
@@ -146,7 +147,7 @@ struct CreateNewsView: View {
                     // Rätt path
                     let fileRef = storageRef.child(path)
                     
-                    // Här hämtar vi datan och väljer den storlek
+                    // Här hämtar vi datan och väljer den storlek bilden ska vara
                     fileRef.getData(maxSize: 5 * 1024 * 1024){ data, error in
                         
                         if error == nil && data != nil {

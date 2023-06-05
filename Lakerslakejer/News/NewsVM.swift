@@ -30,7 +30,7 @@ class NewsVM : ObservableObject {
                     "date": date,
                     "headLine": headline,
                     "newsText": text,
-                    "image": text
+                    "images": text
                 ]
                 
         newsRef.addDocument(data: newsData) { error in

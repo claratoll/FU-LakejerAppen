@@ -19,7 +19,7 @@ struct NewsEntryView: View {
     @State var content : String = ""
     @State var headline : String = ""
     @State var text : String = ""
-    @State var image: String = ""
+    @State var images: String = ""
 
     // vi kan få tag på den vartsomhelst i appen
     @Environment(\.presentationMode) var presentationMode
@@ -31,7 +31,7 @@ struct NewsEntryView: View {
            
             
             VStack(alignment: .center, spacing: 5.0){
-                Image(newsEntry?.image ?? "eventgruppen")
+                Image(newsEntry?.images ??  "images/\(UUID().uuidString).jpg")
                     .frame(width: 500, height: 300)
                     .aspectRatio(contentMode: .fill)
                     .cornerRadius(10)
@@ -81,7 +81,7 @@ struct NewsEntryView: View {
             content = newsEntry.content ?? "Content"
             headline = newsEntry.headLine ?? "Headline"
             text = newsEntry.newsText ?? "newstext"
-            image = newsEntry.image ?? "image"
+            images = newsEntry.images ?? "images"
 
         }
     }

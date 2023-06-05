@@ -16,7 +16,7 @@ struct NewsView: View {
     
     @State var isAdmin = false
     @Binding var newsIsPresented : Bool
-   // @State var selectedImage: UIImage?
+    @State var selectedImage: UIImage?
     // här skapar vi listan för tableviewn
 
     @StateObject var newsVM = NewsVM()
@@ -95,15 +95,15 @@ struct RowView: View {
             
             VStack(alignment: .leading, spacing: 5.0){
                 
-               ForEach(retPictures, id: \.self) { image in
-                //Image(newsEntry.image ?? "eventgruppen")
+              ForEach(retPictures, id: \.self) { image in
+                //Image(newsEntry.images ?? "eventgruppen")
                     Image(uiImage: image)
                         .frame(width: 310, height: 200)
                         .aspectRatio(contentMode: .fill)
                         .cornerRadius(10)
                     //   Spacer()
                     
-                }
+               }
                 
                     HStack{
                         
@@ -134,11 +134,10 @@ struct RowView: View {
                     }
                     
             
-            
-             
+                    
                 
             }
-                            
+          
             
             .padding(.top,10)
             .background(Rectangle()
@@ -153,6 +152,7 @@ struct RowView: View {
            // .padding()
             
         }
+        
         
           
     }
