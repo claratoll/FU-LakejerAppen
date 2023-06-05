@@ -13,7 +13,6 @@ struct ContentView: View {
     @ObservedObject var cardVM = CardViewModel()
     var body: some View {
         
-        
     
         if !signedIn{
             LoginView(signedIn: $signedIn)
@@ -21,9 +20,7 @@ struct ContentView: View {
             MenuView(signedIn: $signedIn)
                }
         }
-        
-        
-    
+ 
 }
 
 struct ContentView_Previews: PreviewProvider {

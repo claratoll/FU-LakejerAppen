@@ -23,18 +23,12 @@ struct MenuView: View {
     var auth = Auth.auth()
     var body: some View {
         ZStack{
-            
-            
             VStack{
-                
-                
                 TabView(selection: $selectedTab){
                     ButtonView(selectedTab: $selectedTab, cardVM: cardVM)
                     
                         .tabItem{
                             Label("Home", systemImage: "house.fill")
-                            
-                            
                         }.tag(0)
                    
                     
@@ -44,10 +38,8 @@ struct MenuView: View {
                                 Label("Klippkort", systemImage: "greetingcard.fill")
                             }
                             .tag(1)
-                        
                     }
                     else{
-                        
                         ScannedView(scanVM: ScanVM())
                             .tabItem{
                                 Label("Scanner", systemImage: "qrcode.viewfinder")
@@ -104,11 +96,7 @@ struct MenuView: View {
                             
                         }
                     }
-                    
-                   
                 }
-              
-            
         }
       
         .alert(isPresented: $showLogoutAlert)
@@ -155,8 +143,7 @@ struct ButtonView: View {
     @State var isSwiftPresented = false
     @State var isContactPresented = false
 
-    
-    
+
     var body: some View {
         GeometryReader { geometry in
         VStack{
@@ -211,7 +198,7 @@ struct ButtonView: View {
                                 selectedTab = 1
                                 
                             }) {
-                                Text("ScannerView")
+                                Text("Scanna medlemmar")
                                     .frame(width: 200, height: 50)
                                     .background(Color.ui.blue)
                                     .foregroundColor(Color.ui.gray)
@@ -238,32 +225,27 @@ struct ButtonView: View {
                         Button(action: {awayIsPresented = true
                             
                         }){
-                            Text("Borta Resor")
+                            Text("Boka bortaresor")
                                 .frame(width: 200, height: 50)
                                 .background(Color.ui.blue)
                                 .foregroundColor(Color.ui.gray)
                                 .cornerRadius(10)
                             
                         }
-                        
-                        
-                        
                         Spacer()
                         Button(action: { isSwiftPresented = true
                             
                         }){
                             
-                            Text("Sponsra Tifogruppen")
+                            Text("Sponsra tifogruppen")
                                 .frame(width: 200, height: 50)
                                 .background(Color.ui.blue)
                                 .foregroundColor(Color.ui.gray)
                                 .cornerRadius(10)
                         }
                         Spacer()
-                        
-                        
+
                         Button(action: { isContactPresented = true
-                            
                         }){
                             
                             Text("Kontakta styrelsen")
@@ -272,10 +254,6 @@ struct ButtonView: View {
                                 .foregroundColor(Color.ui.gray)
                                 .cornerRadius(10)
                         }
-                       // Spacer()
-                     
-                        
-                        
                     }.onAppear{
                         
                         userVM.checkUserAuthorization { isAdmin in
@@ -293,9 +271,6 @@ struct ButtonView: View {
                             }
                         }
                     }
-                    
-                    
-                    
                     Spacer()
                 }
             }

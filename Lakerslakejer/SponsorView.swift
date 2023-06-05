@@ -34,11 +34,9 @@ struct SponsorView: View {
                     Spacer()
                     Spacer()
                     
-                }
-                
+                }   
             }
-            
-    
+
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
                     Button(action: {

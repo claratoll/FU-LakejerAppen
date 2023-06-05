@@ -10,7 +10,6 @@ import Firebase
 
 
 struct UserSignUpView: View {
-//    @StateObject var viewModel = UserRegisterVM()
     @ObservedObject var vm = UserVM()
     @Binding var signedIn : Bool
     var auth = Auth.auth()
@@ -113,9 +112,3 @@ struct UserSignUpView: View {
         }
     }
 }
-
-//struct MemberSignUp_Previews: PreviewProvider {
-//    static var previews: some View {
-//        UserSignUpView()
-//    }
-//}

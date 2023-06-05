@@ -60,8 +60,8 @@ struct GameDetailView: View {
             let details = result.string.components(separatedBy: "\n")
             guard details.count == 2 else { return }
 
-            var memberNumber = details[0]
-            var couponNumber = details[1]
+            let memberNumber = details[0]
+            let couponNumber = details[1]
             print(memberNumber)
             print(couponNumber)
 

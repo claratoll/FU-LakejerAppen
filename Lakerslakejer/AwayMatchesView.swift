@@ -102,9 +102,6 @@ struct AwayMatchesView: View {
                     }
                 }
             }
-            
-            
-            
         }
     }
     

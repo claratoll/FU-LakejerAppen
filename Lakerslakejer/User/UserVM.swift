@@ -65,36 +65,23 @@ class UserVM : ObservableObject{
             //If sats om den redan finnst!
             
             do{
-                //            try itemsRef.addDocument(data: ["name": name, "email": email, "memberNr": memberNr, "coupons": 0, "admin": false])
                 try itemsRef.setData(from: myuser)
-                
             } catch{
                 
                 print("no safely safe")
             }
-            
-            
         }
         
     }
     
     func isValidInput(name: String, memberNr: String, email: String, password: String) -> Bool{
         
-        if name.isEmpty || email.isEmpty || password.isEmpty {
-            
+        if name.isEmpty || email.isEmpty || password.isEmpty {            
             return false
         }
         else if memberNr.count != 4 || !memberNr.allSatisfy({ $0.isNumber }){
-            
             return false
-            
         }
-        
         return true
     }
-    
-    
-    
-    
-    
 }

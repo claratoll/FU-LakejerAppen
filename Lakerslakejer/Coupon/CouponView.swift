@@ -9,27 +9,13 @@ import SwiftUI
 import Firebase
 
 struct CouponView: View {
-    
-    // User behöver en Int med CouponsAvailable
-    // ett medlemsnr - som sedan även svara till Qr läsaren
-    //två typ av Coupontecken available - 1 unavailabel
-    //CouponViewn ska med en Loop kolla hur många är available och isf väljer availablepic och om resten är unavailabel
-    
-    //OBS just nu inte dynamistk bara on appear ohc ladda inte in första gången
-    
-
     @ObservedObject var couponVM : CouponViewModel
     
     var body: some View {
-       // let totalCoupons = 10 // Total number of coupons
-
-        
         Grid(alignment: .center, horizontalSpacing: 1, verticalSpacing: 1) {
             Text(String(couponVM.coupons))
             if couponVM.coupons > 10 {
                 Text("Du har en till 10-Block som visas när din första är förbrukat")
-                 
-                        //jag hantera visst inte om man har mer än tjugo,... men tänker det händer inte
             }
             
             Spacer()
@@ -45,11 +31,9 @@ struct CouponView: View {
                         
                         Image(index < couponVM.coupons ? "Coupon" : "UsedCoupon")
                             .padding()
-                        
                     }}}
             
             GridRow{
-                
                 if couponVM.coupons > 10 {
                     ForEach(13..<16) { index in
                         
@@ -57,16 +41,12 @@ struct CouponView: View {
                             .padding()
                     }}
                 else {
-                
-                
                 ForEach(3..<6) { index in
                     
                     Image(index < couponVM.coupons ? "Coupon" : "UsedCoupon")
                         .padding()
-                    
                 }}}
-            
-            
+
             GridRow{
                 if couponVM.coupons > 10 {
                     ForEach(16..<19) { index in
@@ -79,7 +59,6 @@ struct CouponView: View {
                         
                         Image(index < couponVM.coupons  ? "Coupon" : "UsedCoupon")
                             .padding()
-                        
                     }}}
             GridRow(){
                 Rectangle()
@@ -97,13 +76,11 @@ struct CouponView: View {
                         
                         Image(index < couponVM.coupons ? "Coupon" : "UsedCoupon")
                             .padding()
-                        
                     }}}
             
             Spacer()
             VStack {
                 let coupontext = "\(couponVM.memberNr)\n\(couponVM.coupons)"
-               // qrcoupon = coupontext
                 
                 if coupontext != ""{
                     Image(uiImage: UIImage(data: returnData(str: coupontext))!).resizable().frame(width: 150, height: 150)
@@ -115,7 +92,6 @@ struct CouponView: View {
             }
             Spacer()
         }.onAppear{couponVM.getCoupons()}
-        
     }
     
     func returnData(str : String)-> Data{
@@ -127,9 +103,3 @@ struct CouponView: View {
         return uiimage.pngData()!
     }
 }
-
-//struct CouponView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CouponView()
-//    }
-//}
