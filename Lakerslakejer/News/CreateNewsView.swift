@@ -42,7 +42,9 @@ struct CreateNewsView: View {
             .cornerRadius(12)
             .padding(30)
             
-            if selectedImage != nil{
+            // Visas endast om du valt en bild, endast då kan du ladda upp bilden på storage
+            
+         //   if selectedImage != nil{
                 Button{
                 uploadPhotoToFirebase()
                     
@@ -53,9 +55,9 @@ struct CreateNewsView: View {
                 .foregroundColor(.white)
                 .background(Color.green)
                 .cornerRadius(12)
-                .padding(30)
+                .padding(-10)
                 
-            }
+          //  }
             Spacer()
             
             Button("Spara") {
@@ -68,46 +70,47 @@ struct CreateNewsView: View {
             }
             .padding()
             .sheet(isPresented: $picturePickerShow, onDismiss: nil){
-                NewsImagePicker(selectedImage: $selectedImage, picturePickerShow: $picturePickerShow)
+                NewsImagePicker()
             }
         }
         .background(Color.ui.blue)
         
     }
-    
-    
+    func uploadPhotoToFirebase() {
+        
+        let db = Firestore.firestore()
+
+        guard selectedImage != nil else {
+            return
+        }
+        
+        // Ref
+        let storageRef = Storage.storage().reference()
+        
+        // Omvandla bild till data(storlek)
+        let imageData = selectedImage!.jpegData(compressionQuality: 0.8)
+        
+        guard imageData != nil else {
+            return
+        }
+        // Bildfilens path och namn
+        let path = "images/\(UUID().uuidString).jpg"
+        let fileRef = storageRef.child(path)
+        
+        
+        
+        // Ladda upp bilden
+        let Upload = fileRef.putData(imageData!, metadata: nil) { metadata, error in
+            if error == nil && metadata != nil {
+                // Spara en referens i firebase
+                db.collection("images").document().setData(["url":path])
+            }
+        }
+        
+    }
 }
 
-func uploadPhotoToFirebase() {
-    
-    guard selectedImage != nil else {
-        return
-    }
-    
-    // Ref
-    let storageRef = Storage.storage().reference()
-    
-    // Omvandla bild till data(storlek)
-    let imageData = selectedImage!.jpegData(compressionQuality: 0.8)
-    
-    guard imageData != nil else {
-        return
-    }
-    // Bildfilens path och namn
-    let paht = "images/\(UUID().uuidString).jpg")
-    let fileRef = storageRef.child(path)
-    
-    
-    
-    // Ladda upp bilden
-    let Upload = fileRef.putData(imageData!, metadata: nil) { metadata, error in
-        if error == nil && metadata != nil {
-            // Spara en referens i firebase
-            db.collection("images").document().setData(["url":path])
-        }
-    }
-    
-}
+
  
 /* func getPhotosFromFirebase(){
  

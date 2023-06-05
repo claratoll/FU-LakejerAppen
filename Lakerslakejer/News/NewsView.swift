@@ -9,11 +9,13 @@ import SwiftUI
 import Firebase
 import FirebaseFirestore
 import FirebaseAuth
+import FirebaseStorage
 
 
 struct NewsView: View {
     @State var isAdmin = false
     @Binding var newsIsPresented : Bool
+    @State var selectedImage: UIImage?
     
     // här skapar vi listan för tableviewn
 
@@ -90,11 +92,15 @@ struct RowView: View {
            Color(.white)
             
             VStack(alignment: .leading, spacing: 5.0){
+                
+               // if selectedImage != nil{
                 Image(newsEntry.image ?? "eventgruppen")
+                 //   Image(uiImage: selectedImage!)
                     .frame(width: 310, height: 200)
                     .aspectRatio(contentMode: .fill)
                     .cornerRadius(10)
              //   Spacer()
+                    
                 
                     HStack{
                         
