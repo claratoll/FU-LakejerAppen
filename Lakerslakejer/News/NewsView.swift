@@ -13,10 +13,10 @@ import FirebaseStorage
 
 
 struct NewsView: View {
+    
     @State var isAdmin = false
     @Binding var newsIsPresented : Bool
    // @State var selectedImage: UIImage?
-    
     // här skapar vi listan för tableviewn
 
     @StateObject var newsVM = NewsVM()
@@ -87,20 +87,23 @@ struct NewsView: View {
     
 struct RowView: View {
     let newsEntry : News
+    @State var retPictures = [UIImage]()
+    
     var body: some View {
         ZStack{
            Color(.white)
             
             VStack(alignment: .leading, spacing: 5.0){
                 
-               // if selectedImage != nil{
-                Image(newsEntry.image ?? "eventgruppen")
-                   // Image(uiImage: selectedImage!)
-                    .frame(width: 310, height: 200)
-                    .aspectRatio(contentMode: .fill)
-                    .cornerRadius(10)
-             //   Spacer()
+               ForEach(retPictures, id: \.self) { image in
+                //Image(newsEntry.image ?? "eventgruppen")
+                    Image(uiImage: image)
+                        .frame(width: 310, height: 200)
+                        .aspectRatio(contentMode: .fill)
+                        .cornerRadius(10)
+                    //   Spacer()
                     
+                }
                 
                     HStack{
                         
@@ -148,7 +151,10 @@ struct RowView: View {
             .padding(.leading, 15)
             //den fixar under halvans
            // .padding()
+            
         }
+        
+          
     }
 }
 

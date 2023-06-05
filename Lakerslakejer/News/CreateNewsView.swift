@@ -109,6 +109,11 @@ struct CreateNewsView: View {
                 // Spara en referens i firebase
                 let db = Firestore.firestore()
                 db.collection("images").document().setData(["url": path])
+                
+                DispatchQueue.main.async {
+                
+                    self.retPictures.append(self.selectedImage!)
+                }
             }
         }
         
