@@ -172,6 +172,7 @@
 		1D87FBC52A0CCEB50013AC3C /* Lakerslakejer */ = {
 			isa = PBXGroup;
 			children = (
+				613030532A1FC4D40001BFA5 /* AwayMatchesView.swift */,
 				1D864A252A1F55AF0028FB90 /* AwayGames */,
 				B970E6612A1F462A00664C32 /* Info.plist */,
 				B970E6602A1E2BD800664C32 /* Lakerslakejer.entitlements */,
@@ -191,7 +192,6 @@
 				4E12541D2A1762E2004B8B47 /* SponsorView.swift */,
 				1D85F8962A12396500EB810C /* Extension.swift */,
 				61FC44642A129F1E00D7F502 /* GoogleService-Info.plist */,
-				613030532A1FC4D40001BFA5 /* AwayMatchesView.swift */,
 				613030552A252C6C0001BFA5 /* ContactView.swift */,
 				B99C25652A286F9400774594 /* AllMatchesView.swift */,
 			);

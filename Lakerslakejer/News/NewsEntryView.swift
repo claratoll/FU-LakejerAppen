@@ -28,9 +28,6 @@ struct NewsEntryView: View {
 
     var body: some View {
         VStack{
-
-           
-            
             VStack(alignment: .center, spacing: 5.0){
                 Image(newsEntry?.images ??  "images/\(UUID().uuidString).jpg")
                     .frame(width: 500, height: 300)
@@ -71,8 +68,7 @@ struct NewsEntryView: View {
             presentationMode.wrappedValue.dismiss()
 
         } : nil )
-       
-        
+
     }
 
     private func setContent(){
@@ -87,7 +83,7 @@ struct NewsEntryView: View {
         }
     }
 
-    // våran funktion för att spara info.
+    // vår funktion för att spara info.
     private func saveNews() {
 
         // vi ska kolla om den är nil
@@ -104,11 +100,7 @@ struct NewsEntryView: View {
             newsPlaceholder.publishedNews.append(newNews)
 */
         }
-
-
     }
-
-
 }
 
 struct NewsEntryView_Previews: PreviewProvider {

@@ -133,13 +133,8 @@ struct RowView: View {
                             Spacer()
                         }
                     }
-                    
-            
-                    
-                
             }
-          
-            
+
             .padding(.top,10)
             .background(Rectangle()
                 .frame(minWidth: 330)
@@ -149,17 +144,13 @@ struct RowView: View {
             .padding(.bottom,5)
             .padding(.trailing, 5)
             .padding(.leading, 15)
-            //den fixar under halvans
-           // .padding()
-            
+
         }
         
         
           
     }
 }
-
-
 
 
 struct NewsView_Previews: PreviewProvider {

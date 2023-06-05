@@ -17,7 +17,6 @@ class CouponViewModel: ObservableObject{
     @Published var members = [User]()
     let auth = Auth.auth()
     let db = Firestore.firestore()
-    //@Binding var signedIn : Bool
 
     func getCoupons() {
         guard let currentUser = Auth.auth().currentUser else { return }
@@ -31,7 +30,7 @@ class CouponViewModel: ObservableObject{
             }
 
             do {
-                var user = try document.data(as: User.self)
+                let user = try document.data(as: User.self)
 
                 let coupons = user.coupons
                 self.coupons = coupons
@@ -46,13 +45,8 @@ class CouponViewModel: ObservableObject{
     }
     
     func listenToFirestore(){
-        // viktig så att det kan uppdateras när man tog bort en coupon
-        // fast kankse inte - kan ju bara läsa ner för den som är inloggat
-        // MEN kankse behöver admin sen en lista för att se nånting - låta den vara här just nu
-        // och chatten
-        
         db.collection("users").addSnapshotListener() {
-        
+            
             snapshot, err in
             guard let snapshot = snapshot else {return}
             
@@ -69,42 +63,39 @@ class CouponViewModel: ObservableObject{
                         print("nope")
                     }
                 }
-                
             }
-
         }
-
     }
     
-func getCurrentUserDetails (){
-    
-            guard let currentUser = Auth.auth().currentUser else {
-    
-                return
-            }
-    
-            let userRef = db.collection("users").document(currentUser.uid)
-    
-             userRef.getDocument { (document, error) in
-                    if let document = document, document.exists {
-                        do {
-                            let user = try document.data(as: User?.self)
-                            if let user = user {
-    
-                              
-                                print("User Name: \(user.name)")
-                                print("User Email: \(user.email)")
-    
-                            }
-                        } catch {
-                            print("Error decoding user document: \(error)")
-                        }
-                    } else {
-                        print("User document does not exist")
-                    }
-                }
-
+    func getCurrentUserDetails (){
+        
+        guard let currentUser = Auth.auth().currentUser else {
+            
+            return
         }
+        
+        let userRef = db.collection("users").document(currentUser.uid)
+        
+        userRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                do {
+                    let user = try document.data(as: User?.self)
+                    if let user = user {
+                        
+                        
+                        print("User Name: \(user.name)")
+                        print("User Email: \(user.email)")
+                        
+                    }
+                } catch {
+                    print("Error decoding user document: \(error)")
+                }
+            } else {
+                print("User document does not exist")
+            }
+        }
+        
+    }
     
 }
 
