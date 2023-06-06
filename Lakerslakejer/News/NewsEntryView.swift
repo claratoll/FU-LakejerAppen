@@ -36,7 +36,6 @@ struct NewsEntryView: View {
                     .padding(.top,-40)
             }
             TextEditor(text: $headline)
-            //Text(newsEntry.headLine ?? "headline")
                 .font(.title)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.leading)
@@ -89,16 +88,13 @@ struct NewsEntryView: View {
         // vi ska kolla om den är nil
         if let newsEntry = newsEntry {
 
-            //newsPlaceholder.update(news: newsEntry, with: content )
             
             newsPlaceholder.saveToFirebase(headline: headline, date: Date(), text: text)
             
         }else{
             //ändra news - uppdatera news på firebase
 
-            /*let newNews = News(content: content, headline: headline,text: text, image: image)
-            newsPlaceholder.publishedNews.append(newNews)
-*/
+            
         }
     }
 }

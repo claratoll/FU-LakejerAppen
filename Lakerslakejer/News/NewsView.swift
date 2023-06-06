@@ -102,7 +102,6 @@ struct RowView: View {
                         .frame(width: 310, height: 200)
                         .aspectRatio(contentMode: .fill)
                         .cornerRadius(10)
-                    //   Spacer()
                     
                }
                 
@@ -117,7 +116,6 @@ struct RowView: View {
                         
                     }
                     
-                   // Spacer()
                     VStack{
                         Spacer()
                         Text(newsEntry.newsText ?? "news text")
@@ -129,7 +127,8 @@ struct RowView: View {
                             Spacer()
                             Text(newsEntry.content ?? "Dagens datum eller mer text ")
                                 .font(.title3)
-                                .fontWeight(.ultraLight)               .multilineTextAlignment(.leading)
+                                .fontWeight(.ultraLight)
+                                .multilineTextAlignment(.leading)
                             Spacer()
                         }
                     }
