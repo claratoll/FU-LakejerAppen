@@ -21,10 +21,8 @@ class NewsVM : ObservableObject {
     func saveToFirebase (headline: String, date: Date, text: String){
         //saves news to Firebase
         
-      //  guard let user = auth.currentUser else {return}
         
         let newsRef = db.collection("news")
-  //      let news = News(date: date, headLine: headline, newsText: text)
         
         let newsData: [String: Any] = [
                     "date": date,
@@ -59,15 +57,7 @@ class NewsVM : ObservableObject {
         
     }
     
-    /*
-    func update(news: News, with  content: String){
-
-        if let index = news.firstIndex(of: news){
-        news[index].content = content
-
-        }
-
-    }*/
+   
 
     func listenToFirebase(){
         let newsRef = db.collection("news")
@@ -97,25 +87,7 @@ class NewsVM : ObservableObject {
         }
         
     }
-   /* func sendNotification() {
-        let message = [
-            "to": "<FCM-token>",
-            "notification": [
-                "title": "",
-                "body": ""
-            ]
-        ] as [String: Any]
-
-        Messaging.messaging().sendMessage(message) { error in
-            if let error = error {
-                print("Failed to send message: \(error.localizedDescription)")
-            } else {
-                print("Message sent successfully.")
-            }
-        }
-    }*/
-    
-    
+   
     
 }
 

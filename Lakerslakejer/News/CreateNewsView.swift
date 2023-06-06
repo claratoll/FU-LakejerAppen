@@ -16,7 +16,8 @@ struct CreateNewsView: View {
     @State private var newsText: String = ""
     @Environment(\.presentationMode) var presentationMode
     @StateObject var newsVM = NewsVM()
-
+    @State var selectedImage: UIImage?
+    @State var retPictures = [UIImage]()
     @State var picturePickerShow = false
     
     var body: some View {
@@ -61,7 +62,6 @@ struct CreateNewsView: View {
             Spacer()
             
             Button("Spara din nyhet") {
-                //    let newNews = News(date: Date(), headLine: headline, newsText: newsText)
                 //Sends the news to the VM
                 newsVM.saveToFirebase(headline: headline, date: Date(), text: newsText)
                 

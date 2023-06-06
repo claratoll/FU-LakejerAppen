@@ -163,15 +163,7 @@ struct ButtonView: View {
                 Spacer()
                 NavigationView {
                     VStack{
-                        
-// Bara om vi få keyn i tid
-//                        NavigationLink(destination: AllMatchesView()) {
-//                                          Text("All matches")
-//                                              .frame(width: 200, height: 50)
-//                                              .background(Color.ui.blue)
-//                                              .foregroundColor(Color.ui.gray)
-//                                              .cornerRadius(10)
-//                                      }
+
                         Spacer()
                         
                         //if user = admin -- scannerview
@@ -276,7 +268,7 @@ struct ButtonView: View {
             }
             }
         }.fullScreenCover(isPresented: $awayIsPresented ){
-            AwayMatchesView(awayIsPresented: $awayIsPresented)
+            AwayGamesView(awayIsPresented: $awayIsPresented)
         }
         .fullScreenCover(isPresented: $isSwiftPresented){
             SponsorView(isSwiftPresented: $isSwiftPresented)

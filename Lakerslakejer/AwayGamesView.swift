@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 
-struct AwayMatchesView: View {
+struct AwayGamesView: View {
     let auth = Auth.auth()
     let db = Firestore.firestore()
     
@@ -143,7 +143,7 @@ struct AwayMatchesView: View {
 
 struct AwayMatchesView_Previews: PreviewProvider {
     static var previews: some View {
-        AwayMatchesView(awayIsPresented: .constant(true))
+        AwayGamesView(awayIsPresented: .constant(true))
     }
 }
 
